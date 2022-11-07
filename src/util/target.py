@@ -22,7 +22,10 @@ class Target(object):
         return f"lambda {','.join(self.parameters)}: {self.func}"
 
     def no_package_str(self):
-        return self.func.split(".",1)[1]
+        if self.contains_package:
+            return self.func.split(".",1)[1]
+        else:
+            return self.func
 
 
     def as_lambda(self,package: Optional[str]=None):

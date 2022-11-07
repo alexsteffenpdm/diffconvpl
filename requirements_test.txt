@@ -4,3 +4,5 @@ numpy
 tqdm
 matplotlib
 pytest
+pyexcel
+pyexcel-xlsx

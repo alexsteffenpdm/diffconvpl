@@ -6,3 +6,138 @@ Error: 0.02577034756541252
 Duration: 42.93799543380737
 Iters per Second: 465.78792973304326
 
+Function: -x**2
+Iterations: 20000
+Positive: 0
+Negative: 1
+Error: 0.08142967522144318
+Duration: 19.834784030914307
+Iters per Second: 1008.3296076644036
+
+Function: x**2
+Iterations: 20000
+Positive: 1
+Negative: 0
+Error: 2.0868196137991324e-15
+Duration: 16.970023155212402
+Iters per Second: 1178.5487749235585
+
+Function: -x**2
+Iterations: 20000
+Positive: 0
+Negative: 1
+Error: 0.0012514437548816204
+Duration: 16.898234844207764
+Iters per Second: 1183.555571596014
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00013538489292841405
+Duration: 79.72848176956177
+Iters per Second: 250.8513840487487
+
+Function: -x**2
+Iterations: 20000
+Positive: 0
+Negative: 1
+Error: 1.1646810662568896e-06
+Duration: 23.01174783706665
+Iters per Second: 869.1212915076613
+
+Function: sin(5*x)
+Iterations: 20000
+Positive: 2
+Negative: 2
+Error: 0.0003030607185792178
+Duration: 49.36098575592041
+Iters per Second: 405.178294025483
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00013538489292841405
+Duration: 80.61733603477478
+Iters per Second: 248.08559775992694
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021263273083604872
+Duration: 83.81179332733154
+Iters per Second: 238.62990166418354
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0002079298283206299
+Duration: 83.99549984931946
+Iters per Second: 238.10799430776936
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 82.31119441986084
+Iters per Second: 242.98031562975603
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 82.73853874206543
+Iters per Second: 241.72532297614438
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 82.53280305862427
+Iters per Second: 242.32788974577423
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 83.14774823188782
+Iters per Second: 240.53567805856517
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 82.21243619918823
+Iters per Second: 243.2721973053206
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 82.92414236068726
+Iters per Second: 241.18428518691098
+Success: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00021499887225218117
+Duration: 80.24481797218323
+Iters per Second: 249.23727793778505
+Success: True
+

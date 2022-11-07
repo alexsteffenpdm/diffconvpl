@@ -12,7 +12,7 @@ def make_signs(positive: int, negative: int):
  
     return ([1.0] * positive) + ([-1.0] * negative)
 
-def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,negative:int):
+def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,negative:int,success:bool):
   
     return {
         "Function": func,
@@ -22,4 +22,5 @@ def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,nega
         "Error": str(loss),
         "Duration": str(tqdm_dict["elapsed"]),
         "Iters per Second": str((tqdm_dict["total"])/tqdm_dict["elapsed"]),
+        "Success": success,
     }

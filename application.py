@@ -5,35 +5,53 @@ from src.util.plot import plot2d
 from src.util.target import Target
 
 import numpy as np
+import os
 import torch
 import random
 import multiprocessing
 
 from tqdm import tqdm
+from datetime import datetime
 
 random.seed(1)
 
-def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool):
-    plot2d(func,x,y_target,maxaffines,y_pred,fullplot)
 
+APP_ARGS = {}
+
+def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,timetag:str):
+    plot2d(func,x,y_target,maxaffines,y_pred,fullplot,timetag)
+
+"""
+    APP_ARGS = {
+            "func": "torch.sin(10*x)",
+            "params": ["x"],
+            "m": 7,
+            "entries": 1000,
+            "epochs": 20000,
+            "positive_funcs": 4,
+            "negative_funcs": 4,
+            "fullplot": False,
+        }
+"""
 
 
 def run():
+
     print("STAGE: Setup")
     # setup plot data
-    fullplot=True
+    fullplot=APP_ARGS["fullplot"]
 
     # setup logger
     logger = ParamLogger()
 
     # setup params for MaxAffineFunction
-    TARGET = Target(func="torch.sin(5*x)", parameters=["x"])
+    TARGET = Target(func=APP_ARGS["func"], parameters=APP_ARGS["params"])
 
-    m = 500
-    entries = 1000
-    epochs = 20000
-    positive_funcs = 2
-    negative_funcs = 2
+    m = APP_ARGS["m"]
+    entries = APP_ARGS["entries"]
+    epochs = APP_ARGS["epochs"]
+    positive_funcs = APP_ARGS["positive_funcs"]
+    negative_funcs = APP_ARGS["negative_funcs"]
 
 
     # setup data
@@ -56,7 +74,7 @@ def run():
 
     print("STAGE: Calculation")
 
-    optimizer = torch.optim.SGD(model.parameters(),lr = 0.01, momentum=0.9) #.to(torch.device("cuda:0"))
+    optimizer = torch.optim.Adam([model.a,model.b],lr = 0.06)
 
     loss = None
     pbar = tqdm(total=epochs)
@@ -73,30 +91,55 @@ def run():
     pbar_dict = pbar.format_dict
 
     print("STAGE: Plot")
+    
+    timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
     maxaffines,prediction = model.get_plot_data(datapoints,y)
-    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot))
+    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot,timetag))
     plotprocess.start()
 
     print("STAGE: Data")
     keep_data = None
-    while True:
-        answer = input("Do you want to keep the used parameters? (y/n)")
-        if answer in ["y","n"]:
-            keep_data = "y" == answer
-            break
-
+    success = None
+    while keep_data is None or success is None:
+        if keep_data is None:
+            answer = input("Do you want to keep the used parameters? (y/n)\n")
+            if answer in ["y","n"]:
+                keep_data = "y" == answer
+        if success is None:
+            answer = input("Is the fitting successful? (y/n)\n")
+            if answer in ["y","n"]:
+                success = "y" == answer
+    
     if keep_data:
         log_dict = build_log_dict(
             tqdm_dict=pbar_dict,
             loss = loss.item(),
             func = TARGET.no_package_str(),
             positive=positive_funcs,
-            negative=negative_funcs
+            negative=negative_funcs,
+            success=success,
         )
         logger.full_log(dict=log_dict)
+        APP_ARGS["Success"] = success
+        logger.json_log(dict=APP_ARGS,filename=timetag)
 
+def setup():
+    [os.makedirs(directory) for directory in ["data","data\\json","data\\plots"] if not os.path.exists(directory)] 
+
+    global APP_ARGS
+    APP_ARGS = {
+        "func": "torch.sin(10*x)",
+        "params": ["x"],
+        "m": 7,
+        "entries": 1000,
+        "epochs": 20000,
+        "positive_funcs": 4,
+        "negative_funcs": 4,
+        "fullplot": False,
+    }
 
 if __name__ == "__main__":
+    setup()
     run()
 

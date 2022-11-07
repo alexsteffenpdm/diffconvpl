@@ -1,11 +1,13 @@
 from .util.common import rand_color
 from .util.target import Target
 
-import numpy as np
 import torch
+import random
+import numpy as np
 import matplotlib.pyplot as plt
 
 from typing import List
+
 
 
 class MultiDimMaxAffineFunction(torch.nn.Module):
@@ -26,28 +28,17 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.m = m
         self.domains = np.linspace(0.0,1.0,self.k+1)
 
-       # self.func= lambda t: torch.max(t,dim=-1)[0]
+        # self.func= lambda t: torch.max(t,dim=-1)[0]
         self.func = lambda t: torch.logsumexp(t,dim=-1)
 
         self.param_init()
-        #self.randomize()
-
-    def randomize(self):
-        domain = [-1,1]
-        xi = torch.rand_like(self.a[0])
-        xi = (domain[1]- domain[0])*xi + domain[0]
-
-        a = 1
-        b = 0
-        for ki in range(self.k):
-            self.a[ki].data = a*2*xi
-            self.b[ki].data = a*(xi**2).sum(dim=1) + b - (self.a.data*xi).sum(dim=-1)
 
     def param_init(self):
 
         def _gauss_dist(s:int,e:int,entries:int):
-            #dist = np.linspace(s,e,entries)
-            dist = np.linspace(-1.0,1.0,entries)
+            #dist = np.linspace(-1.0,1.0,entries)
+            
+            dist = np.asarray([random.gauss(0.1,1.0) for _ in range(entries)])
             domain_range = (np.max(dist) + (-1*np.min(dist) if np.min(dist) < 0.0 else np.min(dist)))
             s = []
             for d in dist:
@@ -67,7 +58,6 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             b_ki = []
             for xi in _gauss_dist(domains[ki],domains[ki+1],entries=self.m):
                 xi = torch.from_numpy(np.asarray(xi)).requires_grad_(True)
-                #xi = xi.clone().detach()
                 y = self.target.as_lambda("torch")(xi)
                 y.backward()            
 
