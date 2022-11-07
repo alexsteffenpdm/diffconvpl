@@ -1,0 +1,8 @@
+Function: sin(5*x)
+Iterations: 20000
+Positive: 2
+Negative: 2
+Error: 0.02577034756541252
+Duration: 42.93799543380737
+Iters per Second: 465.78792973304326
+

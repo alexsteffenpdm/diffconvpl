@@ -1,0 +1,2 @@
+Function,Iterations,Positive,Negative,Error,Duration,Iters per Second
+sin(5*x),20000,2,2,0.02577034756541252,42.93799543380737,465.78792973304326
