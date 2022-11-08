@@ -141,3 +141,12 @@ Duration: 80.24481797218323
 Iters per Second: 249.23727793778505
 Success: True
 
+Function: x**2
+Iterations: 20000
+Positive: 1
+Negative: 0
+Error: 0.0004686458851210773
+Duration: 22.454500198364258
+Iters per Second: 890.6900542572281
+Success: True
+

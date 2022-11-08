@@ -1,5 +1,7 @@
 from typing import Dict,Any
 import random
+import os
+import json
 
 def rand_color():
     r = lambda: random.randint(0,255)
@@ -24,3 +26,27 @@ def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,nega
         "Iters per Second": str((tqdm_dict["total"])/tqdm_dict["elapsed"]),
         "Success": success,
     }
+
+def rerun_experiment():
+    try:
+        
+        selection = -1
+        experiments = os.listdir("data\\json")
+        while selection < 0:
+            [print(f"{i}: {exp}") for i,exp in enumerate(experiments)]
+            tmp = int(input(f"Select an experiment (0-{len(experiments)-1}): "))
+            if tmp >= 0 and tmp <= len(experiments)-1:
+                selection = tmp
+       
+        with open(f"data\\json\\{experiments[selection]}","r") as fp:
+            return json.load(fp)
+        
+    except:
+        print("JSON directory not found")
+        pass
+
+
+
+if __name__ == "__main__":
+    exp = rerun_experiment()
+    print(exp)

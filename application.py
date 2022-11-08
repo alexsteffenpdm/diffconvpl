@@ -9,6 +9,7 @@ import os
 import torch
 import random
 import multiprocessing
+import argparse
 
 from tqdm import tqdm
 from datetime import datetime
@@ -124,22 +125,33 @@ def run():
         APP_ARGS["Success"] = success
         logger.json_log(dict=APP_ARGS,filename=timetag)
 
-def setup():
-    [os.makedirs(directory) for directory in ["data","data\\json","data\\plots"] if not os.path.exists(directory)] 
-
+def setup(rerun:bool):
     global APP_ARGS
-    APP_ARGS = {
-        "func": "torch.sin(10*x)",
-        "params": ["x"],
-        "m": 7,
-        "entries": 1000,
-        "epochs": 20000,
-        "positive_funcs": 4,
-        "negative_funcs": 4,
-        "fullplot": False,
-    }
+    if rerun == False:
+        [os.makedirs(directory) for directory in ["data","data\\json","data\\plots"] if not os.path.exists(directory)] 
+
+        
+        APP_ARGS = {
+            "func": "x**2",
+            "params": ["x"],
+            "m": 2,
+            "entries": 1000,
+            "epochs": 20000,
+            "positive_funcs": 1,
+            "negative_funcs": 0,
+            "fullplot": False,
+        }
+    else:
+        APP_ARGS = rerun_experiment()
+
 
 if __name__ == "__main__":
-    setup()
+    parser = argparse.ArgumentParser(
+        description="Diffconvpl"
+    )
+    parser.add_argument('-rerun',action='store_true',help='Select an experiment to rerun from "data\json\\"')
+    args = parser.parse_args()
+  
+    setup(rerun=args.rerun)
     run()
 
