@@ -1,11 +1,12 @@
 import random
 import string
 import pytest
+from typing import Dict,Any
 
 from ..src.util.common import rand_color,make_signs,build_log_dict
 MAXINT = 2**32
 FLOATMAX = float(2**32)
-
+LETTERS = string.ascii_letters + string.digits + string.punctuation
 
 def test_random_color():
     expected = [
@@ -46,8 +47,7 @@ def test_build_log_dict():
         "total": random.randint(0,MAXINT),
         "elapsed": random.uniform(0.0,FLOATMAX),
     }
-    letters = string.ascii_letters + string.digits + string.punctuation
-    func = ''.join(random.choice(letters) for i in range(1,100))
+    func = ''.join(random.choice(LETTERS) for i in range(1,100))
     positive = random.randint(0,MAXINT)
     negative = random.randint(0,MAXINT)
     loss = random.uniform(0.0,FLOATMAX)
@@ -69,3 +69,4 @@ def test_build_log_dict():
         positive=positive,
         negative=negative
     )
+    

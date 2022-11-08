@@ -16,33 +16,16 @@ from datetime import datetime
 
 random.seed(1)
 
-
+AUTOSAVE = False
 APP_ARGS = {}
 
-def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,timetag:str):
-    plot2d(func,x,y_target,maxaffines,y_pred,fullplot,timetag)
-
-"""
-    APP_ARGS = {
-            "func": "torch.sin(10*x)",
-            "params": ["x"],
-            "m": 7,
-            "entries": 1000,
-            "epochs": 20000,
-            "positive_funcs": 4,
-            "negative_funcs": 4,
-            "fullplot": False,
-        }
-"""
-
+def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,timetag:str,autosave:bool):
+    plot2d(func,x,y_target,maxaffines,y_pred,fullplot,timetag,autosave)
 
 def run():
-
+    global APP_ARGS,AUTOSAVE
     print("STAGE: Setup")
-    # setup plot data
     fullplot=APP_ARGS["fullplot"]
-
-    # setup logger
     logger = ParamLogger()
 
     # setup params for MaxAffineFunction
@@ -56,7 +39,6 @@ def run():
 
 
     # setup data
-    
     signs = np.asarray(make_signs(positive=positive_funcs,negative=negative_funcs))
     k = len(signs)
     datapoints = np.linspace(-1.0,1.0,entries)
@@ -96,22 +78,28 @@ def run():
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
     maxaffines,prediction = model.get_plot_data(datapoints,y)
-    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot,timetag))
+    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot,timetag,AUTOSAVE))
     plotprocess.start()
 
     print("STAGE: Data")
-    keep_data = None
-    success = None
-    while keep_data is None or success is None:
-        if keep_data is None:
-            answer = input("Do you want to keep the used parameters? (y/n)\n")
-            if answer in ["y","n"]:
-                keep_data = "y" == answer
-        if success is None:
-            answer = input("Is the fitting successful? (y/n)\n")
-            if answer in ["y","n"]:
-                success = "y" == answer
-    
+   
+    if AUTOSAVE == True:
+        keep_data = True
+        success = True
+    else:
+        keep_data = None
+        success = None
+
+    while keep_data is None:
+        answer = input("Do you want to keep the used parameters? (y/n)\n")
+        if answer in ["y","n"]:
+            keep_data = "y" == answer
+        while success is None:
+                answer = input("Is the fitting successful? (y/n)\n")
+                if answer in ["y","n"]:
+                    success = "y" == answer
+                    break
+
     if keep_data:
         log_dict = build_log_dict(
             tqdm_dict=pbar_dict,
@@ -120,38 +108,44 @@ def run():
             positive=positive_funcs,
             negative=negative_funcs,
             success=success,
+            autosave=AUTOSAVE,
         )
         logger.full_log(dict=log_dict)
         APP_ARGS["Success"] = success
+        APP_ARGS["Autosave"] = AUTOSAVE
         logger.json_log(dict=APP_ARGS,filename=timetag)
+    print("STAGE: End")
 
-def setup(rerun:bool):
-    global APP_ARGS
+def setup(rerun:bool,autosave:bool,filepath:str=None):
+    global APP_ARGS, AUTOSAVE
+    AUTOSAVE = autosave
     if rerun == False:
         [os.makedirs(directory) for directory in ["data","data\\json","data\\plots"] if not os.path.exists(directory)] 
 
-        
         APP_ARGS = {
-            "func": "x**2",
+            "func": "torch.sin(10*x)",
             "params": ["x"],
-            "m": 2,
+            "m": 500,
             "entries": 1000,
             "epochs": 20000,
-            "positive_funcs": 1,
-            "negative_funcs": 0,
+            "positive_funcs": 4,
+            "negative_funcs": 4,
             "fullplot": False,
         }
     else:
-        APP_ARGS = rerun_experiment()
+        APP_ARGS = rerun_experiment(filepath)
 
 
 if __name__ == "__main__":
+    
     parser = argparse.ArgumentParser(
         description="Diffconvpl"
     )
-    parser.add_argument('-rerun',action='store_true',help='Select an experiment to rerun from "data\json\\"')
+    parser.add_argument('-rerun',action='store_true',help='Select an experiment to rerun from "data\json\\".')
+    parser.add_argument('-autosave',action='store_true',help='Skips questions and directly saves data.')
+    parser.add_argument('--autorun',metavar="str",default=None,action='store',nargs='?',help='Issues and autorun with a given configuration via file.')
     args = parser.parse_args()
-  
-    setup(rerun=args.rerun)
+    
+    setup(rerun=args.rerun,autosave=args.autosave,filepath=args.autorun)
     run()
 

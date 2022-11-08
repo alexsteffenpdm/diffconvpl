@@ -14,7 +14,7 @@ def make_signs(positive: int, negative: int):
  
     return ([1.0] * positive) + ([-1.0] * negative)
 
-def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,negative:int,success:bool):
+def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,negative:int,success:bool,autosave:bool):
   
     return {
         "Function": func,
@@ -25,11 +25,15 @@ def build_log_dict(tqdm_dict:Dict[str,Any],loss:float,func:str,positive:int,nega
         "Duration": str(tqdm_dict["elapsed"]),
         "Iters per Second": str((tqdm_dict["total"])/tqdm_dict["elapsed"]),
         "Success": success,
+        "Autosave": autosave,
     }
 
-def rerun_experiment():
+def rerun_experiment(filepath:str=None):
+    if filepath:
+        with open(filepath,"r") as fp:
+            return json.load(fp)
     try:
-        
+
         selection = -1
         experiments = os.listdir("data\\json")
         while selection < 0:
@@ -44,9 +48,3 @@ def rerun_experiment():
     except:
         print("JSON directory not found")
         pass
-
-
-
-if __name__ == "__main__":
-    exp = rerun_experiment()
-    print(exp)

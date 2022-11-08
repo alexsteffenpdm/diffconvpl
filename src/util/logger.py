@@ -30,7 +30,8 @@ class ParamLogger(object):
             "Error",
             "Duration",
             "Iters per Second",
-            
+            "Success",
+            "Autosave",
         ]
 
     def log_entry(self,dict:Dict[str,str],):
@@ -40,11 +41,6 @@ class ParamLogger(object):
         self.logger.debug(msg=msg)
 
     def csv_log(self,dict:Dict[str,str]):
-        try:
-            if dict["Success"]:
-                del dict["Success"]
-        except:
-            pass
         if os.path.exists(self.csv):
             with open(self.csv,"a",encoding="UTF8",newline="") as fp:
                 writer = csv.DictWriter(fp,fieldnames=self.fields)
@@ -65,11 +61,13 @@ class ParamLogger(object):
         merge_all_to_a_book(glob.glob("data\*.csv"),"data\experiments.xlsx")
 
     def json_log(self,dict:Dict[str,str],filename:str):
-
-        if dict["Success"] == True:
-            filepath = f"data\\json\\SUCCESS_{filename}.json"
+        if dict["Autosave"] == True:
+            filepath = f"data\\json\\AUTOSAVE_{filename}.json"
         else:
-            filepath = f"data\\json\\FAILED_{filename}.json"
+            if dict["Success"] == True:
+                filepath = f"data\\json\\SUCCESS_{filename}.json"
+            else:
+                filepath = f"data\\json\\FAILED_{filename}.json"
 
         del dict["Success"]
         dict["plot_data"] = f"data\\plots\\{filename}.png"

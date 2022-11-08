@@ -6,7 +6,7 @@ import numpy as np
 from typing import Any
 
 
-def plot2d(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,filename:str):
+def plot2d(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,filename:str,autosave:bool):
     
     if fullplot:
         for i,y_predi in enumerate(maxaffines):
@@ -16,7 +16,8 @@ def plot2d(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np
     plt.plot(x,y_target,color=rand_color(),label=func,linestyle="-.")
     plt.legend(loc="best")
     plt.savefig(f"data\\plots\\{filename}.png")
-    plt.show()
-    
+    if autosave != False:
+        plt.show(block=False)    
+    plt.close()
     return 
 

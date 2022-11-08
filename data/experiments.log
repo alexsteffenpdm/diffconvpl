@@ -150,3 +150,553 @@ Duration: 22.454500198364258
 Iters per Second: 890.6900542572281
 Success: True
 
+Function: 5*x**5 + 5*x**4 - 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 1
+Negative: 0
+Error: 0.1978529393672943
+Duration: 22.39950442314148
+Iters per Second: 892.8768968360527
+Success: True
+
+Function: 5*x**5 + 5*x**4 - 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 2
+Negative: 2
+Error: 0.00030000341939739883
+Duration: 46.22021126747131
+Iters per Second: 432.7111333235191
+Success: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.46233102679252625
+Duration: 83.45900011062622
+Iters per Second: 239.63862463592525
+Success: False
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.46233102679252625
+Duration: 84.10049748420715
+Iters per Second: 237.81072167564417
+Success: False
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.46233102679252625
+Duration: 84.64619088172913
+Iters per Second: 236.2776138142443
+Success: False
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.46233102679252625
+Duration: 83.12801837921143
+Iters per Second: 240.59276751629605
+Success: False
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.46233102679252625
+Duration: 82.70141959190369
+Iters per Second: 241.83381734789427
+Success: False
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.45092940330505
+Iters per Second: 245.54661495597932
+Success: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 86.48769760131836
+Iters per Second: 231.24676173244706
+Success: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 84.83793711662292
+Iters per Second: 235.74359160226743
+Success: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.71687293052673
+Iters per Second: 244.7474956243542
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 82.11606907844543
+Iters per Second: 243.55768882329244
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 82.0576331615448
+Iters per Second: 243.73113419718678
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 84.2228832244873
+Iters per Second: 237.46515476906777
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.96315884590149
+Iters per Second: 244.01206934449533
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 83.0768461227417
+Iters per Second: 240.74096373917524
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 80.10435628890991
+Iters per Second: 249.6743114427712
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 80.48693823814392
+Iters per Second: 248.4875240355672
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 82.16846561431885
+Iters per Second: 243.4023788867582
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 82.15730595588684
+Iters per Second: 243.43544091792282
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 82.31668424606323
+Iters per Second: 242.96411089901855
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.74866151809692
+Iters per Second: 244.65232370284798
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 80.96949553489685
+Iters per Second: 247.00660252206026
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.21751856803894
+Iters per Second: 246.2522907941992
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.50102829933167
+Iters per Second: 245.39567680723368
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.36474251747131
+Iters per Second: 245.80671407772763
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 81.06601738929749
+Iters per Second: 246.71250228015327
+Success: True
+Autosave: True
+
+Function: 5*x**5 - 5*x**4 + 5*x**3 - 5*x**2 + 5*x - 5
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00023024471011012793
+Duration: 80.80536222457886
+Iters per Second: 247.50832679166592
+Success: True
+Autosave: True
+
+Function: sin(20*x)
+Iterations: 200
+Positive: 4
+Negative: 4
+Error: 0.4408266544342041
+Duration: 2.308500051498413
+Iters per Second: 86.63634201358713
+Success: True
+Autosave: False
+
+Function: sin(20*x)
+Iterations: 2000
+Positive: 7
+Negative: 7
+Error: 0.37083861231803894
+Duration: 14.315014123916626
+Iters per Second: 139.71344929786173
+Success: True
+Autosave: False
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0007102209492586553
+Duration: 76.22889256477356
+Iters per Second: 262.3677102878742
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00936350878328085
+Duration: 82.01628971099854
+Iters per Second: 243.85399620580452
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.000133225490571931
+Duration: 81.13004064559937
+Iters per Second: 246.5178106759008
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00014064754941500723
+Duration: 81.53274703025818
+Iters per Second: 245.30021038758406
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0007071758154779673
+Duration: 80.84686064720154
+Iters per Second: 247.38128159701506
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0011809375137090683
+Duration: 80.93430924415588
+Iters per Second: 247.11398894708134
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0001657234679441899
+Duration: 81.4379301071167
+Iters per Second: 245.58580963064335
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.000126074708532542
+Duration: 81.47728538513184
+Iters per Second: 245.46718641229603
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0001202542262035422
+Duration: 81.5821545124054
+Iters per Second: 245.15165258302656
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 9.688065620139241e-05
+Duration: 81.64172530174255
+Iters per Second: 244.9727749637981
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00011633583198999986
+Duration: 84.28910779953003
+Iters per Second: 237.27858227622045
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.000173839638591744
+Duration: 91.2928421497345
+Iters per Second: 219.07522571371894
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 3.721627945196815e-05
+Duration: 98.25150632858276
+Iters per Second: 203.5592200806973
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 7.03194600646384e-05
+Duration: 105.14642882347107
+Iters per Second: 190.21092987929939
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 4.012827048427425e-05
+Duration: 112.25403475761414
+Iters per Second: 178.16731526118627
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00014535619993694127
+Duration: 118.44946956634521
+Iters per Second: 168.84837115119134
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 8.815047476673499e-05
+Duration: 125.89943385124207
+Iters per Second: 158.85694945722497
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0001623907737666741
+Duration: 132.68422937393188
+Iters per Second: 150.73381436791422
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00017359174671582878
+Duration: 141.32341837882996
+Iters per Second: 141.51936196723057
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.0001263737358385697
+Duration: 145.6846284866333
+Iters per Second: 137.28284313698214
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00020683338516391814
+Duration: 152.95301628112793
+Iters per Second: 130.75910816456187
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 9.939885785570368e-05
+Duration: 161.26428055763245
+Iters per Second: 124.02002434043305
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00019250823243055493
+Duration: 166.84689617156982
+Iters per Second: 119.87037493004281
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00017185835167765617
+Duration: 172.84710478782654
+Iters per Second: 115.70919874272943
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00015387222811114043
+Duration: 184.03401732444763
+Iters per Second: 108.67556058802147
+Success: True
+Autosave: True
+
+Function: sin(10*x)
+Iterations: 20000
+Positive: 4
+Negative: 4
+Error: 0.00013620982645079494
+Duration: 186.40238881111145
+Iters per Second: 107.29476230192925
+Success: True
+Autosave: True
+
