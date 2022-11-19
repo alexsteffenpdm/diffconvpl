@@ -25,5 +25,21 @@ Locate the `application.py` and simply run it with Python. This will run with th
             "positive_funcs": 1,
             "negative_funcs": 1,
             "fullplot": fullplot,
-            
+
         }
+
+
+The source code will now try to build a model that approximates the given `func`. Parameters can be changed to approximate other functions as well.
+
+### Commandline Parameters
+The program accepts certain commandline parameters:
+
+`--autosave` will automatically save the generated output data without user-intercation.
+
+`--fullplot` will add all evaluated MaxAffineFunctions to the output plot.
+
+`--no-batch` will disable batched computation.
+
+`--autorun <str:FILEPATH>` will recreate the model with parameters provided by a given filepath. Use the files within `data\json`.
+
+`--batchsize <int:AMOUNT>` will set the size of batches for computation (only use, when large datasets are given)
