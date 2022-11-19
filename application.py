@@ -19,8 +19,8 @@ random.seed(1)
 AUTOSAVE = False
 APP_ARGS = {}
 
-def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,timetag:str,autosave:bool):
-    plot2d(func,x,y_target,maxaffines,y_pred,fullplot,timetag,autosave)
+def plot_wrapper(func:str,x:np.array,y_target:np.array,maxaffines:np.ndarray,y_pred:np.array,fullplot:bool,timetag:str,autosave:bool,losses:np.array):
+    plot2d(func,x,y_target,maxaffines,y_pred,fullplot,timetag,autosave,losses)
 
 def run():
     global APP_ARGS,AUTOSAVE
@@ -36,6 +36,11 @@ def run():
     epochs = APP_ARGS["epochs"]
     positive_funcs = APP_ARGS["positive_funcs"]
     negative_funcs = APP_ARGS["negative_funcs"]
+   
+    batching = "batch_size" in APP_ARGS.keys()
+    if batching:
+        batch_size = APP_ARGS["batch_size"]
+    
 
 
     # setup data
@@ -52,20 +57,35 @@ def run():
         k=k,
         dim=1,
         x=datapoints,
-        signs=signs
+        signs=signs,
+        batchsize= batch_size if batching else 2**32
     ).to(torch.device("cuda:0"))
+    
+    if batching == True:
+        print("STAGE: Calculating batchsize")
+        print_colored("Warning: Running computation in batched mode is significantly slower. Please check whether it is needed!",cmdcolors.WARNING)
+        if APP_ARGS["batch_size"] == 2**32:
+            model.bench(y_target=tensor_y,granularity=0.01)
+            print(f"       Maximum applicaple batchsize={model.batch_size}")
+        else:
+            print(f"       Using preset batchsize of {batch_size}")
+            model.batches = get_batch_spacing(batch_size,model.x.shape[0])
 
     print("STAGE: Calculation")
 
     optimizer = torch.optim.Adam([model.a,model.b],lr = 0.06)
 
     loss = None
+    loss_plot = []
     pbar = tqdm(total=epochs)
 
     for _ in range(epochs):
         optimizer.zero_grad()
-
-        loss = (model() - tensor_y).pow(2).mean()
+        if batching == True:
+            loss = model.batch_diff(model(batching),tensor_y)
+        else:
+            loss = (model(batching) -tensor_y).pow(2).mean()
+        loss_plot.append(loss.item())
         loss.backward()
 
         optimizer.step()
@@ -77,8 +97,8 @@ def run():
     
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
-    maxaffines,prediction = model.get_plot_data(datapoints,y)
-    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot,timetag,AUTOSAVE))
+    maxaffines,prediction = model.get_plot_data(batching,datapoints,y)
+    plotprocess = multiprocessing.Process(target=plot_wrapper,args=(TARGET.no_package_str(),datapoints,y,maxaffines,prediction,fullplot,timetag,AUTOSAVE,loss_plot))
     plotprocess.start()
 
     print("STAGE: Data")
@@ -116,22 +136,29 @@ def run():
         logger.json_log(dict=APP_ARGS,filename=timetag)
     print("STAGE: End")
 
-def setup(rerun:bool,autosave:bool,filepath:str=None):
+def setup(rerun:bool,autosave:bool,fullplot:bool,filepath:str=None,batch_size:int=2**32,no_batch:bool=False):
     global APP_ARGS, AUTOSAVE
     AUTOSAVE = autosave
     if rerun == False:
         [os.makedirs(directory) for directory in ["data","data\\json","data\\plots"] if not os.path.exists(directory)] 
 
+# APP_ARGS START
         APP_ARGS = {
             "func": "torch.sin(10*x)",
             "params": ["x"],
-            "m": 500,
-            "entries": 1000,
-            "epochs": 20000,
-            "positive_funcs": 4,
-            "negative_funcs": 4,
-            "fullplot": False,
+            "m": 32,
+            "entries": 200000,
+            "epochs": 5000,
+            "positive_funcs": 1,
+            "negative_funcs": 1,
+            "fullplot": fullplot,
+            
         }
+# APP_ARGS STOP
+        if no_batch == False:
+            APP_ARGS["batch_size"] = batch_size
+        
+        
     else:
         APP_ARGS = rerun_experiment(filepath)
 
@@ -141,11 +168,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Diffconvpl"
     )
-    parser.add_argument('-rerun',action='store_true',help='Select an experiment to rerun from "data\json\\".')
-    parser.add_argument('-autosave',action='store_true',help='Skips questions and directly saves data.')
-    parser.add_argument('--autorun',metavar="str",default=None,action='store',nargs='?',help='Issues and autorun with a given configuration via file.')
+    parser.add_argument('--rerun',action='store_true',help='Select an experiment to rerun from "data\json\\".')
+    parser.add_argument('--autosave',action='store_true',help='Skips questions and directly saves data.')
+    parser.add_argument('--fullplot',action='store_true',help='Enable plotting all max affine functions.')
+    parser.add_argument('--no-batch',action='store_true',help='Disables batch-computation.')
+
+    parser.add_argument('--autorun',metavar=str,default=None,action='store',nargs='?',help='Issues and autorun with a given configuration via file.')
+    parser.add_argument('--batchsize',metavar=int,default=2**32,action='store',nargs='?',help='Presets batch_size value used for large datasets')
+    
+
     args = parser.parse_args()
     
-    setup(rerun=args.rerun,autosave=args.autosave,filepath=args.autorun)
+    setup(rerun=args.rerun,autosave=args.autosave,fullplot=args.fullplot,filepath=args.autorun,batch_size=int(args.batchsize),no_batch=args.no_batch)
     run()
-

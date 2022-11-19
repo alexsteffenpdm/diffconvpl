@@ -3,6 +3,20 @@ import random
 import os
 import json
 
+class cmdcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def print_colored(text:str,color:cmdcolors):
+    print(color + text + cmdcolors.ENDC)
+
 def rand_color():
     r = lambda: random.randint(0,255)
     return '#{:02x}{:02x}{:02x}'.format(r(), r(), r())
@@ -48,3 +62,17 @@ def rerun_experiment(filepath:str=None):
     except:
         print("JSON directory not found")
         pass
+
+def get_batch_spacing(size,stop):
+    x = size-1
+    arr = [(0,size)]
+    while x < stop:
+        s = x
+        x += size
+        if x <= stop:
+            arr.append((s,x))
+            if x == stop-1:
+                break
+        else:
+            arr.append((s,stop-1))
+    return arr

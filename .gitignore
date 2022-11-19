@@ -2,3 +2,6 @@
 *.pyc
 data/json/
 data/plots/
+build_readme.py
+readme_content.txt
+**/src/experimental/*

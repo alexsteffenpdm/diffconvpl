@@ -1,17 +1,19 @@
-from .util.common import rand_color
+from .util.common import rand_color,get_batch_spacing
 from .util.target import Target
 
 import torch
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-
+import sys
+import os
 from typing import List
+from tqdm import tqdm
 
 
 
 class MultiDimMaxAffineFunction(torch.nn.Module):
-    def __init__(self,m:int,k:int,dim:int,x,signs:List[float],target:Target):
+    def __init__(self,m:int,k:int,dim:int,x,signs:List[float],target:Target,batchsize:int=2**32):
         super().__init__()    
 
         self.target = target
@@ -26,18 +28,21 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.k = k
         self.dim = dim
         self.m = m
-        self.domains = np.linspace(0.0,1.0,self.k+1)
+        self.domains = np.linspace(-1.0,1.0,self.k+1)
 
         # self.func= lambda t: torch.max(t,dim=-1)[0]
         self.func = lambda t: torch.logsumexp(t,dim=-1)
-
+        if batchsize == 2**32:
+            self.batch_size: int = self.x.shape[0]
+        else:
+            self.batch_size = batchsize
+        
+        self.batches = []
         self.param_init()
 
     def param_init(self):
 
         def _gauss_dist(s:int,e:int,entries:int):
-            #dist = np.linspace(-1.0,1.0,entries)
-            
             dist = np.asarray([random.gauss(0.1,1.0) for _ in range(entries)])
             domain_range = (np.max(dist) + (-1*np.min(dist) if np.min(dist) < 0.0 else np.min(dist)))
             s = []
@@ -74,9 +79,6 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                         self.b[ki,i] = b_ki[i]
   
             assert self.a.shape == (self.k,self.m,self.dim)
-       
-
-
     def eval(self,ki,x=None):
         if len(self.x.shape) == 1:
             self.x = self.x[:, None]
@@ -85,14 +87,49 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         else:
             return self.func(x @ self.a[ki].T + self.b[ki])
        
+    
+    def batch_eval(self,s,e,x=None):
+        if len(self.x.shape) == 1:
+           self.x = self.x[:, None] 
 
-    def forward(self):
-        return torch.stack([si*self.eval(ki=ki,x=None) for ki,si in zip(range(self.k),self.s)]).sum(dim=0)
+        U = torch.einsum("bn, kmn -> bkm",self.x[s:e],self.a) + self.b[None]
+        V = self.func(U)
+        W = (self.s[None]*V).sum(dim=-1,keepdim=True)
+        return W
 
-    def __call__(self):
-        return self.forward()
+    def bench(self,y_target,granularity=0.005):
+        if len(self.x.shape) == 1:
+            self.x = self.x[:, None]      
+      
+        for xi in tqdm(np.linspace(0.0,1.0,int(1.0/granularity))[1:]):
+            try:
+                entries = int(self.x.shape[0] * xi)
+                l = (self.batch_eval(s=0,e=entries) - y_target).pow(2).mean()
+            except RuntimeError:
+                break
+            else:
+                self.batch_size = entries
+        self.batches = get_batch_spacing(self.batch_size,self.x.shape[0])
 
-    def get_plot_data(self,x,y_target):
+    def forward(self,batching:bool):
+        if batching:
+            return torch.cat([self.batch_eval(s=b[0],e=b[1]) for b in self.batches])
+        else:
+            return torch.stack([si*self.eval(ki=ki,x=None) for ki,si in zip(range(self.k),self.s)]).sum(dim=0)
+        
+        
+
+    def batch_diff(self,prediction:torch.Tensor,target:torch.Tensor):
+        diff = torch.zeros(1,dtype=torch.float32,requires_grad=True).to(torch.device("cuda:0"))
+        for b in self.batches:
+            diff += (prediction[b[0]:b[1]] - target[b[0]:b[1]]).pow(2).mean()
+        
+        return diff.mean()
+
+    def __call__(self,batching:bool):
+        return self.forward(batching)
+
+    def get_plot_data(self,batching,x,y_target):
         y_pred = []
         for ki,si in zip(range(self.k),self.s):
             y_xi = []    
@@ -106,7 +143,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                 y_xi.append(s_calc*(y_calc+ki))
             y_pred.append(y_xi)
       
-        y_calc = self.forward().cpu().detach().numpy()     
+        y_calc = self.forward(batching).cpu().detach().numpy()     
 
         return y_pred, y_calc
 
