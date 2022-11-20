@@ -5,8 +5,6 @@ import torch
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-import os
 from typing import List
 from tqdm import tqdm
 

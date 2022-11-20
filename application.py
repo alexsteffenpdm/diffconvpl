@@ -14,6 +14,8 @@ import argparse
 from tqdm import tqdm
 from datetime import datetime
 
+from torch.profiler import profile, record_function, ProfilerActivity
+
 random.seed(1)
 
 AUTOSAVE = False
@@ -101,10 +103,11 @@ def run():
         loss.backward()
 
         optimizer.step()
+        torch.cuda.empty_cache()
         pbar.update(1)
     pbar.close()
     pbar_dict = pbar.format_dict
-
+    
     print("STAGE: Plot")
 
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
@@ -183,10 +186,10 @@ def setup(
             "func": "torch.sin(10*x)",
             "params": ["x"],
             "m": 32,
-            "entries": 200000,
+            "entries": 100000,
             "epochs": 5000,
-            "positive_funcs": 1,
-            "negative_funcs": 1,
+            "positive_funcs": 16,
+            "negative_funcs": 16,
             "fullplot": fullplot,
         }
         # APP_ARGS STOP
