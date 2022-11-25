@@ -1,0 +1,89 @@
+import numpy as np
+import random
+import json
+from typing import Dict, List
+import os
+
+JSON_PATH = os.path.join(os.getcwd(), "data\\generated")
+
+
+class SDFGenerator2D:
+    def __init__(
+        self,
+        dist_func: str,
+        parameters: List[str],
+        num_points: int,
+        delta: float,
+        distances: np.array,
+    ):
+
+        random.seed(1)
+        self.dist_func_str = dist_func
+        self.parameters = parameters
+        self.dist_func = eval(dist_func)
+        self.num_points = num_points
+        self.data = np.zeros((num_points, 2))
+        self.distances = np.zeros((num_points))
+        assert len(distances) == 3
+        self.color_params = distances
+        self.delta = delta
+
+    # needs to be overwritten
+    def sdf_value(self, x, y, d):
+        return
+
+    # needs to be overwritten
+    def on_surface_points(self, num_points: int):
+        return
+
+    # needs to be overwritten
+    def generate(self):
+        return
+
+    # needs to be overwritten
+    def plot(self):
+        return
+
+    # append datapoints
+    def as_json(self, filename):
+        json_data = {
+            "func": self.dist_func_str.split(": ")[1],
+            "params": self.parameters,
+            "m": 50,
+            "entries": self.num_points,
+            "epochs": 5000,
+            "positive_funcs": 1,
+            "negative_funcs": 1,
+            "format": "[x,y,d]",
+            "data": self.data.tolist(),
+            "fullplot": True,
+        }
+
+        with open(os.path.join(JSON_PATH, filename), "w") as fp:
+            json.dump(json_data, fp, indent=4)
+
+    def color_table(self, distance: float):
+        # white on surface
+        # red inside
+        # blue outside
+
+        if distance == 0.0:
+            return f"#{255:02x}{255:02x}{255:02x}"
+
+        elif distance > 0.0:
+            percentage = abs((distance - self.color_params[1])) / abs(
+                (self.color_params[2] - self.color_params[1])
+            )
+            rg = int(255 * percentage)
+
+            return f"#{255-rg:02x}{255-rg:02x}{255:02x}"
+
+        elif distance < 0.0:
+            percentage = abs((distance - self.color_params[1])) / abs(
+                (self.color_params[1] - self.color_params[0])
+            )
+            gb = int(255 * percentage)
+            return f"#{255:02x}{255-gb:02x}{255-gb:02x}"
+
+    def distance_domain(self):
+        return [np.min(self.data[:, 2]), 0.0, np.max(self.data[:, 2])]

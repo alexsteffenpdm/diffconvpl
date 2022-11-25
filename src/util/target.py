@@ -39,6 +39,9 @@ class Target(object):
                     return eval(
                         f"lambda {','.join(self.parameters)}: {self.func.replace('np','torch') if 'np' in self.func else self.func}"
                     )
+                # for debug only
+                elif package == "string":
+                    return f"lambda {','.join(self.parameters)}: {self.func.replace('np','torch') if 'np' in self.func else self.func}"
                 else:
                     raise self.UnknownPackageError(
                         "Could not identify package used in Lambda function evaluation"

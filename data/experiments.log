@@ -859,6 +859,7 @@ Duration: 18.81007742881775
 Iters per Second: 265.8149610984488
 Success: True
 Autosave: False
+
 Function: sin(10*x)
 Iterations: 5000
 Positive: 1
@@ -868,4 +869,12 @@ Duration: 17.72429656982422
 Iters per Second: 282.0986424088924
 Success: True
 Autosave: False
-
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 20000
+Positive: 1
+Negative: 1
+Error: 1.0089817806147039e-05
+Duration: 28.363332509994507
+Iters per Second: 705.1357590985656
+Success: False
+Autosave: False

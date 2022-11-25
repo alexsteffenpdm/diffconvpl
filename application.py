@@ -58,15 +58,22 @@ def run():
     # setup data
     signs = np.asarray(make_signs(positive=positive_funcs, negative=negative_funcs))
     k = len(signs)
-    datapoints = np.linspace(-1.0, 1.0, entries)
-    y = np.asarray([TARGET.as_lambda("torch")(torch.tensor(dp)) for dp in datapoints])
+    # datapoints = np.linspace(-1.0, 1.0, entries)
+    # y = np.asarray([TARGET.as_lambda("torch")(torch.tensor(dp)) for dp in datapoints])
+    datapoints = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
+    y = np.asarray(
+        [
+            TARGET.as_lambda("torch")(torch.tensor(dp[0]), torch.tensor(dp[1]))
+            for dp in datapoints
+        ]
+    )
     tensor_y = torch.from_numpy(y).type(torch.FloatTensor).to(torch.device("cuda:0"))
 
     model = MultiDimMaxAffineFunction(
         target=TARGET,
         m=m,
         k=k,
-        dim=1,
+        dim=2,
         x=datapoints,
         signs=signs,
         batchsize=batch_size if batching else 2**32,
@@ -107,7 +114,7 @@ def run():
         pbar.update(1)
     pbar.close()
     pbar_dict = pbar.format_dict
-    
+
     print("STAGE: Plot")
 
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")

@@ -46,15 +46,15 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.m = m
         self.domains = np.linspace(-1.0, 1.0, self.k + 1)
 
-        # self.func= lambda t: torch.max(t,dim=-1)[0]
-        self.func = lambda t: torch.logsumexp(t, dim=-1)
+        self.func = lambda t: torch.min(t, dim=-1)[0]
+        # self.func = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
             self.batch_size: int = self.x.shape[0]
         else:
             self.batch_size = batchsize
 
         self.batches = []
-        self.param_init()
+        # self.param_init()
 
     def param_init(self):
         def _gauss_dist(s: int, e: int, entries: int):
@@ -80,7 +80,9 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             b_ki = []
             for xi in _gauss_dist(domains[ki], domains[ki + 1], entries=self.m):
                 xi = torch.from_numpy(np.asarray(xi)).requires_grad_(True)
-                y = self.target.as_lambda("torch")(xi)
+                print(xi)
+                input()
+                y = self.target.as_lambda("torch")(xi[0], xi[1])
                 y.backward()
 
                 a_ki.append(xi.grad.item())
