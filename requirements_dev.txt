@@ -1,8 +1,11 @@
-torch
-torchvision
 numpy
 tqdm
 matplotlib
 pyexcel
 pyexcel-xlsx
 pre-commit
+
+--extra-index-url https://download.pytorch.org/whl/cu117
+torch
+torchvision
+torchaudio

@@ -1,10 +1,17 @@
 import numpy as np
 import random
 import json
-from typing import Dict, List
+from typing import List
 import os
+from enum import Enum
+
 
 JSON_PATH = os.path.join(os.getcwd(), "data\\generated")
+
+class Setting(Enum):
+    UNSET = 0
+    DISTANCE = 1
+    SURFACENORMALS = 2
 
 
 class SDFGenerator2D:
@@ -15,9 +22,11 @@ class SDFGenerator2D:
         num_points: int,
         delta: float,
         distances: np.array,
+        setting: Setting
     ):
 
         random.seed(1)
+        self.setting = setting
         self.dist_func_str = dist_func
         self.parameters = parameters
         self.dist_func = eval(dist_func)
@@ -46,6 +55,7 @@ class SDFGenerator2D:
 
     # append datapoints
     def as_json(self, filename):
+
         json_data = {
             "func": self.dist_func_str.split(": ")[1],
             "params": self.parameters,
@@ -54,7 +64,7 @@ class SDFGenerator2D:
             "epochs": 5000,
             "positive_funcs": 1,
             "negative_funcs": 1,
-            "format": "[x,y,d]",
+            "format": "[x,y,d]" if self.setting == Setting.DISTANCE else "[x,y,n_x,n_y]",
             "data": self.data.tolist(),
             "fullplot": True,
         }

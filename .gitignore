@@ -1,7 +1,6 @@
 **/__pycache__
 *.pyc
-data/json/
-data/plots/
-build_readme.py
-readme_content.txt
-**/src/experimental/*
+**data/json/*
+**data/plots/*
+**data/experiments/*
+**venv_dev*

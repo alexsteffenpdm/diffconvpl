@@ -1,9 +1,9 @@
-from base import SDFGenerator2D
+from base import SDFGenerator2D, Setting
 from typing import List
 import numpy as np
 import random
 import matplotlib.pyplot as plt
-
+import argparse
 
 class SDFSphere2D(SDFGenerator2D):
     def __init__(
@@ -13,9 +13,10 @@ class SDFSphere2D(SDFGenerator2D):
         num_points: int,
         delta: float,
         distances: np.array,
+        setting: Setting,
         **kwargs,
     ):
-        super().__init__(dist_func, parameters, num_points, delta, distances)
+        super().__init__(dist_func, parameters, num_points, delta, distances,setting)
 
         assert "radius" in kwargs
         assert "center" in kwargs
@@ -61,28 +62,41 @@ class SDFSphere2D(SDFGenerator2D):
 
     def generate(self):
         surface = self.on_surface_points()
-        deltas = [random.gauss(self.radius, self.delta) for _ in range(self.num_points)]
-        surface = [
-            (delta_i * surface_i[0], delta_i * surface_i[1])
-            for delta_i, surface_i in zip(deltas, surface)
-        ]
 
-        distances = [
-            self.sdf_value(surface_i[0], surface_i[1]) for surface_i in surface
-        ]
-
-        if self.center.all() != 0.0:
+        if self.setting == Setting.DISTANCE:
+            deltas = [random.gauss(self.radius, self.delta) for _ in range(self.num_points)]
             surface = [
-                (surface_i[0] + self.center[0], surface_i[1] + self.center[1])
-                for surface_i in surface
+                (delta_i * surface_i[0], delta_i * surface_i[1])
+                for delta_i, surface_i in zip(deltas, surface)
             ]
 
-        return np.asanyarray(
-            [
-                (surface_i[0], surface_i[1], distance)
-                for surface_i, distance in zip(surface, distances)
+            distances = [
+                self.sdf_value(surface_i[0], surface_i[1]) for surface_i in surface
             ]
-        )
+
+            if self.center.all() != 0.0:
+                surface = [
+                    (surface_i[0] + self.center[0], surface_i[1] + self.center[1])
+                    for surface_i in surface
+                ]
+
+            return np.asanyarray(
+                [
+                    (surface_i[0], surface_i[1], distance)
+                    for surface_i, distance in zip(surface, distances)
+                ]
+            )
+        elif self.setting == Setting.SURFACENORMALS:
+            normals = [point / np.linalg.norm(point) for point in surface]
+            return np.asanyarray(
+                [
+                    (
+                        surface_i[0],surface_i[1],normal_i[0],normal_i[1]
+                    )
+                    for surface_i, normal_i in zip(surface,normals)
+                ]
+            )
+
 
     def color_table(self, distance: float):
         return super().color_table(distance)
@@ -92,15 +106,57 @@ class SDFSphere2D(SDFGenerator2D):
 
 
 if __name__ == "__main__":
-    radius = 0.25
+    parser = argparse.ArgumentParser(description="SDF Data Generator - Sphere")
+    parser.add_argument(
+        "--setting",
+        metavar=str,
+        default="distance",
+        action="store",
+        nargs="?",
+        help="Compute SDF sample data (distance or surfacenormals)"
+        )
+    
+    parser.add_argument(
+        "--radius",
+        metavar=float,
+        default=1.0,
+        action="store",
+        nargs="?",
+        help="Set the radius for the generated sphere surface."
+    )
+
+    parser.add_argument(
+        "--datapoints",
+        metavar=int,
+        default=100,
+        action="store",
+        nargs="?",
+        help="Set the amount of datapoints generated."
+    )
+
+    args = parser.parse_args()
+    _setting:Setting = Setting.UNSET
+    
+    if args.setting not in ["distance","normals"]:
+        raise ValueError(f"Unkown Setting {args.setting}")
+    elif args.setting == "distance":
+        _setting = Setting.DISTANCE
+    elif args.setting == "normals":
+        _setting = Setting.SURFACENORMALS
+    assert float(args.radius) > 0.0
+    assert int(args.datapoints) > 0
+
+    
+
     sphere = SDFSphere2D(
-        dist_func=f"lambda x,y: np.sqrt(x**2 + y**2) - {radius}",
+        dist_func=f"lambda x,y: np.sqrt(x**2 + y**2) - {args.radius}",
         parameters=["x", "y"],
-        num_points=100,
+        num_points=int(args.datapoints),
         delta=0.1,
-        radius=radius,
+        radius=float(args.radius),
         center=np.asarray([0.0, 0.0]),
         distances=np.asarray([-1.0, 0.0, 1.0]),
+        setting=_setting,
     )
-    # sphere.plot()
+    sphere.plot()
     sphere.as_json(filename="2DSDF_Circle.json")

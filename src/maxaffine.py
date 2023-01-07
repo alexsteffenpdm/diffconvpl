@@ -46,15 +46,15 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.m = m
         self.domains = np.linspace(-1.0, 1.0, self.k + 1)
 
-        self.func = lambda t: torch.min(t, dim=-1)[0]
-        # self.func = lambda t: torch.logsumexp(t, dim=-1)
+        # self.func = lambda t: torch.min(t, dim=-1)[0]
+        self.func = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
             self.batch_size: int = self.x.shape[0]
         else:
             self.batch_size = batchsize
 
         self.batches = []
-        # self.param_init()
+        self.param_init()
 
     def param_init(self):
         def _gauss_dist(s: int, e: int, entries: int):
@@ -78,15 +78,15 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         for ki in range(self.k):
             a_ki = []
             b_ki = []
-            for xi in _gauss_dist(domains[ki], domains[ki + 1], entries=self.m):
-                xi = torch.from_numpy(np.asarray(xi)).requires_grad_(True)
-                print(xi)
+            for xi,yi in zip(_gauss_dist(domains[ki], domains[ki + 1], entries=self.m),_gauss_dist(domains[ki], domains[ki + 1], entries=self.m)):
+                pi = torch.from_numpy(np.asarray(xi,yi)).requires_grad_(True)
+                print(pi)
                 input()
-                y = self.target.as_lambda("torch")(xi[0], xi[1])
+                y = self.target.as_lambda("torch")(pi[0], pi[1])
                 y.backward()
 
-                a_ki.append(xi.grad.item())
-                b_ki.append(y.item() - (xi.grad.item() * xi.item()))
+                a_ki.append(pi.grad.item())
+                b_ki.append(y.item() - (pi.grad.item() * pi.item()))
             Arr_a.append(a_ki)
             Arr_b.append(b_ki)
 
@@ -173,7 +173,16 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
 
         y_calc = self.forward(batching).cpu().detach().numpy()
 
-        return y_pred, y_calc
+        return np.asanyarray(y_pred), np.asanyarray(y_calc)
+
+    def generate_sdf_plot_data(self,batching):
+        prediction = []
+        x = np.linspace(-1.0,1.0,self.m)
+        y = np.linspace(-1.0,1.0,self.m)
+        xy = np.asanyarray(
+            [[(xi,yi) for yi in y] for xi in x]
+            ).flatten()
+            
 
     def print_params(self):
         print(

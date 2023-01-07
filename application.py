@@ -14,8 +14,6 @@ import argparse
 from tqdm import tqdm
 from datetime import datetime
 
-from torch.profiler import profile, record_function, ProfilerActivity
-
 random.seed(1)
 
 AUTOSAVE = False
@@ -68,6 +66,7 @@ def run():
         ]
     )
     tensor_y = torch.from_numpy(y).type(torch.FloatTensor).to(torch.device("cuda:0"))
+    area = torch.zeros_like(tensor_y).to(torch.device("cuda:0"))
 
     model = MultiDimMaxAffineFunction(
         target=TARGET,
@@ -103,9 +102,9 @@ def run():
     for _ in range(epochs):
         optimizer.zero_grad()
         if batching == True:
-            loss = model.batch_diff(model(batching), tensor_y)
+            loss = model.batch_diff(model(batching), area)
         else:
-            loss = (model(batching) - tensor_y).pow(2).mean()
+            loss = (model(batching) - area).pow(2).mean()
         loss_plot.append(loss.item())
         loss.backward()
 
@@ -184,7 +183,7 @@ def setup(
     if not filepath:
         [
             os.makedirs(directory)
-            for directory in ["data", "data\\json", "data\\plots"]
+            for directory in ["data", "data\\json", "data\\plots","data\\generated"]
             if not os.path.exists(directory)
         ]
 

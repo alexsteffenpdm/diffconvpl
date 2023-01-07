@@ -1,8 +1,11 @@
 # Diffconvpl
+## General
+***
 
-Version: 0.1
+Version: 0.1.1
 
-## Installation of requirements
+
+### Installation of requirements
 In order to be able to run the source code the required packages need to be installed.
 This can be done via pip with the following command:
 
@@ -12,7 +15,7 @@ In order to run the tests please install the required packages via
 
 `pip install -r requirements_test.txt`
 
-## Running the source code
+### Running the source code
 
 Locate the `application.py` and simply run it with Python. This will run with the following default arguments
 
@@ -20,19 +23,19 @@ Locate the `application.py` and simply run it with Python. This will run with th
             "func": "torch.sin(10*x)",
             "params": ["x"],
             "m": 32,
-            "entries": 200000,
+            "entries": 100000,
             "epochs": 5000,
-            "positive_funcs": 1,
-            "negative_funcs": 1,
+            "positive_funcs": 16,
+            "negative_funcs": 16,
             "fullplot": fullplot,
-
         }
 
 
 The source code will now try to build a model that approximates the given `func`. Parameters can be changed to approximate other functions as well.
 
-### Commandline Parameters
-The program accepts certain commandline parameters:
+### Commandline Arguments
+
+The program accepts certain commandline Arguments:
 
 `--autosave` will automatically save the generated output data without user-intercation.
 
@@ -43,3 +46,55 @@ The program accepts certain commandline parameters:
 `--autorun <str:FILEPATH>` will recreate the model with parameters provided by a given filepath. Use the files within `data\json`.
 
 `--batchsize <int:AMOUNT>` will set the size of batches for computation (only use, when large datasets are given)
+
+## SDF Generators
+***
+
+The branch `sdf2d` contains scripts that generate `JSON`-Files that can be applied to the `application.py` using the `--autorun` command line argument.
+Located under **`src\generators`** the scripts will produce the aforementioned `JSON`-Files under **`data\generated`** .
+
+### Generators and Commandline Arguments
+
+The following generators exist and provide the functionality to parse specific commandline arguments as shown below:
+
+*Note: The square generator can only handle datapoints in increments of 4.*
+
+**Generator-Source: sphere.py**
+```
+usage: sphere.py [-h] [--setting [<class 'str'>]] [--radius [<class 'float'>]]
+                 [--datapoints [<class 'int'>]]
+
+SDF Data Generator - Sphere
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --setting [<class 'str'>]
+                        Compute SDF sample data (distance or surfacenormals)
+  --radius [<class 'float'>]
+                        Set the radius for the generated sphere surface.
+  --datapoints [<class 'int'>]
+                        Set the amount of datapoints generated.
+```
+
+**Generator-Source: square.py**
+```
+usage: square.py [-h] [--setting [<class 'str'>]] [--width [<class 'float'>]]
+                 [--height [<class 'float'>]] [--datapoints [<class 'int'>]]
+
+SDF Data Generator - Sphere
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --setting [<class 'str'>]
+                        Compute SDF sample data (distance or normals)
+  --width [<class 'float'>]
+                        Set width of the rectangle.
+  --height [<class 'float'>]
+                        Set height of the rectangle.
+  --datapoints [<class 'int'>]
+                        Set the amount of datapoints generated.
+```
+
+
+
+

@@ -878,3 +878,493 @@ Duration: 28.363332509994507
 Iters per Second: 705.1357590985656
 Success: False
 Autosave: False
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0003267737338319421
+Duration: 5.825217247009277
+Iters per Second: 858.3370864952802
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 8.779316704021767e-05
+Duration: 6.637300252914429
+Iters per Second: 753.3183387032261
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.1217768370339627e-09
+Duration: 5.173415660858154
+Iters per Second: 966.4794649751015
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.411258381267544e-07
+Duration: 6.707051753997803
+Iters per Second: 745.4840343254698
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.2848197911807802e-05
+Duration: 6.884666204452515
+Iters per Second: 726.2516223032504
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.2565420547616668e-05
+Duration: 5.077513933181763
+Iters per Second: 984.7338807530973
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0002274225262226537
+Duration: 5.301516056060791
+Iters per Second: 943.1264466857377
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.869528932729736e-05
+Duration: 5.28364372253418
+Iters per Second: 946.3166448327185
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.0136298442375846e-05
+Duration: 7.027191400527954
+Iters per Second: 711.521817895034
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.2570127384824445e-06
+Duration: 6.437158584594727
+Iters per Second: 776.7402238568264
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.5048749446577858e-06
+Duration: 6.366659164428711
+Iters per Second: 785.3412395523857
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 4.4537806388689205e-05
+Duration: 6.202274560928345
+Iters per Second: 806.1558628019862
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 8.759414777159691e-05
+Duration: 6.233083963394165
+Iters per Second: 802.1711289891399
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.451441949029686e-05
+Duration: 7.1162614822387695
+Iters per Second: 702.6161155656417
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 4.3672006455608425e-08
+Duration: 8.65284776687622
+Iters per Second: 577.8444432063617
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.7092593441201416e-09
+Duration: 7.280958652496338
+Iters per Second: 686.7227570761864
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.4203159227909055e-06
+Duration: 7.340949296951294
+Iters per Second: 681.1108206504719
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.3609454754259787e-06
+Duration: 5.602527856826782
+Iters per Second: 892.4542863106711
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 0
+Error: 2.1600498896056503e-14
+Duration: 5.390186786651611
+Iters per Second: 927.6116390589879
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.3984986253490206e-05
+Duration: 5.3829991817474365
+Iters per Second: 928.8502247880508
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.1281246037906385e-07
+Duration: 7.285053491592407
+Iters per Second: 686.3367586484354
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.815966581692919e-06
+Duration: 7.341942548751831
+Iters per Second: 681.0186768418702
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.6178855111757e-07
+Duration: 7.254941701889038
+Iters per Second: 689.185413950067
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 4.7442654249607585e-08
+Duration: 7.419799327850342
+Iters per Second: 673.8726721668086
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 5.806933586427476e-06
+Duration: 7.367447376251221
+Iters per Second: 678.6611080680906
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 4.5463246351573616e-05
+Duration: 7.435576915740967
+Iters per Second: 672.4427783693691
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.333935961156385e-05
+Duration: 7.344992399215698
+Iters per Second: 680.735898451563
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0001663380826357752
+Duration: 7.198201417922974
+Iters per Second: 694.6179621412622
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 7.050215117487824e-06
+Duration: 5.638320684432983
+Iters per Second: 886.7888649548893
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 6.970337562961504e-05
+Duration: 7.276855230331421
+Iters per Second: 687.1100003692499
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.962802318506874e-05
+Duration: 6.558893203735352
+Iters per Second: 762.3237404067584
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.85379207727965e-05
+Duration: 5.380234479904175
+Iters per Second: 929.3275262770802
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.9550710678449832e-05
+Duration: 6.049432039260864
+Iters per Second: 826.5238732413156
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.87423506253981e-06
+Duration: 7.3664305210113525
+Iters per Second: 678.7547898182768
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 5.02149123349227e-05
+Duration: 5.542580604553223
+Iters per Second: 902.1068626214487
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00013798954023513943
+Duration: 5.494680166244507
+Iters per Second: 909.9710717862201
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 8.544651791453362e-06
+Duration: 7.341310501098633
+Iters per Second: 681.077308915315
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.4137517609924544e-06
+Duration: 5.457339286804199
+Iters per Second: 916.1973880000385
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 6.251309969229624e-05
+Duration: 7.343571424484253
+Iters per Second: 680.8676202602817
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 5.323118834610341e-09
+Duration: 7.236032485961914
+Iters per Second: 690.9863947819646
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.79361085833807e-06
+Duration: 5.460649490356445
+Iters per Second: 915.6419962185897
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.9329028368229046e-05
+Duration: 5.45056414604187
+Iters per Second: 917.3362364024164
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 0
+Error: 3.134779035462998e-05
+Duration: 4.271280765533447
+Iters per Second: 1170.6090689113344
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 0
+Error: 1.3335465544328517e-12
+Duration: 5.113616466522217
+Iters per Second: 977.7815823173208
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 1.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 2.6902185709332116e-05
+Duration: 5.137114524841309
+Iters per Second: 973.3090387262596
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2) - 2.0
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.1961068366872496e-06
+Duration: 5.9130425453186035
+Iters per Second: 845.5883687085144
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2)
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 6.999015022302046e-05
+Duration: 5.541564464569092
+Iters per Second: 902.272279239613
+Success: True
+Autosave: True
+
+Function: sqrt(x**2 + y**2)
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 7.563274721178459e-06
+Duration: 5.6489996910095215
+Iters per Second: 885.1124576900907
+Success: True
+Autosave: True
+
+Function: sqrt(max(abs(x) - 0.5,0)**2 + max(abs(y)- 0.5,0)**2)
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 6.563427177752601e-06
+Duration: 6.243058204650879
+Iters per Second: 800.8895378029889
+Success: True
+Autosave: True
+
