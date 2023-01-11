@@ -2,5 +2,4 @@
 *.pyc
 **data/json/*
 **data/plots/*
-**data/experiments/*
 **venv_dev*
