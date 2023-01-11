@@ -1368,3 +1368,13 @@ Iters per Second: 800.8895378029889
 Success: True
 Autosave: True
 
+Function: sqrt(max(abs(x) - 0.5,0)**2 + max(abs(y)- 0.5,0)**2)
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 1.4923571143299341e-06
+Duration: 7.294821739196777
+Iters per Second: 685.417708445682
+Success: True
+Autosave: True
+

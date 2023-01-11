@@ -54,7 +54,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             self.batch_size = batchsize
 
         self.batches = []
-        self.param_init()
+        #self.param_init()
 
     def param_init(self):
         def _gauss_dist(s: int, e: int, entries: int):

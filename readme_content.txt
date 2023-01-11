@@ -42,6 +42,10 @@ The program accepts certain commandline Arguments:
 The branch `sdf2d` contains scripts that generate `JSON`-Files that can be applied to the `application.py` using the `--autorun` command line argument.
 Located under **`<GENERATOR_LOCATION>`** the scripts will produce the aforementioned `JSON`-Files under **`<GENERATED_JSON_LOCATION>`** .
 
+### Example call
+
+`python .\application.py --autorun data\generated\2DSDF_Rectangle_BETA.json --no-batch --autosave`
+
 ### Generators and Commandline Arguments
 
 The following generators exist and provide the functionality to parse specific commandline arguments as shown below:
