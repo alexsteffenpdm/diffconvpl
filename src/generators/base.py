@@ -39,19 +39,27 @@ class SDFGenerator2D:
 
     # needs to be overwritten
     def sdf_value(self, x, y, d):
-        return
+        raise NotImplementedError
 
     # needs to be overwritten
     def on_surface_points(self, num_points: int):
-        return
+        raise NotImplementedError
 
     # needs to be overwritten
     def generate(self):
-        return
+        raise NotImplementedError
 
-    # needs to be overwritten
+    def plot_normals(self):
+        raise NotImplementedError
+
+    def plot_distances(self):
+        raise NotImplementedError
+
     def plot(self):
-        return
+        if self.setting == Setting.SURFACENORMALS:
+            self.plot_normals()
+        elif self.setting == Setting.DISTANCE:
+            self.plot_distances()
 
     # append datapoints
     def as_json(self, filename):

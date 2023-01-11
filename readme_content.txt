@@ -47,6 +47,7 @@ Located under **`<GENERATOR_LOCATION>`** the scripts will produce the aforementi
 The following generators exist and provide the functionality to parse specific commandline arguments as shown below:
 
 *Note: The square generator can only handle datapoints in increments of 4.*
+*Note: The triangle generator can only handle datapoints in increments of 3.*
 
 <GENERATOR_HELP_TEXTS>
 

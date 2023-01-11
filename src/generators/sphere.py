@@ -36,7 +36,17 @@ class SDFSphere2D(SDFGenerator2D):
             for x in range(0, self.num_points + 1)
         ]
 
-    def plot(self):
+    def plot_normals(self):
+        _, ax = plt.subplots()
+        ax.scatter(self.data[:, 0], self.data[:, 1], color="black",s=2)
+
+        for d in self.data:
+            ax.arrow(d[0],d[1],d[2],d[3],length_includes_head=True,head_width=0.025)
+
+        ax.axis("equal")
+        plt.show()
+
+    def plot_distances(self):
         _, ax = plt.subplots()
 
         patches = []
@@ -59,6 +69,10 @@ class SDFSphere2D(SDFGenerator2D):
 
         ax.scatter(self.data[:, 0], self.data[:, 1], color="black", s=0.02)
         plt.show()
+
+    def plot(self):
+        return super().plot()
+        
 
     def generate(self):
         surface = self.on_surface_points()
@@ -113,13 +127,13 @@ if __name__ == "__main__":
         default="distance",
         action="store",
         nargs="?",
-        help="Compute SDF sample data (distance or surfacenormals)"
+        help="Compute SDF sample data (distance or normals)"
         )
     
     parser.add_argument(
         "--radius",
         metavar=float,
-        default=1.0,
+        default=None,
         action="store",
         nargs="?",
         help="Set the radius for the generated sphere surface."
@@ -134,6 +148,15 @@ if __name__ == "__main__":
         help="Set the amount of datapoints generated."
     )
 
+    parser.add_argument(
+        "--delta",
+        metavar=float,
+        default=None,
+        action="store",
+        nargs="?",
+        help="Randomly varies the range of distances for generated points. Only applicable with setting 'distance'."
+    )
+
     args = parser.parse_args()
     _setting:Setting = Setting.UNSET
     
@@ -143,8 +166,13 @@ if __name__ == "__main__":
         _setting = Setting.DISTANCE
     elif args.setting == "normals":
         _setting = Setting.SURFACENORMALS
+
+    if args.delta is not None:
+        assert _setting == Setting.DISTANCE,"Delta can only be specified when using the 'distance' setting."
+    
     assert float(args.radius) > 0.0
     assert int(args.datapoints) > 0
+
 
     
 

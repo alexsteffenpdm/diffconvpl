@@ -58,22 +58,26 @@ Located under **`src\generators`** the scripts will produce the aforementioned `
 The following generators exist and provide the functionality to parse specific commandline arguments as shown below:
 
 *Note: The square generator can only handle datapoints in increments of 4.*
+*Note: The triangle generator can only handle datapoints in increments of 3.*
 
 **Generator-Source: sphere.py**
 ```
 usage: sphere.py [-h] [--setting [<class 'str'>]] [--radius [<class 'float'>]]
-                 [--datapoints [<class 'int'>]]
+                 [--datapoints [<class 'int'>]] [--delta [<class 'float'>]]
 
 SDF Data Generator - Sphere
 
 optional arguments:
   -h, --help            show this help message and exit
   --setting [<class 'str'>]
-                        Compute SDF sample data (distance or surfacenormals)
+                        Compute SDF sample data (distance or normals)
   --radius [<class 'float'>]
                         Set the radius for the generated sphere surface.
   --datapoints [<class 'int'>]
-                        Set the amount of datapoints generated.
+                        Set the amount of datapoints generated.
+  --delta [<class 'float'>]
+                        Randomly varies the range of distances for generated
+                        points. Only applicable with setting 'distance'.
 ```
 
 **Generator-Source: square.py**
@@ -81,7 +85,7 @@ optional arguments:
 usage: square.py [-h] [--setting [<class 'str'>]] [--width [<class 'float'>]]
                  [--height [<class 'float'>]] [--datapoints [<class 'int'>]]
 
-SDF Data Generator - Sphere
+SDF Data Generator - Rectangle
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -91,6 +95,30 @@ optional arguments:
                         Set width of the rectangle.
   --height [<class 'float'>]
                         Set height of the rectangle.
+  --datapoints [<class 'int'>]
+                        Set the amount of datapoints generated.
+```
+
+**Generator-Source: triangle.py**
+```
+usage: triangle.py [-h] [--setting [<class 'str'>]]
+                   [--radius [<class 'float'>]]
+                   [--corners [<built-in function array>]]
+                   [--datapoints [<class 'int'>]]
+
+SDF Data Generator - Triangle
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --setting [<class 'str'>]
+                        Compute SDF sample data (distance or normals)
+  --radius [<class 'float'>]
+                        Defines the radius of the circle, on which the corner
+                        points of the triangle reside. (Exclusive vs 'corners'
+                        option)
+  --corners [<built-in function array>]
+                        Defines the coordinates of the corner points. Format:
+                        x1,y2,x2,y2,x3,y3 (Exclusive vs 'radius' option)
   --datapoints [<class 'int'>]
                         Set the amount of datapoints generated.
 ```

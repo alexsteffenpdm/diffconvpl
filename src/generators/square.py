@@ -20,11 +20,11 @@ class SDFSquare2D(SDFGenerator2D):
 
         assert "sidelength" in kwargs
         assert "center" in kwargs
-        self.width = kwargs["sidelength"]["width"]
-        self.height = kwargs["sidelength"]["height"]
+        self.width:float = float(kwargs["sidelength"]["width"])
+        self.height:float = float(kwargs["sidelength"]["height"])
        
         self.center: np.array = kwargs["center"]
-        self.data = self.generate()
+        self.data:np.array = self.generate()
         self.color_params = super().distance_domain()
     
     def corners(self,width=None,height=None):
@@ -60,11 +60,9 @@ class SDFSquare2D(SDFGenerator2D):
                 (sides[1][0] - sides[1][1] / np.linalg.norm(sides[1])), 
                 (sides[0][0] - sides[0][1] / np.linalg.norm(sides[0])), 
                 (sides[2][0] + sides[2][1] / np.linalg.norm(sides[2])), 
-                (sides[3][0] + sides[3][1] / np.linalg.norm(sides[3])),
-                
+                (sides[3][0] + sides[3][1] / np.linalg.norm(sides[3])),    
             ]
         )
-
 
     def sdf_value(self, x, y):
         dx = max(abs(x) - self.width/2.0,0)
@@ -105,17 +103,12 @@ class SDFSquare2D(SDFGenerator2D):
         corners = np.asanyarray(self.corners())
         ax.scatter(corners[:, 0], corners[:, 1], color="red", s=0.9)
 
-        for d in self.data:
-            origin = np.array([d[0],d[1]])
-            normal = np.array([d[2],d[3]])
-            print(f"origin: {origin}")
-            print(f"normal: {normal}")
-           
+        for d in self.data:           
             ax.arrow(d[0],d[1],d[2],d[3],length_includes_head=True,head_width=0.025)
 
         ax.axis("equal")
         plt.show()
-        return 1
+        
 
     def plot_distances(self):
         _, ax = plt.subplots()
@@ -140,13 +133,9 @@ class SDFSquare2D(SDFGenerator2D):
         ax.axis("equal")
         plt.show()
 
-
     def plot(self):
-        if self.setting == Setting.SURFACENORMALS:
-            self.plot_normals()
-        elif self.setting == Setting.DISTANCE:
-            self.plot_distances()
-
+        return super().plot()
+  
     def color_table(self, distance: float):
         return super().color_table(distance)
 
@@ -155,7 +144,7 @@ class SDFSquare2D(SDFGenerator2D):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="SDF Data Generator - Sphere")
+    parser = argparse.ArgumentParser(description="SDF Data Generator - Rectangle")
     parser.add_argument(
         "--setting",
         metavar=str,
@@ -203,9 +192,8 @@ if __name__ == "__main__":
     elif args.setting == "normals":
         _setting = Setting.SURFACENORMALS
     assert width > 0.0 and height > 0.0
-    assert int(args.datapoints) >= 4,"Cannot build a rectangle with less than 4 points."
+    assert int(args.datapoints) % 4 == 0 and int(args.datapoints) >= 4,"Cannot build a rectangle with less than 4 points."
 
-    test = lambda x,y: np.sqrt(max(abs(x) - width/2,0)**2 + max(abs(y)- height/2,0)**2) 
     square = SDFSquare2D(
         dist_func=f"lambda x,y: np.sqrt(max(abs(x) - {width/2},0)**2 + max(abs(y)- {height/2},0)**2)",
         parameters=["x,y"],
@@ -217,4 +205,4 @@ if __name__ == "__main__":
         setting=_setting
     )
     square.plot()
-    square.as_json(filename="2DSDF_Rectangle_BETA.json")
+    square.as_json(filename="2DSDF_Rectangle.json")
