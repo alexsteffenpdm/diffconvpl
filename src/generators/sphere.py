@@ -22,6 +22,8 @@ class SDFSphere2D(SDFGenerator2D):
         assert "center" in kwargs
         self.radius: float = kwargs["radius"]
         self.center: np.array = kwargs["center"]
+        if "griddomain" in kwargs:
+            self.griddomain = kwargs["griddomain"]
         self.data = self.generate()
 
     def sdf_value(self, x, y):
@@ -70,9 +72,27 @@ class SDFSphere2D(SDFGenerator2D):
         ax.scatter(self.data[:, 0], self.data[:, 1], color="black", s=0.02)
         plt.show()
 
+    def plot_points(self):
+        _, ax = plt.subplots()
+        
+        ax.scatter(self.data[:, 0], self.data[:, 1], color="black", s=0.02)
+        plt.show()
+
     def plot(self):
         return super().plot()
         
+    def grid_data(self):
+        data = []
+        domain = np.linspace(self.griddomain[0],self.griddomain[1],self.num_points +1)
+        x,y = np.meshgrid(domain,domain)
+        for _ in range(self.num_points):
+            xi = x[random.randint(0,len(domain)-1),random.randint(0,len(domain)-1)]
+            yi = y[random.randint(0,len(domain)-1),random.randint(0,len(domain)-1)]
+            
+            di = self.sdf_value(xi,yi)
+            data.append([xi,yi,di])
+        return np.asanyarray(data)
+
 
     def generate(self):
         surface = self.on_surface_points()
@@ -110,6 +130,9 @@ class SDFSphere2D(SDFGenerator2D):
                     for surface_i, normal_i in zip(surface,normals)
                 ]
             )
+
+        elif self.setting == Setting.GRID_DISTANCE:
+            return self.grid_data()
 
 
     def color_table(self, distance: float):
@@ -157,34 +180,46 @@ if __name__ == "__main__":
         help="Randomly varies the range of distances for generated points. Only applicable with setting 'distance'."
     )
 
+    parser.add_argument(
+        "--gridsize",
+        metavar=float,
+        default=None,
+        action="store",
+        nargs="?",
+        help="Specifies the factor of the grid created based on the given radius. (i.e. -radius * gridsize <= data <= radius * gridsize)"
+    )
+
     args = parser.parse_args()
     _setting:Setting = Setting.UNSET
     
-    if args.setting not in ["distance","normals"]:
+    if args.setting not in ["distance","normals","grid"]:
         raise ValueError(f"Unkown Setting {args.setting}")
     elif args.setting == "distance":
         _setting = Setting.DISTANCE
     elif args.setting == "normals":
         _setting = Setting.SURFACENORMALS
+    elif args.setting == "grid":
+        _setting = Setting.GRID_DISTANCE
 
     if args.delta is not None:
-        assert _setting == Setting.DISTANCE,"Delta can only be specified when using the 'distance' setting."
+        assert _setting == Setting.DISTANCE or Setting.GRID_DISTANCE,"Delta can only be specified when using the 'distance' or 'grid' setting."
     
     assert float(args.radius) > 0.0
     assert int(args.datapoints) > 0
 
-
+    gridsize = float(args.gridsize) * float(args.radius) if args.gridsize is not None else 0.0
     
 
     sphere = SDFSphere2D(
         dist_func=f"lambda x,y: np.sqrt(x**2 + y**2) - {args.radius}",
         parameters=["x", "y"],
         num_points=int(args.datapoints),
-        delta=0.1,
+        delta=0.0 if args.delta is None else float(args.delta),
         radius=float(args.radius),
         center=np.asarray([0.0, 0.0]),
-        distances=np.asarray([-1.0, 0.0, 1.0]),
+        distances=np.asarray([-np.Inf, 0.0, np.Inf]),
         setting=_setting,
+        griddomain=np.asarray([-gridsize,gridsize])
     )
     sphere.plot()
     sphere.as_json(filename="2DSDF_Circle.json")

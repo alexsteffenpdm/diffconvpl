@@ -46,7 +46,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.m = m
         self.domains = np.linspace(-1.0, 1.0, self.k + 1)
 
-        # self.func = lambda t: torch.min(t, dim=-1)[0]
+        # self.func = lambda t: torch.max(t,dim=-1)[0]
         self.func = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
             self.batch_size: int = self.x.shape[0]
@@ -54,7 +54,9 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             self.batch_size = batchsize
 
         self.batches = []
-        #self.param_init()
+        self.param_init()
+
+
 
     def param_init(self):
         def _gauss_dist(s: int, e: int, entries: int):
@@ -79,23 +81,21 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             a_ki = []
             b_ki = []
             for xi,yi in zip(_gauss_dist(domains[ki], domains[ki + 1], entries=self.m),_gauss_dist(domains[ki], domains[ki + 1], entries=self.m)):
-                pi = torch.from_numpy(np.asarray(xi,yi)).requires_grad_(True)
-                print(pi)
-                input()
-                y = self.target.as_lambda("torch")(pi[0], pi[1])
-                y.backward()
+                pi = torch.tensor(np.array([xi,yi]),dtype=torch.float32,requires_grad=True)
+                y = self.target.as_lambda("torch")(pi[0],pi[1])            
+                y.backward()               
+                pi.retain_grad()
 
-                a_ki.append(pi.grad.item())
-                b_ki.append(y.item() - (pi.grad.item() * pi.item()))
+                a_ki.append(np.asanyarray([pi.grad[0],pi.grad[1]]))
+                b_ki.append(y.item())
             Arr_a.append(a_ki)
             Arr_b.append(b_ki)
-
+      
         with torch.no_grad():
             for ki in range(self.k):
-                for a_ki, b_ki in zip(Arr_a, Arr_b):
-                    for i in range(len(a_ki)):
-                        self.a[ki, i] = a_ki[i]
-                        self.b[ki, i] = b_ki[i]
+                for a_ki in Arr_a[ki]: 
+                    self.a[ki] = torch.from_numpy(a_ki).type(torch.FloatTensor)
+                self.b[ki] = torch.from_numpy(np.asanyarray(Arr_b[ki])).type(torch.FloatTensor)
 
             assert self.a.shape == (self.k, self.m, self.dim)
 
@@ -150,39 +150,39 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
     def __call__(self, batching: bool):
         return self.forward(batching)
 
-    def get_plot_data(self, batching, x, y_target):
-        y_pred = []
-        for ki, si in zip(range(self.k), self.s):
-            y_xi = []
-            for xi in x:
-                y_calc = (
-                    self.eval(
-                        ki=ki,
-                        x=torch.from_numpy(np.asarray([xi]))
-                        .type(torch.FloatTensor)
-                        .to(torch.device("cuda:0")),
-                    )
-                    .cpu()
-                    .detach()
-                    .numpy()
-                )
-                s_calc = si.cpu().detach().numpy()
+    def generate_sdf_plot_data(self,spacing:float,min:float,max:float):
 
-                y_xi.append(s_calc * (y_calc + ki))
-            y_pred.append(y_xi)
+        def model_output(data:np.array,k:np.array,s:np.array):
+            prediction = []
+            for ki, si in zip(range(k),s):                        
+                z = (self.eval(
+                    ki=ki,
+                    x=torch.from_numpy(data)
+                    .type(torch.FloatTensor)
+                    .to(torch.device("cuda:0")),
+                ).cpu().detach().numpy())
+                prediction.append(z* si)
+                
+            return np.asarray(prediction).sum()
+                          
+        points = int((abs(min)+abs(max)) / spacing) + 1
+        
+        s = self.s.cpu().detach().numpy()
 
-        y_calc = self.forward(batching).cpu().detach().numpy()
+        domain = np.linspace(min,max,points)
+        x,y = np.meshgrid(domain,domain)
+        z = []
+        for xi,yi in zip(x.flatten(),y.flatten()):
+            # d = np.asanyarray([[xi,yi] for _ in range(self.m)])
+            d = np.asanyarray([[xi,yi]])   
+            # output = model_output(data=d,k=self.k,s=s)
+            # print(output)
+            # zi = self.target.as_lambda('numpy')(xi,yi)
+            zi = model_output(data=d,k=self.k,s=s)
+            #print(f"x: {xi} y: {yi} z: {zi:.3f} sdf: {self.target.as_lambda('numpy')(xi,yi):.3f} (diff: {(abs(zi)-abs(self.target.as_lambda('numpy')(xi,yi))):.3f})")
+            z.append(zi)
 
-        return np.asanyarray(y_pred), np.asanyarray(y_calc)
-
-    def generate_sdf_plot_data(self,batching):
-        prediction = []
-        x = np.linspace(-1.0,1.0,self.m)
-        y = np.linspace(-1.0,1.0,self.m)
-        xy = np.asanyarray(
-            [[(xi,yi) for yi in y] for xi in x]
-            ).flatten()
-            
+        return x,y,np.asanyarray(z).reshape(len(x),len(y))
 
     def print_params(self):
         print(

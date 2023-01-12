@@ -12,6 +12,7 @@ class Setting(Enum):
     UNSET = 0
     DISTANCE = 1
     SURFACENORMALS = 2
+    GRID_DISTANCE = 3
 
 
 class SDFGenerator2D:
@@ -54,12 +55,17 @@ class SDFGenerator2D:
 
     def plot_distances(self):
         raise NotImplementedError
+    
+    def plot_points(self):
+        raise NotImplementedError
 
     def plot(self):
         if self.setting == Setting.SURFACENORMALS:
             self.plot_normals()
         elif self.setting == Setting.DISTANCE:
             self.plot_distances()
+        elif self.setting == Setting.GRID_DISTANCE:
+            self.plot_points()
 
     # append datapoints
     def as_json(self, filename):
@@ -67,12 +73,12 @@ class SDFGenerator2D:
         json_data = {
             "func": self.dist_func_str.split(": ")[1],
             "params": self.parameters,
-            "m": 50,
+            "m": self.num_points,
             "entries": self.num_points,
             "epochs": 5000,
             "positive_funcs": 1,
             "negative_funcs": 1,
-            "format": "[x,y,d]" if self.setting == Setting.DISTANCE else "[x,y,n_x,n_y]",
+            "format": "[x,y,d]" if self.setting != Setting.SURFACENORMALS else "[x,y,n_x,n_y]",
             "data": self.data.tolist(),
             "fullplot": True,
         }

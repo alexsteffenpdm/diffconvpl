@@ -1,0 +1,17 @@
+Version 0.1.2
+    Findings:
+        -   currently the algorithm is not able to approximate an SDF when perfect input data is given ( i.e. all datapoints have a distance of ~0.0 from the surface)
+    Changes:
+        -   Added the a "grid" setting to SDF data generators (currently only for the circle generator)
+        -   Code optimizations and cleanup
+        -   The application does now use a contour plot in order to visualize the results. This will later be extended with a heightmap like plot in 3D.
+
+Version 0.1.1
+    Changes:
+        -   Added data SDF data generators (square,triangle,circle).
+
+
+Version 0.1
+    This is a port from main branch.
+    Changes:
+        -   Added the ability to work with 2-dimensional input data.

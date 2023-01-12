@@ -1,7 +1,7 @@
 from src.maxaffine import MultiDimMaxAffineFunction
 from src.util.common import *
 from src.util.logger import ParamLogger
-from src.util.plot import plot2d
+from src.util.plot import plot2d,plotsdf
 from src.util.target import Target
 
 import numpy as np
@@ -33,6 +33,17 @@ def plot_wrapper(
 ):
     plot2d(func, x, y_target, maxaffines, y_pred, fullplot, timetag, autosave, losses)
 
+def plot_wrapper_sdf(
+    func: str,
+    xv: np.array,
+    yv: np.array,
+    z: np.array,
+    autosave: bool,
+    losses: np.array,
+    filename: str,
+):
+    plotsdf(func,xv,yv,z,autosave,losses,filename)
+
 
 def run():
     global APP_ARGS, AUTOSAVE
@@ -56,17 +67,12 @@ def run():
     # setup data
     signs = np.asarray(make_signs(positive=positive_funcs, negative=negative_funcs))
     k = len(signs)
-    # datapoints = np.linspace(-1.0, 1.0, entries)
-    # y = np.asarray([TARGET.as_lambda("torch")(torch.tensor(dp)) for dp in datapoints])
+    
     datapoints = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
-    y = np.asarray(
-        [
-            TARGET.as_lambda("torch")(torch.tensor(dp[0]), torch.tensor(dp[1]))
-            for dp in datapoints
-        ]
-    )
-    tensor_y = torch.from_numpy(y).type(torch.FloatTensor).to(torch.device("cuda:0"))
-    area = torch.zeros_like(tensor_y).to(torch.device("cuda:0"))
+   
+   
+    y = torch.from_numpy(np.asarray([dp[2] for dp in APP_ARGS["data"]])).type(torch.FloatTensor).to(torch.device("cuda:0"))
+    
 
     model = MultiDimMaxAffineFunction(
         target=TARGET,
@@ -85,7 +91,7 @@ def run():
             cmdcolors.WARNING,
         )
         if APP_ARGS["batch_size"] == 2**32:
-            model.bench(y_target=tensor_y, granularity=0.01)
+            model.bench(y_target=y, granularity=0.01)
             print(f"       Maximum applicaple batchsize={model.batch_size}")
         else:
             print(f"       Using preset batchsize of {batch_size}")
@@ -102,9 +108,9 @@ def run():
     for _ in range(epochs):
         optimizer.zero_grad()
         if batching == True:
-            loss = model.batch_diff(model(batching), area)
+            loss = model.batch_diff(model(batching), y)
         else:
-            loss = (model(batching) - area).pow(2).mean()
+            loss = (model(batching) - y).pow(2).mean()
         loss_plot.append(loss.item())
         loss.backward()
 
@@ -117,23 +123,19 @@ def run():
     print("STAGE: Plot")
 
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-
-    maxaffines, prediction = model.get_plot_data(batching, datapoints, y)
-    plotprocess = multiprocessing.Process(
-        target=plot_wrapper,
+    xv,yv, z = model.generate_sdf_plot_data(spacing=0.01,min=-2.0,max=2.0)
+    multiprocessing.Process(
+        target=plotsdf,
         args=(
             TARGET.no_package_str(),
-            datapoints,
-            y,
-            maxaffines,
-            prediction,
-            fullplot,
-            timetag,
+            xv,
+            yv,
+            z,
             AUTOSAVE,
             loss_plot,
-        ),
-    )
-    plotprocess.start()
+            timetag,
+        )
+    ).start()
 
     print("STAGE: Data")
 

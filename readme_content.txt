@@ -55,4 +55,17 @@ The following generators exist and provide the functionality to parse specific c
 
 <GENERATOR_HELP_TEXTS>
 
+## Findings
 
+With the current setup ( as of 2023/01/12 ) the model cannot approximate an SDF properly when feeded "perfect" input data.
+A small randomized offset suffices in order properly approximate the given SDf from data. 
+
+Observed via:
+
+`python .\src\generators\sphere.py --setting distance --radius 1.0 --datapoints 100 --delta 0.0` --> Leads to the inability to approximate.
+
+`python .\src\generators\sphere.py --setting distance --radius 1.0 --datapoints 100 --delta 0.1` --> Proper approximation possible.
+
+Both scenarios get called via:
+
+`python .\application.py --autorun .\data\generated\2DSDF_Circle.json --no-batch --autosave`

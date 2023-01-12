@@ -1,12 +1,45 @@
 from .common import rand_color
 import matplotlib.pyplot as plt
 import numpy as np
-import collections
 
 def unscientific_plot(name: str, values: np.array):
     print(f"{name}: {np.array2string(values,formatter={'float':lambda x: f'{x:f}'})}\n")
          
+def plotsdf(
+    func: str,
+    xv: np.ndarray,
+    yv: np.ndarray,
+    z: np.ndarray,
+    autosave: bool,
+    losses: np.array,
+    filename: str,
+):
+    assert len(z)**2 == (len(xv) * len(yv)),f"{len(z)} == ({len(xv)} * {len(yv)})"
+    assert len(z.shape) == 2
     
+    fig = plt.figure("Results SDF", [10, 20])
+    plt.subplot(2, 1, 1)   
+   
+    plt.contourf(xv,yv,z,label=func)
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("Approximation")
+    plt.legend(loc="best")
+    plt.axis("equal")
+
+    err_x = np.arange(0, len(losses), 1)
+    plt.subplot(2, 1, 2)
+    plt.title("Error")
+    plt.plot(err_x, losses, color=rand_color(), label="Loss")
+    plt.xlabel("Iterations")
+    plt.ylabel("Error")
+
+    plt.savefig(f"data\\plots\\{filename}.png")
+    if autosave != False:
+        plt.show(block=False)
+        plt.show()
+    plt.close()
+    return
 
 def plot2d(
     func: str,
