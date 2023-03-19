@@ -80,7 +80,7 @@ class SDFSquare2D(SDFGenerator2D):
         lambdas = np.linspace(start=0, stop=1, num= 2 + (self.num_points // 4))[1:-1]
         for i in lambdas:
             for side,normal in zip(self.sides(),self.side_normals()):
-                p = (1.0 - i) * side[0] + i * side[1]
+                p = ((1.0 - i) * side[0] + i * side[1]) * random.gauss(1.0, self.delta)
                 if self.setting == Setting.DISTANCE:
                     d = self.sdf_value(p[0],p[1])
                     points.append([p[0],p[1],d])
@@ -90,11 +90,13 @@ class SDFSquare2D(SDFGenerator2D):
         for corner in self.corners():
             corner_normal = (corner - self.center) / np.linalg.norm(corner - self.center)
             if self.setting == Setting.DISTANCE:
+                corner *= random.gauss(1.0, self.delta)
                 d = self.sdf_value(corner[0],corner[1])
                 points.append([corner[0],corner[1],d])
             elif self.setting == Setting.SURFACENORMALS:
                 points.append(np.asarray([corner[0],corner[1],corner_normal[0],corner_normal[1]]))    
-                
+
+        self.num_points += 4    
         return np.asanyarray(points)
 
     def plot_normals(self):
@@ -180,6 +182,15 @@ if __name__ == "__main__":
         nargs="?",
         help="Set the amount of datapoints generated."
     )
+
+    parser.add_argument(
+        "--delta",
+        metavar=float,
+        default=0.0,
+        action="store",
+        nargs="?",
+        help="Set the amount of datapoints generated."
+    )
     args = parser.parse_args()
     _setting:Setting = Setting.UNSET
     width = float(args.width)
@@ -195,10 +206,10 @@ if __name__ == "__main__":
     assert int(args.datapoints) % 4 == 0 and int(args.datapoints) >= 4,"Cannot build a rectangle with less than 4 points."
 
     square = SDFSquare2D(
-        dist_func=f"lambda x,y: np.sqrt(max(abs(x) - {width/2},0)**2 + max(abs(y)- {height/2},0)**2)",
+        dist_func=f" lambda x, y: torch.sqrt(torch.pow(torch.max(torch.abs(x) -  {width/2},0).values,2) + torch.pow(torch.max(torch.abs(y) - {height/2},0).values,2))",
         parameters=["x,y"],
         num_points=int(args.datapoints),
-        delta=0.0,
+        delta=float(args.delta),
         sidelength={"width": width, "height": height},
         center=np.asarray([0.0, 0.0]),
         distances=np.asarray([-0.5, 0.0, 0.5]),

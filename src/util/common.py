@@ -1,7 +1,8 @@
-from typing import Dict, Any
+from typing import Any
 import random
 import os
 import json
+import numpy as np
 
 
 class cmdcolors:
@@ -16,32 +17,33 @@ class cmdcolors:
     UNDERLINE = "\033[4m"
 
 
-def print_colored(text: str, color: cmdcolors):
+def print_colored(text: str, color: cmdcolors) -> None:
     print(color + text + cmdcolors.ENDC)
 
 
-def rand_color():
+def rand_color() -> str:
     r = lambda: random.randint(0, 255)
     return "#{:02x}{:02x}{:02x}".format(r(), r(), r())
 
 
-def make_signs(positive: int, negative: int):
+def make_signs(positive: int, negative: int) -> np.array:
     assert positive >= 0
     assert negative >= 0
     assert (abs(positive) + abs(negative)) > 0
-
-    return ([1.0] * positive) + ([-1.0] * negative)
+    signs =  ([1.0] * positive) + ([-1.0] * negative)
+    
+    return np.asarray(signs)
 
 
 def build_log_dict(
-    tqdm_dict: Dict[str, Any],
+    tqdm_dict: dict[str, Any],
     loss: float,
     func: str,
     positive: int,
     negative: int,
     success: bool,
     autosave: bool,
-):
+) -> dict[str, Any]:
 
     return {
         "Function": func,
@@ -56,7 +58,7 @@ def build_log_dict(
     }
 
 
-def rerun_experiment(filepath: str = None):
+def rerun_experiment(filepath: str = None) -> dict[str,Any]:
     if filepath:
         with open(filepath, "r") as fp:
             return json.load(fp)
@@ -75,10 +77,10 @@ def rerun_experiment(filepath: str = None):
 
     except:
         print("JSON directory not found")
-        pass
+        exit()
 
 
-def get_batch_spacing(size, stop):
+def get_batch_spacing(size:int, stop:int) -> list[int]:
     x = size - 1
     arr = [(0, size)]
     while x < stop:

@@ -1,12 +1,11 @@
-from .util.common import rand_color, get_batch_spacing
-from .util.target import Target
-
 import torch
-import random
 import numpy as np
-import matplotlib.pyplot as plt
-from typing import List
+from typing import Tuple,Callable
 from tqdm import tqdm
+
+from .util.common import get_batch_spacing
+from .util.target import Target
+from .util.parameter_initializer import Initializer
 
 
 class MultiDimMaxAffineFunction(torch.nn.Module):
@@ -15,108 +14,78 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         m: int,
         k: int,
         dim: int,
-        x,
-        signs: List[float],
+        x: np.array,
+        signs: np.array,
         target: Target,
+        initializer: Initializer,
         batchsize: int = 2**32,
     ):
-        super().__init__()
+        super(MultiDimMaxAffineFunction,self).__init__()
 
-        self.target = target
+        self.initializer:Initializer = initializer
+        self.target:Target = target
 
-        self.x = (
+        self.x:torch.nn.Parameter = (
             torch.nn.Parameter(torch.from_numpy(x), requires_grad=False)
             .type(torch.FloatTensor)
             .to(torch.device("cuda:0"))
         )
 
-        self.s = torch.nn.Parameter(
+        self.s:torch.nn.Parameter = torch.nn.Parameter(
             torch.from_numpy(signs), requires_grad=False
-        )  # .to(torch.device("cuda:0"))
+        )
 
-        self.a = torch.nn.Parameter(
+        self.a:torch.nn.Parameter = torch.nn.Parameter(
             torch.rand((k, m, dim), dtype=torch.float32), requires_grad=True
-        )  # .to(torch.device("cuda:0"))
+        )
 
-        self.b = torch.nn.Parameter(
+        self.b:torch.nn.Parameter = torch.nn.Parameter(
             torch.rand((k, m), dtype=torch.float32), requires_grad=True
-        )  # .to(torch.device("cuda:0"))
-        self.k = k
-        self.dim = dim
-        self.m = m
-        self.domains = np.linspace(-1.0, 1.0, self.k + 1)
+        )
+        self.k:int = k
+        self.dim:int = dim
+        self.m:int = m
 
-        # self.func = lambda t: torch.max(t,dim=-1)[0]
-        self.func = lambda t: torch.logsumexp(t, dim=-1)
+        self.func:Callable = lambda t: torch.max(t,dim=-1)[0]
+        # self.func:Callable = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
-            self.batch_size: int = self.x.shape[0]
+            self.batch_size:int = self.x.shape[0]
         else:
-            self.batch_size = batchsize
+            self.batch_size:int = batchsize
 
-        self.batches = []
-        self.param_init()
+        self.batches: list[int] = []
+        self.initialization()
 
-
-
-    def param_init(self):
-        def _gauss_dist(s: int, e: int, entries: int):
-            dist = np.asarray([random.gauss(0.1, 1.0) for _ in range(entries)])
-            domain_range = np.max(dist) + (
-                -1 * np.min(dist) if np.min(dist) < 0.0 else np.min(dist)
-            )
-            s = []
-            for d in dist:
-                v = 2 * abs(d) / domain_range
-                if d < 0.0:
-                    s.append(-v)
-                else:
-                    s.append(v)
-            return s
-
-        domains = np.linspace(-1.0, 1.0, self.k + 1)
-
-        Arr_a = []
-        Arr_b = []
-        for ki in range(self.k):
-            a_ki = []
-            b_ki = []
-            for xi,yi in zip(_gauss_dist(domains[ki], domains[ki + 1], entries=self.m),_gauss_dist(domains[ki], domains[ki + 1], entries=self.m)):
-                pi = torch.tensor(np.array([xi,yi]),dtype=torch.float32,requires_grad=True)
-                y = self.target.as_lambda("torch")(pi[0],pi[1])            
-                y.backward()               
-                pi.retain_grad()
-
-                a_ki.append(np.asanyarray([pi.grad[0],pi.grad[1]]))
-                b_ki.append(y.item())
-            Arr_a.append(a_ki)
-            Arr_b.append(b_ki)
-      
+    def initialization(self) -> None:
+        a,b = self.initializer(self.m)
         with torch.no_grad():
+ 
             for ki in range(self.k):
-                for a_ki in Arr_a[ki]: 
-                    self.a[ki] = torch.from_numpy(a_ki).type(torch.FloatTensor)
-                self.b[ki] = torch.from_numpy(np.asanyarray(Arr_b[ki])).type(torch.FloatTensor)
+                self.a[ki].data = a
+                self.b[ki].data = b
+        assert self.a.shape == (self.k, self.m, self.dim)
 
-            assert self.a.shape == (self.k, self.m, self.dim)
+    
 
-    def eval(self, ki, x=None):
+    def eval(self, ki, x=None) -> torch.Tensor:
         if len(self.x.shape) == 1:
             self.x = self.x[:, None]
+
         if x == None:
             return self.func(self.x @ self.a[ki].T + self.b[ki])
         else:
             return self.func(x @ self.a[ki].T + self.b[ki])
 
-    def batch_eval(self, s, e, x=None):
+    def batch_eval(self, s, e) -> torch.Tensor:
         if len(self.x.shape) == 1:
             self.x = self.x[:, None]
 
-        U = torch.einsum("bn, kmn -> bkm", self.x[s:e], self.a) + self.b[None]
-        V = self.func(U)
-        W = (self.s[None] * V).sum(dim=-1, keepdim=True)
+        U:torch.Tensor = torch.einsum("bn, kmn -> bkm", self.x[s:e], self.a) + self.b[None]
+        V:torch.Tensor = self.func(U)
+        W:torch.Tensor = (self.s[None] * V).sum(dim=-1, keepdim=True)
         return W
 
-    def bench(self, y_target, granularity=0.005):
+    def bench(self, y_target, granularity=0.005) -> None:
         if len(self.x.shape) == 1:
             self.x = self.x[:, None]
 
@@ -130,16 +99,16 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                 self.batch_size = entries
         self.batches = get_batch_spacing(self.batch_size, self.x.shape[0])
 
-    def forward(self, batching: bool):
+    def forward(self, batching: bool) -> torch.Tensor:
         if batching:
             return torch.cat([self.batch_eval(s=b[0], e=b[1]) for b in self.batches])
         else:
             return torch.stack(
-                [si * self.eval(ki=ki, x=None) for ki, si in zip(range(self.k), self.s)]
+                [si* self.eval(ki=ki, x=None) for ki, si in zip(range(self.k), self.s)]
             ).sum(dim=0)
 
-    def batch_diff(self, prediction: torch.Tensor, target: torch.Tensor):
-        diff = torch.zeros(1, dtype=torch.float32, requires_grad=True).to(
+    def batch_diff(self, prediction: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        diff:torch.Tensor = torch.zeros(1, dtype=torch.float32, requires_grad=True).to(
             torch.device("cuda:0")
         )
         for b in self.batches:
@@ -147,44 +116,68 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
 
         return diff.mean()
 
-    def __call__(self, batching: bool):
+    def __call__(self, batching: bool) -> torch.Tensor:
         return self.forward(batching)
 
     def generate_sdf_plot_data(self,spacing:float,min:float,max:float):
 
-        def model_output(data:np.array,k:np.array,s:np.array):
-            prediction = []
+        def model_output(data:torch.FloatTensor,k:int,s:torch.FloatTensor) -> torch.FloatTensor:
+            prediction:torch.Tensor = torch.zeros((k),dtype=torch.float32).to(torch.device("cuda:0"))
             for ki, si in zip(range(k),s):                        
-                z = (self.eval(
-                    ki=ki,
-                    x=torch.from_numpy(data)
-                    .type(torch.FloatTensor)
-                    .to(torch.device("cuda:0")),
-                ).cpu().detach().numpy())
-                prediction.append(z* si)
-                
-            return np.asarray(prediction).sum()
-                          
-        points = int((abs(min)+abs(max)) / spacing) + 1
-        
-        s = self.s.cpu().detach().numpy()
+                prediction[ki] = self.eval(ki=ki,x=data) * si
+            return prediction.sum()
 
-        domain = np.linspace(min,max,points)
+        print(f"\tCollecting model evaluation (from {min} to {max} with granularity: {spacing})")     
+
+        points:np.array = int((abs(min)+abs(max)) / spacing) + 1
+        domain:np.array = np.linspace(min,max,points)
         x,y = np.meshgrid(domain,domain)
-        z = []
-        for xi,yi in zip(x.flatten(),y.flatten()):
-            # d = np.asanyarray([[xi,yi] for _ in range(self.m)])
-            d = np.asanyarray([[xi,yi]])   
-            # output = model_output(data=d,k=self.k,s=s)
-            # print(output)
-            # zi = self.target.as_lambda('numpy')(xi,yi)
-            zi = model_output(data=d,k=self.k,s=s)
-            #print(f"x: {xi} y: {yi} z: {zi:.3f} sdf: {self.target.as_lambda('numpy')(xi,yi):.3f} (diff: {(abs(zi)-abs(self.target.as_lambda('numpy')(xi,yi))):.3f})")
-            z.append(zi)
 
-        return x,y,np.asanyarray(z).reshape(len(x),len(y))
+        x_flat:torch.Tensor = torch.from_numpy(x.flatten()).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        y_flat:torch.Tensor = torch.from_numpy(y.flatten()).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        z:torch.Tensor = torch.zeros_like(x_flat)
 
-    def print_params(self):
-        print(
-            f"Devices: \na: {self.a.device}\nb: {self.b.device} \nx: {self.x.device} \ns: {self.s.device}"
-        )
+        for i in tqdm(range(len(x_flat))):    
+            z.data[i] = model_output(data=torch.stack([x_flat[i],y_flat[i]]),k=self.k,s=self.s)
+       
+        try:
+            return x,y, z.cpu().detach().numpy().reshape(len(x),len(y))
+        except:
+            print("could not return")
+            exit()
+
+    def error_propagation(self,spacing:float,min:float,max:float) -> Tuple[np.array,np.array]:
+
+        def model_output(data:torch.FloatTensor,k:int,s:torch.FloatTensor):
+            prediction:torch.Tensor = torch.zeros((k),dtype=torch.float32).to(torch.device("cuda:0"))
+            for ki, si in zip(range(k),s):                        
+                prediction[ki] = si* self.eval(ki=ki,x=data) 
+            return prediction.sum()
+
+        print(f"\tCollecting model error propagation (from {min} to {max} with granularity: {spacing})")     
+
+        points: int = int((abs(min)+abs(max)) / spacing) + 1
+        domain: np.array = np.linspace(min,max,points)
+
+        x_y:torch.Tensor = torch.from_numpy(domain.flatten()).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        model_z:torch.Tensor = torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        target_z:torch.Tensor = torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        
+        for i in tqdm(range(len(x_y))):
+            model_z[i].data = model_output(data=torch.stack([x_y[i],x_y[i]]),k=self.k,s=self.s)
+            target_z[i].data = self.target.as_lambda("torch")(x_y[i],x_y[i]) 
+
+        model_z:np.array = model_z.cpu().detach().numpy()
+        target_z:np.array = target_z.cpu().detach().numpy()
+
+        return domain, np.subtract(model_z,target_z)
+
+    def tensor_devices(self) -> None:
+        tensors = {
+            "a":self.a,
+            "b":self.b,
+            "s":self.s,
+            "x":self.x
+        }
+        for k,v in tensors.items():
+            print(f"Tensor {k} on device: {v.device}")

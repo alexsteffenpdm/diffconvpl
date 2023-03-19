@@ -1,0 +1,7 @@
+{
+    "name": "Parabola",
+    "symbol": "x",
+    "precision": 4,
+    "function": "x**2",
+    "derivative": "2*x"    
+}

@@ -3,6 +3,8 @@ from src.util.common import *
 from src.util.logger import ParamLogger
 from src.util.plot import plot2d,plotsdf
 from src.util.target import Target
+from src.util.parameter_initializer import Initializer
+from src.util.shm_process import MemorySharedSubprocess
 
 import numpy as np
 import os
@@ -38,11 +40,13 @@ def plot_wrapper_sdf(
     xv: np.array,
     yv: np.array,
     z: np.array,
+    err_d: np.array,
+    err_v: np.array,
     autosave: bool,
     losses: np.array,
     filename: str,
 ):
-    plotsdf(func,xv,yv,z,autosave,losses,filename)
+    plotsdf(func,xv,yv,z,err_d,err_v,autosave,losses,filename)
 
 
 def run():
@@ -65,25 +69,25 @@ def run():
         batch_size = APP_ARGS["batch_size"]
 
     # setup data
-    signs = np.asarray(make_signs(positive=positive_funcs, negative=negative_funcs))
-    k = len(signs)
+    signs:np.array = make_signs(positive=positive_funcs, negative=negative_funcs)
+    k:int = len(signs)
     
-    datapoints = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
+    datapoints:np.array = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
    
-   
-    y = torch.from_numpy(np.asarray([dp[2] for dp in APP_ARGS["data"]])).type(torch.FloatTensor).to(torch.device("cuda:0"))
+    y:torch.Tensor = torch.from_numpy(np.asarray([dp[2] for dp in APP_ARGS["data"]])).type(torch.FloatTensor).to(torch.device("cuda:0"))
     
 
-    model = MultiDimMaxAffineFunction(
+    model: MultiDimMaxAffineFunction = MultiDimMaxAffineFunction(
         target=TARGET,
         m=m,
         k=k,
         dim=2,
         x=datapoints,
         signs=signs,
+        initializer=Initializer("src\\initializations\\parabola.json",dim=2),
         batchsize=batch_size if batching else 2**32,
     ).to(torch.device("cuda:0"))
-
+    
     if batching == True:
         print("STAGE: Calculating batchsize")
         print_colored(
@@ -98,44 +102,68 @@ def run():
             model.batches = get_batch_spacing(batch_size, model.x.shape[0])
 
     print("STAGE: Calculation")
-
-    optimizer = torch.optim.Adam([model.a, model.b], lr=0.06)
-
-    loss = None
-    loss_plot = []
+    
+    optimizer:torch.optim = torch.optim.Adam([model.a, model.b], lr=0.06)
+    loss:torch.Tensor = None
+    loss_plot:list[float] = []
     pbar = tqdm(total=epochs)
+    if batching == True:
+             
+        for _ in range(epochs):
+            optimizer.zero_grad()
 
-    for _ in range(epochs):
-        optimizer.zero_grad()
-        if batching == True:
             loss = model.batch_diff(model(batching), y)
-        else:
-            loss = (model(batching) - y).pow(2).mean()
-        loss_plot.append(loss.item())
-        loss.backward()
+            loss_plot.append(loss.item())
+            loss.backward()
 
-        optimizer.step()
-        torch.cuda.empty_cache()
-        pbar.update(1)
+            optimizer.step()
+            torch.cuda.empty_cache()
+            pbar.update(1)    
+    else:     
+
+        for _ in range(epochs):
+            optimizer.zero_grad()
+            
+            loss = (model(batching) - y).pow(2).mean()
+            loss_plot.append(loss.item())
+            loss.backward()
+
+            optimizer.step()
+            torch.cuda.empty_cache()
+            pbar.update(1)
+
     pbar.close()
     pbar_dict = pbar.format_dict
 
     print("STAGE: Plot")
 
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-    xv,yv, z = model.generate_sdf_plot_data(spacing=0.01,min=-2.0,max=2.0)
-    multiprocessing.Process(
-        target=plotsdf,
-        args=(
-            TARGET.no_package_str(),
-            xv,
-            yv,
-            z,
-            AUTOSAVE,
-            loss_plot,
-            timetag,
-        )
-    ).start()
+    try:
+       x,y,z = model.generate_sdf_plot_data(spacing=0.01,min=-1.0,max=1.0)
+       print('RETURNED')
+    except:
+        print("ERROR while generating sdf plot data")
+        exit()
+    try:
+        error_domain, error_values = model.error_propagation(spacing=0.01,min=-20.0,max=20.0)    
+    except:
+        print("ERROR while generating error propagation")
+    
+    plot_dict = {
+        "func":TARGET.no_package_str(),
+        "xv":x.tolist(),
+        "yv":y.tolist(),
+        "z":z.tolist(),
+        "err_d":error_domain.tolist(),
+        "err_v":error_values.tolist(),
+        "autosave":AUTOSAVE,
+        "losses":loss_plot,
+        "filename":timetag,
+    }
+
+    shared_memory_process = MemorySharedSubprocess(target=plotsdf)
+    shared_memory_process.fork_on(data=plot_dict)
+    shared_memory_process.await_join()
 
     print("STAGE: Data")
 
@@ -179,7 +207,7 @@ def setup(
     filepath: str = None,
     batch_size: int = 2**32,
     no_batch: bool = False,
-):
+) -> None:
     global APP_ARGS, AUTOSAVE
     AUTOSAVE = autosave
     if not filepath:

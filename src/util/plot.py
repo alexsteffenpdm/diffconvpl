@@ -1,5 +1,11 @@
-from .common import rand_color
+import os
+if os.getenv("PLOT_TESTS"):
+    from common import rand_color
+else:
+    from .common import rand_color
 import matplotlib.pyplot as plt
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator
 import numpy as np
 
 def unscientific_plot(name: str, values: np.array):
@@ -7,38 +13,52 @@ def unscientific_plot(name: str, values: np.array):
          
 def plotsdf(
     func: str,
-    xv: np.ndarray,
-    yv: np.ndarray,
-    z: np.ndarray,
+    xv: np.array,
+    yv: np.array,
+    z: np.array,
+    err_d: np.array,
+    err_v: np.array,
     autosave: bool,
     losses: np.array,
     filename: str,
-):
+) -> None:
     assert len(z)**2 == (len(xv) * len(yv)),f"{len(z)} == ({len(xv)} * {len(yv)})"
     assert len(z.shape) == 2
-    
-    fig = plt.figure("Results SDF", [10, 20])
-    plt.subplot(2, 1, 1)   
-   
-    plt.contourf(xv,yv,z,label=func)
-    plt.xlabel("x")
-    plt.ylabel("y")
-    plt.title("Approximation")
-    plt.legend(loc="best")
-    plt.axis("equal")
-
+    fig = plt.figure("Results SDF", [10, 30])
     err_x = np.arange(0, len(losses), 1)
-    plt.subplot(2, 1, 2)
+    plt.subplot(2, 2, 1)
     plt.title("Error")
     plt.plot(err_x, losses, color=rand_color(), label="Loss")
     plt.xlabel("Iterations")
     plt.ylabel("Error")
+    plt.legend(loc="best")
+
+    plt.subplot(2, 1, 2)   
+   
+    plt.contourf(xv,yv,z)
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title(f"Approximation of {func}")
+    plt.legend(loc="best")
+    plt.axis("equal")
+
+    plt.subplot(2,2,2)
+    plt.title("Error Propagation")
+    plt.plot(err_d,err_v,color=rand_color(), label="Normalized Error")
+    plt.xlabel("x/y value")
+    plt.ylabel("SDF Error")
+    plt.legend(loc="best")
 
     plt.savefig(f"data\\plots\\{filename}.png")
     if autosave != False:
         plt.show(block=False)
         plt.show()
     plt.close()
+
+    fig2, ax2 = plt.subplots(subplot_kw={"projection":"3d"})
+    surf = ax2.plot_surface(xv,yv,z,cmap=cm.coolwarm,linewidth=0,antialiased=False)
+    fig2.colorbar(surf,shrink=0.5,aspect=5)
+    plt.show()
     return
 
 def plot2d(

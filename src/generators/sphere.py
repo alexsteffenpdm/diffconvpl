@@ -79,6 +79,9 @@ class SDFSphere2D(SDFGenerator2D):
         plt.show()
 
     def plot(self):
+        if self.setting == Setting.DISTANCE:
+            return self.plot_distances()
+        
         return super().plot()
         
     def grid_data(self):
@@ -98,7 +101,11 @@ class SDFSphere2D(SDFGenerator2D):
         surface = self.on_surface_points()
 
         if self.setting == Setting.DISTANCE:
-            deltas = [random.gauss(self.radius, self.delta) for _ in range(self.num_points)]
+            if self.delta != 0.0:
+                deltas = [random.gauss(self.radius, self.delta) for _ in range(self.num_points)]
+            else:
+                deltas = [1.0 for _ in range(self.num_points)]
+                
             surface = [
                 (delta_i * surface_i[0], delta_i * surface_i[1])
                 for delta_i, surface_i in zip(deltas, surface)
