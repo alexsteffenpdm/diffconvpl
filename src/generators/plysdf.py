@@ -1,5 +1,5 @@
 from base import SDFGenerator2D, Setting
-from ..util.ply_reader import PlyReader
+from ..util.ply_handler import PlyReader
 from typing import List
 import numpy as np
 import random

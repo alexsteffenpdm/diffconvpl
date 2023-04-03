@@ -123,7 +123,8 @@ def run():
 
         for _ in range(epochs):
             optimizer.zero_grad()
-            
+            # model.gradient(min=-1.0,max=1.0)
+            # input()
             loss = (model(batching) - y).pow(2).mean()
             loss_plot.append(loss.item())
             loss.backward()
@@ -198,6 +199,11 @@ def run():
         APP_ARGS["Success"] = success
         APP_ARGS["Autosave"] = AUTOSAVE
         logger.json_log(dict=APP_ARGS, filename=timetag)
+
+    with open(os.path.join(os.getcwd(),"data","generated","blender_files",f"datapoints_{timetag}.txt"),"w") as dp_file:
+        for dp in APP_ARGS["data"]:
+            dp_file.write(f"{dp[0]:.4f} {dp[1]:.4f} {dp[2]:.4f}\n")
+
     print("STAGE: End")
 
 

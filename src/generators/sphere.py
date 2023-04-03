@@ -4,6 +4,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 import argparse
+import os
 
 class SDFSphere2D(SDFGenerator2D):
     def __init__(
@@ -33,9 +34,9 @@ class SDFSphere2D(SDFGenerator2D):
         return [
             (
                 np.cos(2 * np.pi / self.num_points * x) * self.radius,
-                np.sin(2 * np.pi / self.num_points * x) * self.radius,
+                np.sin(2 * np.pi / self.num_points * x)* self.radius,
             )
-            for x in range(0, self.num_points + 1)
+            for x in range(self.num_points)
         ]
 
     def plot_normals(self):
@@ -102,12 +103,29 @@ class SDFSphere2D(SDFGenerator2D):
 
         if self.setting == Setting.DISTANCE:
             if self.delta != 0.0:
-                deltas = [random.gauss(self.radius, self.delta) for _ in range(self.num_points)]
+                deltas = [random.gauss(0.0, self.delta/2) for _ in range(self.num_points)]
+                # for d in deltas:
+                #     print(d)
+                
+                # delta_mean = np.asarray(deltas).mean()
+                # # print(f"MEAN: {delta_mean}")
+                # for d in deltas:
+                #     if d < delta_mean:
+                #         d = 1-d
+                #         # print(f"Minus d: {d}")
+                #     else:
+                #         d = 1+d
+                #         # print(f"Plus d: {d}")
+                
             else:
                 deltas = [1.0 for _ in range(self.num_points)]
                 
+            # surface = [
+            #     (delta_i * surface_i[0], delta_i * surface_i[1])
+            #     for delta_i, surface_i in zip(deltas, surface)
+            # ]
             surface = [
-                (delta_i * surface_i[0], delta_i * surface_i[1])
+                ((1+delta_i) * surface_i[0], (1+delta_i) * surface_i[1])
                 for delta_i, surface_i in zip(deltas, surface)
             ]
 
@@ -147,6 +165,14 @@ class SDFSphere2D(SDFGenerator2D):
 
     def as_json(self, filename):
         return super().as_json(filename)
+    
+    def save(self,filename):
+        if not os.path.exists(os.path.join(os.getcwd(),"data","generated","blender_files")):
+            os.makedirs(os.path.join(os.getcwd(),"data","generated","blender_files"))
+        with open(os.path.join(os.getcwd(),"data","generated","blender_files",filename),"w") as f:
+            for d in self.data:
+                f.write(f"{d[0]} {d[1]} {d[2]}\n")
+       
 
 
 if __name__ == "__main__":
@@ -230,3 +256,4 @@ if __name__ == "__main__":
     )
     sphere.plot()
     sphere.as_json(filename="2DSDF_Circle.json")
+    sphere.save("sphere_data.txt")

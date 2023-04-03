@@ -46,7 +46,9 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.dim:int = dim
         self.m:int = m
 
-        self.func:Callable = lambda t: torch.max(t,dim=-1)[0]
+        # self.func:Callable = lambda t: torch.max(t,dim=-1)[0]
+        self.func:Callable = lambda t: torch.logsumexp(torch.relu(t),dim=-1)
+        self.gradfunc:Callable = lambda t: torch.argmax(t,dim=-1)
         # self.func:Callable = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
             self.batch_size:int = self.x.shape[0]
@@ -181,3 +183,22 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         }
         for k,v in tensors.items():
             print(f"Tensor {k} on device: {v.device}")
+
+    def gradient(self,min:float,max:float):
+        domain:np.array = np.linspace(min,max,self.m)
+        x,y = np.meshgrid(domain,domain)
+        print(np.vstack((x,y)).shape,np.vstack((x,y)))
+        # domain:np.array = torch.from_numpy(np.linspace(min,max,points)).type(torch.FloatTensor).to(torch.device("cuda:0"))
+        domain = torch.from_numpy(np.vstack((x,y))).type(torch.FloatTensor).to(torch.device("cuda:0"))
+
+        q = np.zeros([self.m,self.k])
+        for ki in range(self.k):
+            q[ki] = self.gradfunc(domain @ self.a[ki].T + self.b[ki])
+            print(q[ki])
+            
+            
+            
+                
+
+
+

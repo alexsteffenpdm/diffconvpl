@@ -1,11 +1,16 @@
 import os
-if os.getenv("PLOT_TESTS"):
+if os.getenv("TESTING") == 'True':
     from common import rand_color
+    from gridexport import GridExporter
+    from ply_handler import PlyWriter
 else:
     from .common import rand_color
+    from .gridexport import GridExporter
+    from .ply_handler import PlyWriter
+
+
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from matplotlib.ticker import LinearLocator
 import numpy as np
 
 def unscientific_plot(name: str, values: np.array):
@@ -52,13 +57,23 @@ def plotsdf(
     plt.savefig(f"data\\plots\\{filename}.png")
     if autosave != False:
         plt.show(block=False)
-        plt.show()
     plt.close()
 
     fig2, ax2 = plt.subplots(subplot_kw={"projection":"3d"})
     surf = ax2.plot_surface(xv,yv,z,cmap=cm.coolwarm,linewidth=0,antialiased=False)
     fig2.colorbar(surf,shrink=0.5,aspect=5)
     plt.show()
+
+    x = xv.flatten()
+    y = yv.flatten()
+    z = z.flatten()
+    vertices = []
+    for xi,yi,zi in zip(x,y,z):
+        vertices.append([xi,yi,zi])
+    vertices = np.asanyarray(vertices)   
+    exporter = GridExporter(xv.shape)
+    writer = PlyWriter(f"{filename}.ply",vertices,exporter.grid)
+    writer.write()
     return
 
 def plot2d(
