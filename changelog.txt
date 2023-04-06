@@ -1,3 +1,14 @@
+Version 0.2.0
+    Findings:
+        -   introducting a wider spread of data (i.e. more noise) increases the range of correct/fitting approximations significantly
+    Changes:
+        -   version-fixing in requirements_dev
+        -   used Python version changed (3.9* --> 3.10.*) to accomodate bpy (the Blender Python module)
+        -   added MemorySharedSubprocess to avoid errorless termination when passing data to the plot mechanism
+        -   a lot of unused code is removed
+    Notes:
+        -   data generators in `src\generators` will be removed in version 0.2.1 and replaced with BlenderSceneHandler.layercut
+
 Version 0.1.2
     Findings:
         -   currently the algorithm is not able to approximate an SDF when perfect input data is given ( i.e. all datapoints have a distance of ~0.0 from the surface)

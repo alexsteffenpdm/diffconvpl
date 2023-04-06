@@ -2,10 +2,8 @@ import logging
 from typing import Dict
 import os
 import csv
-from pyexcel.cookbook import merge_all_to_a_book
 import glob
 import json
-from datetime import datetime
 
 
 class ParamLogger(object):
@@ -59,10 +57,6 @@ class ParamLogger(object):
     def full_log(self, dict: Dict[str, str]):
         self.log_entry(dict=dict)
         self.csv_log(dict=dict)
-        self.csv_to_xlsx()
-
-    def csv_to_xlsx(self):
-        merge_all_to_a_book(glob.glob("data\*.csv"), "data\experiments.xlsx")
 
     def json_log(self, dict: Dict[str, str], filename: str):
         if dict["Autosave"] == True:

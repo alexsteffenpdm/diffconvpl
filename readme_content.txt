@@ -1,8 +1,12 @@
 # Diffconvpl
+Version: <VERSION>
+##
+As of version 0.2.0 this project requires Python 3.10.* .
+***
 ## General
 ***
 
-Version: <VERSION>
+
 
 ### Installation of requirements
 In order to be able to run the source code the required packages need to be installed.
@@ -58,7 +62,7 @@ The following generators exist and provide the functionality to parse specific c
 ## Findings
 
 With the current setup ( as of 2023/01/12 ) the model cannot approximate an SDF properly when feeded "perfect" input data.
-A small randomized offset suffices in order properly approximate the given SDf from data. 
+A small randomized offset suffices in order properly approximate the given SDf from data.
 
 Observed via:
 

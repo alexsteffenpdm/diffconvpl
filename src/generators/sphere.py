@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import argparse
 import os
 
+
 class SDFSphere2D(SDFGenerator2D):
     def __init__(
         self,
@@ -17,7 +18,7 @@ class SDFSphere2D(SDFGenerator2D):
         setting: Setting,
         **kwargs,
     ):
-        super().__init__(dist_func, parameters, num_points, delta, distances,setting)
+        super().__init__(dist_func, parameters, num_points, delta, distances, setting)
 
         assert "radius" in kwargs
         assert "center" in kwargs
@@ -34,17 +35,19 @@ class SDFSphere2D(SDFGenerator2D):
         return [
             (
                 np.cos(2 * np.pi / self.num_points * x) * self.radius,
-                np.sin(2 * np.pi / self.num_points * x)* self.radius,
+                np.sin(2 * np.pi / self.num_points * x) * self.radius,
             )
             for x in range(self.num_points)
         ]
 
     def plot_normals(self):
         _, ax = plt.subplots()
-        ax.scatter(self.data[:, 0], self.data[:, 1], color="black",s=2)
+        ax.scatter(self.data[:, 0], self.data[:, 1], color="black", s=2)
 
         for d in self.data:
-            ax.arrow(d[0],d[1],d[2],d[3],length_includes_head=True,head_width=0.025)
+            ax.arrow(
+                d[0], d[1], d[2], d[3], length_includes_head=True, head_width=0.025
+            )
 
         ax.axis("equal")
         plt.show()
@@ -75,38 +78,45 @@ class SDFSphere2D(SDFGenerator2D):
 
     def plot_points(self):
         _, ax = plt.subplots()
-        
+
         ax.scatter(self.data[:, 0], self.data[:, 1], color="black", s=0.02)
         plt.show()
 
     def plot(self):
         if self.setting == Setting.DISTANCE:
             return self.plot_distances()
-        
+
         return super().plot()
-        
+
     def grid_data(self):
         data = []
-        domain = np.linspace(self.griddomain[0],self.griddomain[1],self.num_points +1)
-        x,y = np.meshgrid(domain,domain)
+        domain = np.linspace(
+            self.griddomain[0], self.griddomain[1], self.num_points + 1
+        )
+        x, y = np.meshgrid(domain, domain)
         for _ in range(self.num_points):
-            xi = x[random.randint(0,len(domain)-1),random.randint(0,len(domain)-1)]
-            yi = y[random.randint(0,len(domain)-1),random.randint(0,len(domain)-1)]
-            
-            di = self.sdf_value(xi,yi)
-            data.append([xi,yi,di])
-        return np.asanyarray(data)
+            xi = x[
+                random.randint(0, len(domain) - 1), random.randint(0, len(domain) - 1)
+            ]
+            yi = y[
+                random.randint(0, len(domain) - 1), random.randint(0, len(domain) - 1)
+            ]
 
+            di = self.sdf_value(xi, yi)
+            data.append([xi, yi, di])
+        return np.asanyarray(data)
 
     def generate(self):
         surface = self.on_surface_points()
 
         if self.setting == Setting.DISTANCE:
             if self.delta != 0.0:
-                deltas = [random.gauss(0.0, self.delta/2) for _ in range(self.num_points)]
+                deltas = [
+                    random.gauss(0.0, self.delta / 2) for _ in range(self.num_points)
+                ]
                 # for d in deltas:
                 #     print(d)
-                
+
                 # delta_mean = np.asarray(deltas).mean()
                 # # print(f"MEAN: {delta_mean}")
                 # for d in deltas:
@@ -116,16 +126,16 @@ class SDFSphere2D(SDFGenerator2D):
                 #     else:
                 #         d = 1+d
                 #         # print(f"Plus d: {d}")
-                
+
             else:
                 deltas = [1.0 for _ in range(self.num_points)]
-                
+
             # surface = [
             #     (delta_i * surface_i[0], delta_i * surface_i[1])
             #     for delta_i, surface_i in zip(deltas, surface)
             # ]
             surface = [
-                ((1+delta_i) * surface_i[0], (1+delta_i) * surface_i[1])
+                ((1 + delta_i) * surface_i[0], (1 + delta_i) * surface_i[1])
                 for delta_i, surface_i in zip(deltas, surface)
             ]
 
@@ -149,30 +159,31 @@ class SDFSphere2D(SDFGenerator2D):
             normals = [point / np.linalg.norm(point) for point in surface]
             return np.asanyarray(
                 [
-                    (
-                        surface_i[0],surface_i[1],normal_i[0],normal_i[1]
-                    )
-                    for surface_i, normal_i in zip(surface,normals)
+                    (surface_i[0], surface_i[1], normal_i[0], normal_i[1])
+                    for surface_i, normal_i in zip(surface, normals)
                 ]
             )
 
         elif self.setting == Setting.GRID_DISTANCE:
             return self.grid_data()
 
-
     def color_table(self, distance: float):
         return super().color_table(distance)
 
     def as_json(self, filename):
         return super().as_json(filename)
-    
-    def save(self,filename):
-        if not os.path.exists(os.path.join(os.getcwd(),"data","generated","blender_files")):
-            os.makedirs(os.path.join(os.getcwd(),"data","generated","blender_files"))
-        with open(os.path.join(os.getcwd(),"data","generated","blender_files",filename),"w") as f:
+
+    def save(self, filename):
+        if not os.path.exists(
+            os.path.join(os.getcwd(), "data", "generated", "blender_files")
+        ):
+            os.makedirs(os.path.join(os.getcwd(), "data", "generated", "blender_files"))
+        with open(
+            os.path.join(os.getcwd(), "data", "generated", "blender_files", filename),
+            "w",
+        ) as f:
             for d in self.data:
                 f.write(f"{d[0]} {d[1]} {d[2]}\n")
-       
 
 
 if __name__ == "__main__":
@@ -183,16 +194,16 @@ if __name__ == "__main__":
         default="distance",
         action="store",
         nargs="?",
-        help="Compute SDF sample data (distance or normals)"
-        )
-    
+        help="Compute SDF sample data (distance or normals)",
+    )
+
     parser.add_argument(
         "--radius",
         metavar=float,
         default=None,
         action="store",
         nargs="?",
-        help="Set the radius for the generated sphere surface."
+        help="Set the radius for the generated sphere surface.",
     )
 
     parser.add_argument(
@@ -201,7 +212,7 @@ if __name__ == "__main__":
         default=100,
         action="store",
         nargs="?",
-        help="Set the amount of datapoints generated."
+        help="Set the amount of datapoints generated.",
     )
 
     parser.add_argument(
@@ -210,7 +221,7 @@ if __name__ == "__main__":
         default=None,
         action="store",
         nargs="?",
-        help="Randomly varies the range of distances for generated points. Only applicable with setting 'distance'."
+        help="Randomly varies the range of distances for generated points. Only applicable with setting 'distance'.",
     )
 
     parser.add_argument(
@@ -219,13 +230,13 @@ if __name__ == "__main__":
         default=None,
         action="store",
         nargs="?",
-        help="Specifies the factor of the grid created based on the given radius. (i.e. -radius * gridsize <= data <= radius * gridsize)"
+        help="Specifies the factor of the grid created based on the given radius. (i.e. -radius * gridsize <= data <= radius * gridsize)",
     )
 
     args = parser.parse_args()
-    _setting:Setting = Setting.UNSET
-    
-    if args.setting not in ["distance","normals","grid"]:
+    _setting: Setting = Setting.UNSET
+
+    if args.setting not in ["distance", "normals", "grid"]:
         raise ValueError(f"Unkown Setting {args.setting}")
     elif args.setting == "distance":
         _setting = Setting.DISTANCE
@@ -235,13 +246,16 @@ if __name__ == "__main__":
         _setting = Setting.GRID_DISTANCE
 
     if args.delta is not None:
-        assert _setting == Setting.DISTANCE or Setting.GRID_DISTANCE,"Delta can only be specified when using the 'distance' or 'grid' setting."
-    
+        assert (
+            _setting == Setting.DISTANCE or Setting.GRID_DISTANCE
+        ), "Delta can only be specified when using the 'distance' or 'grid' setting."
+
     assert float(args.radius) > 0.0
     assert int(args.datapoints) > 0
 
-    gridsize = float(args.gridsize) * float(args.radius) if args.gridsize is not None else 0.0
-    
+    gridsize = (
+        float(args.gridsize) * float(args.radius) if args.gridsize is not None else 0.0
+    )
 
     sphere = SDFSphere2D(
         dist_func=f"lambda x,y: np.sqrt(x**2 + y**2) - {args.radius}",
@@ -252,7 +266,7 @@ if __name__ == "__main__":
         center=np.asarray([0.0, 0.0]),
         distances=np.asarray([-np.Inf, 0.0, np.Inf]),
         setting=_setting,
-        griddomain=np.asarray([-gridsize,gridsize])
+        griddomain=np.asarray([-gridsize, gridsize]),
     )
     sphere.plot()
     sphere.as_json(filename="2DSDF_Circle.json")

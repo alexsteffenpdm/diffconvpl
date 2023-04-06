@@ -30,8 +30,8 @@ def make_signs(positive: int, negative: int) -> np.array:
     assert positive >= 0
     assert negative >= 0
     assert (abs(positive) + abs(negative)) > 0
-    signs =  ([1.0] * positive) + ([-1.0] * negative)
-    
+    signs = ([1.0] * positive) + ([-1.0] * negative)
+
     return np.asarray(signs)
 
 
@@ -44,7 +44,6 @@ def build_log_dict(
     success: bool,
     autosave: bool,
 ) -> dict[str, Any]:
-
     return {
         "Function": func,
         "Iterations": str(tqdm_dict["total"]),
@@ -58,12 +57,11 @@ def build_log_dict(
     }
 
 
-def rerun_experiment(filepath: str = None) -> dict[str,Any]:
+def rerun_experiment(filepath: str = None) -> dict[str, Any]:
     if filepath:
         with open(filepath, "r") as fp:
             return json.load(fp)
     try:
-
         selection = -1
         experiments = os.listdir("data\\json")
         while selection < 0:
@@ -80,7 +78,7 @@ def rerun_experiment(filepath: str = None) -> dict[str,Any]:
         exit()
 
 
-def get_batch_spacing(size:int, stop:int) -> list[int]:
+def get_batch_spacing(size: int, stop: int) -> list[int]:
     x = size - 1
     arr = [(0, size)]
     while x < stop:

@@ -1,21 +1,20 @@
 import os
-if os.getenv("TESTING") == 'True':
+
+if os.getenv("TESTING") == "True":
     from common import rand_color
-    from gridexport import GridExporter
-    from ply_handler import PlyWriter
 else:
     from .common import rand_color
-    from .gridexport import GridExporter
-    from .ply_handler import PlyWriter
-
 
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import numpy as np
+import json
+
 
 def unscientific_plot(name: str, values: np.array):
     print(f"{name}: {np.array2string(values,formatter={'float':lambda x: f'{x:f}'})}\n")
-         
+
+
 def plotsdf(
     func: str,
     xv: np.array,
@@ -27,7 +26,7 @@ def plotsdf(
     losses: np.array,
     filename: str,
 ) -> None:
-    assert len(z)**2 == (len(xv) * len(yv)),f"{len(z)} == ({len(xv)} * {len(yv)})"
+    assert len(z) ** 2 == (len(xv) * len(yv)), f"{len(z)} == ({len(xv)} * {len(yv)})"
     assert len(z.shape) == 2
     fig = plt.figure("Results SDF", [10, 30])
     err_x = np.arange(0, len(losses), 1)
@@ -38,18 +37,18 @@ def plotsdf(
     plt.ylabel("Error")
     plt.legend(loc="best")
 
-    plt.subplot(2, 1, 2)   
-   
-    plt.contourf(xv,yv,z)
+    plt.subplot(2, 1, 2)
+
+    plt.contourf(xv, yv, z)
     plt.xlabel("x")
     plt.ylabel("y")
     plt.title(f"Approximation of {func}")
     plt.legend(loc="best")
     plt.axis("equal")
 
-    plt.subplot(2,2,2)
+    plt.subplot(2, 2, 2)
     plt.title("Error Propagation")
-    plt.plot(err_d,err_v,color=rand_color(), label="Normalized Error")
+    plt.plot(err_d, err_v, color=rand_color(), label="Normalized Error")
     plt.xlabel("x/y value")
     plt.ylabel("SDF Error")
     plt.legend(loc="best")
@@ -59,22 +58,38 @@ def plotsdf(
         plt.show(block=False)
     plt.close()
 
-    fig2, ax2 = plt.subplots(subplot_kw={"projection":"3d"})
-    surf = ax2.plot_surface(xv,yv,z,cmap=cm.coolwarm,linewidth=0,antialiased=False)
-    fig2.colorbar(surf,shrink=0.5,aspect=5)
+    fig2, ax2 = plt.subplots(subplot_kw={"projection": "3d"})
+    surf = ax2.plot_surface(xv, yv, z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    fig2.colorbar(surf, shrink=0.5, aspect=5)
     plt.show()
 
     x = xv.flatten()
     y = yv.flatten()
     z = z.flatten()
     vertices = []
-    for xi,yi,zi in zip(x,y,z):
-        vertices.append([xi,yi,zi])
-    vertices = np.asanyarray(vertices)   
-    exporter = GridExporter(xv.shape)
-    writer = PlyWriter(f"{filename}.ply",vertices,exporter.grid)
-    writer.write()
+    for xi, yi, zi in zip(x, y, z):
+        vertices.append([xi, yi, zi])
+    vertices = np.asanyarray(vertices)
+
+    with open("tmp.json", "w") as outfile:
+        json.dump(
+            {
+                "mode": "write",
+                "data": vertices.tolist(),
+                "name": filename,
+                "gridsize": [xv.shape[0], xv.shape[1]],
+            },
+            outfile,
+        )
+
+    # workaround for bpy import error, when handling subprocesses
+    writer_path = os.path.join(
+        os.getcwd(), "src", "util", "blender", "scene_handler.py"
+    )
+    print(os.popen(f"python {writer_path}").read())
+
     return
+
 
 def plot2d(
     func: str,
@@ -87,20 +102,18 @@ def plot2d(
     autosave: bool,
     losses: np.array,
 ):
-    unscientific_plot("x",x)
-    unscientific_plot("y_target",y_target)
-    unscientific_plot("maxaffines",maxaffines)
-    unscientific_plot("y_pred",y_pred)
-
-
+    unscientific_plot("x", x)
+    unscientific_plot("y_target", y_target)
+    unscientific_plot("maxaffines", maxaffines)
+    unscientific_plot("y_pred", y_pred)
 
     fig = plt.figure("Results", [10, 20])
     plt.subplot(2, 1, 1)
 
     # original data
-    x0 = x[:,0]
-    x1 = x[:,1]
-    plt.plot(x0,x1, color=rand_color(), label=func, linestyle="-.")
+    x0 = x[:, 0]
+    x1 = x[:, 1]
+    plt.plot(x0, x1, color=rand_color(), label=func, linestyle="-.")
 
     # generated data
     if fullplot:
@@ -108,7 +121,6 @@ def plot2d(
             plt.plot(x0, y_predi, color=rand_color(), label=f"MaxAffine {i}")
 
     plt.plot(x0, y_pred, color=rand_color(), label="Prediction")
-   
 
     plt.xlabel("x0")
     plt.ylabel("x1")

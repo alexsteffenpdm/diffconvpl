@@ -1,7 +1,7 @@
 from src.maxaffine import MultiDimMaxAffineFunction
 from src.util.common import *
 from src.util.logger import ParamLogger
-from src.util.plot import plot2d,plotsdf
+from src.util.plot import plot2d, plotsdf
 from src.util.target import Target
 from src.util.parameter_initializer import Initializer
 from src.util.shm_process import MemorySharedSubprocess
@@ -35,6 +35,7 @@ def plot_wrapper(
 ):
     plot2d(func, x, y_target, maxaffines, y_pred, fullplot, timetag, autosave, losses)
 
+
 def plot_wrapper_sdf(
     func: str,
     xv: np.array,
@@ -46,7 +47,7 @@ def plot_wrapper_sdf(
     losses: np.array,
     filename: str,
 ):
-    plotsdf(func,xv,yv,z,err_d,err_v,autosave,losses,filename)
+    plotsdf(func, xv, yv, z, err_d, err_v, autosave, losses, filename)
 
 
 def run():
@@ -69,13 +70,16 @@ def run():
         batch_size = APP_ARGS["batch_size"]
 
     # setup data
-    signs:np.array = make_signs(positive=positive_funcs, negative=negative_funcs)
-    k:int = len(signs)
-    
-    datapoints:np.array = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
-   
-    y:torch.Tensor = torch.from_numpy(np.asarray([dp[2] for dp in APP_ARGS["data"]])).type(torch.FloatTensor).to(torch.device("cuda:0"))
-    
+    signs: np.array = make_signs(positive=positive_funcs, negative=negative_funcs)
+    k: int = len(signs)
+
+    datapoints: np.array = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
+
+    y: torch.Tensor = (
+        torch.from_numpy(np.asarray([dp[2] for dp in APP_ARGS["data"]]))
+        .type(torch.FloatTensor)
+        .to(torch.device("cuda:0"))
+    )
 
     model: MultiDimMaxAffineFunction = MultiDimMaxAffineFunction(
         target=TARGET,
@@ -84,10 +88,10 @@ def run():
         dim=2,
         x=datapoints,
         signs=signs,
-        initializer=Initializer("src\\initializations\\parabola.json",dim=2),
+        initializer=Initializer("src\\initializations\\parabola.json", dim=2),
         batchsize=batch_size if batching else 2**32,
     ).to(torch.device("cuda:0"))
-    
+
     if batching == True:
         print("STAGE: Calculating batchsize")
         print_colored(
@@ -102,13 +106,12 @@ def run():
             model.batches = get_batch_spacing(batch_size, model.x.shape[0])
 
     print("STAGE: Calculation")
-    
-    optimizer:torch.optim = torch.optim.Adam([model.a, model.b], lr=0.06)
-    loss:torch.Tensor = None
-    loss_plot:list[float] = []
+
+    optimizer: torch.optim = torch.optim.Adam([model.a, model.b], lr=0.06)
+    loss: torch.Tensor = None
+    loss_plot: list[float] = []
     pbar = tqdm(total=epochs)
     if batching == True:
-             
         for _ in range(epochs):
             optimizer.zero_grad()
 
@@ -118,9 +121,8 @@ def run():
 
             optimizer.step()
             torch.cuda.empty_cache()
-            pbar.update(1)    
-    else:     
-
+            pbar.update(1)
+    else:
         for _ in range(epochs):
             optimizer.zero_grad()
             # model.gradient(min=-1.0,max=1.0)
@@ -140,26 +142,28 @@ def run():
 
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
     try:
-       x,y,z = model.generate_sdf_plot_data(spacing=0.01,min=-1.0,max=1.0)
-       print('RETURNED')
+        x, y, z = model.generate_sdf_plot_data(spacing=0.01, min=-1.0, max=1.0)
+        print("RETURNED")
     except:
         print("ERROR while generating sdf plot data")
         exit()
     try:
-        error_domain, error_values = model.error_propagation(spacing=0.01,min=-20.0,max=20.0)    
+        error_domain, error_values = model.error_propagation(
+            spacing=0.01, min=-20.0, max=20.0
+        )
     except:
         print("ERROR while generating error propagation")
-    
+
     plot_dict = {
-        "func":TARGET.no_package_str(),
-        "xv":x.tolist(),
-        "yv":y.tolist(),
-        "z":z.tolist(),
-        "err_d":error_domain.tolist(),
-        "err_v":error_values.tolist(),
-        "autosave":AUTOSAVE,
-        "losses":loss_plot,
-        "filename":timetag,
+        "func": TARGET.no_package_str(),
+        "xv": x.tolist(),
+        "yv": y.tolist(),
+        "z": z.tolist(),
+        "err_d": error_domain.tolist(),
+        "err_v": error_values.tolist(),
+        "autosave": AUTOSAVE,
+        "losses": loss_plot,
+        "filename": timetag,
     }
 
     shared_memory_process = MemorySharedSubprocess(target=plotsdf)
@@ -200,7 +204,16 @@ def run():
         APP_ARGS["Autosave"] = AUTOSAVE
         logger.json_log(dict=APP_ARGS, filename=timetag)
 
-    with open(os.path.join(os.getcwd(),"data","generated","blender_files",f"datapoints_{timetag}.txt"),"w") as dp_file:
+    with open(
+        os.path.join(
+            os.getcwd(),
+            "data",
+            "generated",
+            "blender_files",
+            f"datapoints_{timetag}.txt",
+        ),
+        "w",
+    ) as dp_file:
         for dp in APP_ARGS["data"]:
             dp_file.write(f"{dp[0]:.4f} {dp[1]:.4f} {dp[2]:.4f}\n")
 
@@ -219,7 +232,7 @@ def setup(
     if not filepath:
         [
             os.makedirs(directory)
-            for directory in ["data", "data\\json", "data\\plots","data\\generated"]
+            for directory in ["data", "data\\json", "data\\plots", "data\\generated"]
             if not os.path.exists(directory)
         ]
 
@@ -243,7 +256,6 @@ def setup(
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(description="Diffconvpl")
     parser.add_argument(
         "--autosave",

@@ -8,6 +8,7 @@ from enum import Enum
 
 JSON_PATH = os.path.join(os.getcwd(), "data\\generated")
 
+
 class Setting(Enum):
     UNSET = 0
     DISTANCE = 1
@@ -22,10 +23,9 @@ class SDFGenerator2D:
         parameters: List[str],
         num_points: int,
         delta: float,
-        distances: np.array,
-        setting: Setting
+        distances: np.ndarray,
+        setting: Setting,
     ):
-
         random.seed(1)
         self.setting = setting
         self.dist_func_str = dist_func
@@ -55,7 +55,7 @@ class SDFGenerator2D:
 
     def plot_distances(self):
         raise NotImplementedError
-    
+
     def plot_points(self):
         raise NotImplementedError
 
@@ -69,7 +69,6 @@ class SDFGenerator2D:
 
     # append datapoints
     def as_json(self, filename):
-
         json_data = {
             "func": self.dist_func_str.split(": ")[1],
             "params": self.parameters,
@@ -78,7 +77,9 @@ class SDFGenerator2D:
             "epochs": 5000,
             "positive_funcs": 1,
             "negative_funcs": 1,
-            "format": "[x,y,d]" if self.setting != Setting.SURFACENORMALS else "[x,y,n_x,n_y]",
+            "format": "[x,y,d]"
+            if self.setting != Setting.SURFACENORMALS
+            else "[x,y,n_x,n_y]",
             "data": self.data.tolist(),
             "fullplot": True,
         }

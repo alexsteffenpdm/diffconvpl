@@ -3,3 +3,5 @@
 **data/json/*
 **data/plots/*
 **venv_dev*
+tmp.json
+.vscode/
