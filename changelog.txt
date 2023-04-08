@@ -1,17 +1,34 @@
+Version 0.2.1
+    Findings:
+        -   the generated sdf seems to be stable only in the range of provided data (distortions are visible below and above)
+        -   polling datapoints from the resulting model is reasonably fast, but becomes very slow with increasing m and the amount of functions
+            a vectorized approach has to be found to increase the speed of computation
+    Changes:
+        -   added BlenderSceneHandler.layercut
+        -   old data generators under `src\generators` have been deprecated and removed
+        -   sdf_generator will replace the removed generators
+        -   pyexcel and code that is using it have been removed
+        -   due to the changes above there is no implemented way to gain knowledge about the error propagation (therefore, the appropriate sequences
+            in the code have been deactivated though commenting)
+    Future Changes:
+        -   a ReLu-CNN will be added in version 0.2.2 and used as comarison
+        -   reintegration and redesign of the error propagation will be implemented in version 0.2.3
+        -   an automated setup will be added until version 0.2.4
+
 Version 0.2.0
     Findings:
         -   introducting a wider spread of data (i.e. more noise) increases the range of correct/fitting approximations significantly
     Changes:
-        -   version-fixing in requirements_dev
+        -   version-fixing in requirements_dev text file
         -   used Python version changed (3.9* --> 3.10.*) to accomodate bpy (the Blender Python module)
         -   added MemorySharedSubprocess to avoid errorless termination when passing data to the plot mechanism
         -   a lot of unused code is removed
-    Notes:
+    Future Changes:
         -   data generators in `src\generators` will be removed in version 0.2.1 and replaced with BlenderSceneHandler.layercut
 
 Version 0.1.2
     Findings:
-        -   currently the algorithm is not able to approximate an SDF when perfect input data is given ( i.e. all datapoints have a distance of ~0.0 from the surface)
+        -   currently the algorithm is not able to approximate an SDF when perfect input data is given (i.e. all datapoints have a distance of ~0.0 from the surface)
     Changes:
         -   Added the a "grid" setting to SDF data generators (currently only for the circle generator)
         -   Code optimizations and cleanup

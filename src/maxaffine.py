@@ -16,14 +16,14 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         dim: int,
         x: np.array,
         signs: np.array,
-        target: Target,
+        # target: Target,
         initializer: Initializer,
         batchsize: int = 2**32,
     ):
         super(MultiDimMaxAffineFunction, self).__init__()
 
         self.initializer: Initializer = initializer
-        self.target: Target = target
+        # self.target: Target = target
 
         self.x: torch.nn.Parameter = (
             torch.nn.Parameter(torch.from_numpy(x), requires_grad=False)
@@ -46,8 +46,8 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.dim: int = dim
         self.m: int = m
 
-        # self.func:Callable = lambda t: torch.max(t,dim=-1)[0]
-        self.func: Callable = lambda t: torch.logsumexp(torch.relu(t), dim=-1)
+        self.func: Callable = lambda t: torch.max(t, dim=-1)[0]
+        # self.func: Callable = lambda t: torch.logsumexp(torch.relu(t), dim=-1)
         self.gradfunc: Callable = lambda t: torch.argmax(t, dim=-1)
         # self.func:Callable = lambda t: torch.logsumexp(t, dim=-1)
         if batchsize == 2**32:
@@ -133,9 +133,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                 prediction[ki] = self.eval(ki=ki, x=data) * si
             return prediction.sum()
 
-        print(
-            f"\tCollecting model evaluation (from {min} to {max} with granularity: {spacing})"
-        )
+        print(f"\tCollecting model evaluation (granularity: {spacing})")
 
         points: np.array = int((abs(min) + abs(max)) / spacing) + 1
         domain: np.array = np.linspace(min, max, points)
@@ -164,46 +162,46 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             print("could not return")
             exit()
 
-    def error_propagation(
-        self, spacing: float, min: float, max: float
-    ) -> Tuple[np.array, np.array]:
-        def model_output(data: torch.FloatTensor, k: int, s: torch.FloatTensor):
-            prediction: torch.Tensor = torch.zeros((k), dtype=torch.float32).to(
-                torch.device("cuda:0")
-            )
-            for ki, si in zip(range(k), s):
-                prediction[ki] = si * self.eval(ki=ki, x=data)
-            return prediction.sum()
+    # def error_propagation(
+    #     self, spacing: float, min: float, max: float
+    # ) -> Tuple[np.array, np.array]:
+    #     def model_output(data: torch.FloatTensor, k: int, s: torch.FloatTensor):
+    #         prediction: torch.Tensor = torch.zeros((k), dtype=torch.float32).to(
+    #             torch.device("cuda:0")
+    #         )
+    #         for ki, si in zip(range(k), s):
+    #             prediction[ki] = si * self.eval(ki=ki, x=data)
+    #         return prediction.sum()
 
-        print(
-            f"\tCollecting model error propagation (from {min} to {max} with granularity: {spacing})"
-        )
+    #     print(
+    #         f"\tCollecting model error propagation (from {min} to {max} with granularity: {spacing})"
+    #     )
 
-        points: int = int((abs(min) + abs(max)) / spacing) + 1
-        domain: np.array = np.linspace(min, max, points)
+    #     points: int = int((abs(min) + abs(max)) / spacing) + 1
+    #     domain: np.array = np.linspace(min, max, points)
 
-        x_y: torch.Tensor = (
-            torch.from_numpy(domain.flatten())
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-        model_z: torch.Tensor = (
-            torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
-        )
-        target_z: torch.Tensor = (
-            torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
-        )
+    #     x_y: torch.Tensor = (
+    #         torch.from_numpy(domain.flatten())
+    #         .type(torch.FloatTensor)
+    #         .to(torch.device("cuda:0"))
+    #     )
+    #     model_z: torch.Tensor = (
+    #         torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
+    #     )
+    #     target_z: torch.Tensor = (
+    #         torch.zeros_like(x_y).type(torch.FloatTensor).to(torch.device("cuda:0"))
+    #     )
 
-        for i in tqdm(range(len(x_y))):
-            model_z[i].data = model_output(
-                data=torch.stack([x_y[i], x_y[i]]), k=self.k, s=self.s
-            )
-            target_z[i].data = self.target.as_lambda("torch")(x_y[i], x_y[i])
+    #     for i in tqdm(range(len(x_y))):
+    #         model_z[i].data = model_output(
+    #             data=torch.stack([x_y[i], x_y[i]]), k=self.k, s=self.s
+    #         )
+    #         target_z[i].data = self.target.as_lambda("torch")(x_y[i], x_y[i])
 
-        model_z: np.array = model_z.cpu().detach().numpy()
-        target_z: np.array = target_z.cpu().detach().numpy()
+    #     model_z: np.array = model_z.cpu().detach().numpy()
+    #     target_z: np.array = target_z.cpu().detach().numpy()
 
-        return domain, np.subtract(model_z, target_z)
+    #     return domain, np.subtract(model_z, target_z)
 
     def tensor_devices(self) -> None:
         tensors = {"a": self.a, "b": self.b, "s": self.s, "x": self.x}

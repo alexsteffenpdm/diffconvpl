@@ -57,7 +57,7 @@ def run():
     logger = ParamLogger()
 
     # setup params for MaxAffineFunction
-    TARGET = Target(func=APP_ARGS["func"], parameters=APP_ARGS["params"])
+    # TARGET = Target(func=APP_ARGS["func"], parameters=APP_ARGS["params"])
 
     m = APP_ARGS["m"]
     entries = APP_ARGS["entries"]
@@ -82,7 +82,7 @@ def run():
     )
 
     model: MultiDimMaxAffineFunction = MultiDimMaxAffineFunction(
-        target=TARGET,
+        # target=TARGET,
         m=m,
         k=k,
         dim=2,
@@ -125,8 +125,6 @@ def run():
     else:
         for _ in range(epochs):
             optimizer.zero_grad()
-            # model.gradient(min=-1.0,max=1.0)
-            # input()
             loss = (model(batching) - y).pow(2).mean()
             loss_plot.append(loss.item())
             loss.backward()
@@ -143,34 +141,49 @@ def run():
     timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
     try:
         x, y, z = model.generate_sdf_plot_data(spacing=0.01, min=-1.0, max=1.0)
-        print("RETURNED")
     except:
         print("ERROR while generating sdf plot data")
         exit()
-    try:
-        error_domain, error_values = model.error_propagation(
-            spacing=0.01, min=-20.0, max=20.0
-        )
-    except:
-        print("ERROR while generating error propagation")
+    # try:
+    #     error_domain, error_values = model.error_propagation(
+    #         spacing=0.01, min=-20.0, max=20.0
+    #     )
+    # except:
+    #     print("ERROR while generating error propagation")
 
     plot_dict = {
-        "func": TARGET.no_package_str(),
+        # "func": TARGET.no_package_str(),
+        "func": "Unkown",
         "xv": x.tolist(),
         "yv": y.tolist(),
         "z": z.tolist(),
-        "err_d": error_domain.tolist(),
-        "err_v": error_values.tolist(),
+        "err_d": [],
+        "err_v": [],
+        # "err_d": error_domain.tolist(),
+        # "err_v": error_values.tolist(),
         "autosave": AUTOSAVE,
         "losses": loss_plot,
         "filename": timetag,
     }
 
+    with open(
+        os.path.join(
+            os.getcwd(),
+            "data",
+            "generated",
+            "blender_files",
+            f"datapoints_{timetag}.txt",
+        ),
+        "w",
+    ) as dp_file:
+        for dp in APP_ARGS["data"]:
+            dp_file.write(f"{dp[0]:.4f} {dp[1]:.4f} {dp[2]:.4f}\n")
+
     shared_memory_process = MemorySharedSubprocess(target=plotsdf)
     shared_memory_process.fork_on(data=plot_dict)
     shared_memory_process.await_join()
 
-    print("STAGE: Data")
+    print("STAGE: End")
 
     if AUTOSAVE == True:
         keep_data = True
@@ -193,7 +206,8 @@ def run():
         log_dict = build_log_dict(
             tqdm_dict=pbar_dict,
             loss=loss.item(),
-            func=TARGET.no_package_str(),
+            # func=TARGET.no_package_str(),
+            func="Unknown",
             positive=positive_funcs,
             negative=negative_funcs,
             success=success,
@@ -203,21 +217,6 @@ def run():
         APP_ARGS["Success"] = success
         APP_ARGS["Autosave"] = AUTOSAVE
         logger.json_log(dict=APP_ARGS, filename=timetag)
-
-    with open(
-        os.path.join(
-            os.getcwd(),
-            "data",
-            "generated",
-            "blender_files",
-            f"datapoints_{timetag}.txt",
-        ),
-        "w",
-    ) as dp_file:
-        for dp in APP_ARGS["data"]:
-            dp_file.write(f"{dp[0]:.4f} {dp[1]:.4f} {dp[2]:.4f}\n")
-
-    print("STAGE: End")
 
 
 def setup(

@@ -2,6 +2,11 @@
 *.pyc
 **data/json/*
 **data/plots/*
+**data/plots/blender_files/*.txt
 **venv_dev*
 tmp.json
 .vscode/
+*.blend
+*.blend1
+!**src/assets/scene.blend*
+!**src/assets/SDF_Material.mtl

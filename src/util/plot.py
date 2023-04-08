@@ -74,14 +74,14 @@ def plotsdf(
     with open("tmp.json", "w") as outfile:
         json.dump(
             {
-                "mode": "write",
+                "mode": "create",
                 "data": vertices.tolist(),
                 "name": filename,
                 "gridsize": [xv.shape[0], xv.shape[1]],
             },
             outfile,
         )
-
+    print("STAGE: Data Export")
     # workaround for bpy import error, when handling subprocesses
     writer_path = os.path.join(
         os.getcwd(), "src", "util", "blender", "scene_handler.py"

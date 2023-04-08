@@ -4466,3 +4466,412 @@ Duration: 5.806182861328125
 Iters per Second: 861.150969478127
 Success: True
 Autosave: True
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.001495111733675003
+Duration: 5.864260673522949
+Iters per Second: 852.6223983485124
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0016318423440679908
+Duration: 5.879273176193237
+Iters per Second: 850.445259159984
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0014524454018101096
+Duration: 6.014430046081543
+Iters per Second: 831.3339687536222
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0028063517529517412
+Duration: 3.583393096923828
+Iters per Second: 1395.3255656746844
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0016562488162890077
+Duration: 18.089966773986816
+Iters per Second: 276.39630644263804
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0002850190212484449
+Duration: 3.5820605754852295
+Iters per Second: 1395.8446248002647
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00031985403620637953
+Duration: 3.8347301483154297
+Iters per Second: 1303.8727124505658
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00016722203872632235
+Duration: 4.427361488342285
+Iters per Second: 1129.3408078751945
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00028501913766376674
+Duration: 3.771852970123291
+Iters per Second: 1325.6084051008395
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0002500808041077107
+Duration: 28.726426601409912
+Iters per Second: 174.05575950593857
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 2
+Negative: 2
+Error: 0.00015208260447252542
+Duration: 33.6856632232666
+Iters per Second: 148.4310986208077
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 2
+Negative: 2
+Error: 0.00014308540266938508
+Duration: 33.0664803981781
+Iters per Second: 151.21052920635273
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 2
+Negative: 2
+Error: 0.0001372950937366113
+Duration: 33.019078969955444
+Iters per Second: 151.42760355458657
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00028563837986439466
+Duration: 3.7910349369049072
+Iters per Second: 1318.9010608491308
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00012961815809831023
+Duration: 3.764146089553833
+Iters per Second: 1328.3225148662214
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0016464393120259047
+Duration: 3.5938992500305176
+Iters per Second: 1391.246568739383
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0011968559119850397
+Duration: 3.60105299949646
+Iters per Second: 1388.4827578764202
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.001248437212780118
+Duration: 3.5387113094329834
+Iters per Second: 1412.943742167304
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 95056704.0
+Duration: 150.14752435684204
+Iters per Second: 33.300582353372356
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.001131405821070075
+Duration: 28.517006397247314
+Iters per Second: 175.3339719586639
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0002596221456769854
+Duration: 28.568022966384888
+Iters per Second: 175.02086181754146
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0001003587240120396
+Duration: 28.5987811088562
+Iters per Second: 174.83262594193732
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00014322054630611092
+Duration: 3.921813488006592
+Iters per Second: 1274.9203946823684
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 3.690095127240056e-06
+Duration: 3.91418194770813
+Iters per Second: 1277.4061264391783
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00018693084712140262
+Duration: 3.929112195968628
+Iters per Second: 1272.552106078857
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00033940153662115335
+Duration: 18.182208776474
+Iters per Second: 274.9940923827424
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.000741343479603529
+Duration: 18.312144994735718
+Iters per Second: 273.0428358576985
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.00036715713213197887
+Duration: 18.26178216934204
+Iters per Second: 273.79584060497785
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0003752798365894705
+Duration: 18.210466623306274
+Iters per Second: 274.56737399583477
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.003275106428191066
+Duration: 3.783241033554077
+Iters per Second: 1321.618145831662
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0038281686138361692
+Duration: 3.7569119930267334
+Iters per Second: 1330.880257317867
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0066254581324756145
+Duration: 7.998926639556885
+Iters per Second: 625.0838675371305
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.004717876669019461
+Duration: 18.225090265274048
+Iters per Second: 274.3470637029965
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.0038272428791970015
+Duration: 18.29859757423401
+Iters per Second: 273.2449839238187
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 10000
+Positive: 6
+Negative: 6
+Error: 0.0002543885784689337
+Duration: 30.02320694923401
+Iters per Second: 333.0756776552524
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 10000
+Positive: 12
+Negative: 12
+Error: 0.0003516018041409552
+Duration: 36.95286464691162
+Iters per Second: 270.615014439368
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 100
+Positive: 1
+Negative: 1
+Error: 0.00883415061980486
+Duration: 0.15366768836975098
+Iters per Second: 650.7548923322302
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 1000
+Positive: 1
+Negative: 1
+Error: 0.005472374614328146
+Duration: 0.7686688899993896
+Iters per Second: 1300.9502700191158
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 1
+Negative: 1
+Error: 0.004995326045900583
+Duration: 3.288233757019043
+Iters per Second: 1520.5731616029523
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 26
+Negative: 22
+Error: 1.481806884839898e-05
+Duration: 81.4587025642395
+Iters per Second: 61.38079594450855
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 26
+Negative: 22
+Error: 8.573236118536443e-05
+Duration: 36.518346071243286
+Iters per Second: 136.91748224975876
+Success: True
+Autosave: True
