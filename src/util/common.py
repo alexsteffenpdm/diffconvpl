@@ -4,6 +4,7 @@ import os
 import json
 import numpy as np
 
+
 class cmdcolors:
     HEADER = "\033[95m"
     OKBLUE = "\033[94m"

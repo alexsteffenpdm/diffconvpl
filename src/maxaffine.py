@@ -161,8 +161,9 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             print("could not return")
             exit()
 
-    def generate_sdf_plot_data_single_maxaffine_function(self, x:np.ndarray, y: np.ndarray ,k: int) -> np.ndarray:
-
+    def generate_sdf_plot_data_single_maxaffine_function(
+        self, x: np.ndarray, y: np.ndarray, k: int
+    ) -> np.ndarray:
         x_flat: torch.Tensor = (
             torch.from_numpy(x.flatten())
             .type(torch.FloatTensor)
@@ -176,10 +177,12 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         z: torch.Tensor = torch.zeros_like(x_flat)
 
         for i in range(len(x_flat)):
-            z.data[i] = self.eval(ki=k,x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
+            z.data[i] = (
+                self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
+            )
 
         return z.cpu().detach().numpy().reshape(len(x), len(y))
-     
+
     # def error_propagation(
     #     self, spacing: float, min: float, max: float
     # ) -> Tuple[np.array, np.array]:

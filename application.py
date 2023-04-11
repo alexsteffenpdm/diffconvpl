@@ -32,7 +32,7 @@ def run():
     positive_funcs = APP_ARGS["positive_funcs"]
     negative_funcs = APP_ARGS["negative_funcs"]
     display = APP_ARGS["display_blender"]
- 
+
     batching = "batch_size" in APP_ARGS.keys()
     if batching:
         batch_size = APP_ARGS["batch_size"]
@@ -104,7 +104,7 @@ def run():
     print("STAGE: Model Evaluation")
 
     timetag = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    with open(os.path.join(os.getcwd(),"current_timetag.txt"),"w") as fp:
+    with open(os.path.join(os.getcwd(), "current_timetag.txt"), "w") as fp:
         fp.write(timetag)
         fp.close()
 
@@ -112,13 +112,13 @@ def run():
     points: np.array = int((abs(-1.0) + abs(1.0)) / spacing) + 1
     domain: np.array = np.linspace(-1.0, 1.0, points)
     x, y = np.meshgrid(domain, domain)
-    
+
     z: np.ndarray = np.zeros_like(x)
-    
+
     for ki in tqdm(range(model.k)):
-        zi = model.generate_sdf_plot_data_single_maxaffine_function(x=x,y=y,k=ki)
+        zi = model.generate_sdf_plot_data_single_maxaffine_function(x=x, y=y, k=ki)
         z += zi
-        
+
     # try:
     #     error_domain, error_values = model.error_propagation(
     #         spacing=0.01, min=-20.0, max=20.0
@@ -228,7 +228,7 @@ def setup(
     else:
         APP_ARGS = rerun_experiment(filepath)
     APP_ARGS["display_blender"] = display_blender
- 
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Diffconvpl")
@@ -273,10 +273,10 @@ if __name__ == "__main__":
         default=False,
         action="store",
         nargs="?",
-        help="Wether to run blender and display the results after computation."
+        help="Wether to run blender and display the results after computation.",
     )
     args = parser.parse_args()
-  
+
     setup(
         autosave=args.autosave,
         fullplot=args.fullplot,

@@ -141,7 +141,7 @@ if __name__ == "__main__":
         },
         "data": None,
     }
-    
+
     generator = BlenderSDFGenerator(handler_dict=handler_dict, json_dict=json_dict)
     generator.make_sdf()
     generator.as_json(filename="star_test.json")

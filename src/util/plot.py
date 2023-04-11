@@ -92,7 +92,9 @@ def plotsdf(
         os.getcwd(), "src", "util", "blender", "scene_handler.py"
     )
     print(os.popen(f"python {writer_path}").read())
-    BLEND_PATH = os.path.join(os.getcwd(),"data","generated","blender_files","scenes",f"{filename}.blend")
+    BLEND_PATH = os.path.join(
+        os.getcwd(), "data", "generated", "blender_files", "scenes", f"{filename}.blend"
+    )
     if display_blend == True:
         os.chdir(BLENDER_PATH)
         os.system(f"blender {BLEND_PATH}")

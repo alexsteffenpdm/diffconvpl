@@ -45,7 +45,10 @@ class Initializer(object):
     def __call__(self, entries: int) -> Tuple[torch.Tensor, torch.Tensor]:
         print(f"    Initializer: Generating Samples")
         samples: np.array = np.array(
-            [np.random.uniform(self.domain[0], self.domain[1]) for _ in tqdm(range(entries))]
+            [
+                np.random.uniform(self.domain[0], self.domain[1])
+                for _ in tqdm(range(entries))
+            ]
         )
         a: np.array = np.zeros_like(samples)
         b: np.array = np.zeros_like(samples)
@@ -55,7 +58,9 @@ class Initializer(object):
             print(f"    Initializer: Dim-1 a")
             a = np.asanyarray([self.derivative(s) for s in tqdm(samples)])
             print(f"    Initializer: Dim-1 b")
-            b = np.array([(self.func(s) - self.derivative(s) * s) for s in tqdm(samples)])
+            b = np.array(
+                [(self.func(s) - self.derivative(s) * s) for s in tqdm(samples)]
+            )
 
         # Interpretation as distance function of an 1-dimensional arithmetic function
         elif self.dim == 2:
