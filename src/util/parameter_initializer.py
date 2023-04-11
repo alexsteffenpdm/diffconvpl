@@ -3,6 +3,7 @@ import json
 import torch
 import numpy as np
 from typing import Tuple
+from tqdm import tqdm
 
 
 # The class 'Initializer' initializes the a and b values for max-affine functions by
@@ -42,41 +43,48 @@ class Initializer(object):
         return f"Parameter Initializer '{self.name}':\n\tSymbol: {self.symbol}\n\tFunction: {self.func_str}\n\tDerivative: {self.deriv_str}"
 
     def __call__(self, entries: int) -> Tuple[torch.Tensor, torch.Tensor]:
+        print(f"    Initializer: Generating Samples")
         samples: np.array = np.array(
-            [np.random.uniform(self.domain[0], self.domain[1]) for _ in range(entries)]
+            [np.random.uniform(self.domain[0], self.domain[1]) for _ in tqdm(range(entries))]
         )
         a: np.array = np.zeros_like(samples)
         b: np.array = np.zeros_like(samples)
 
         # Interpretation as arithmetic 1-dimensional function
         if self.dim == 1:
-            a = np.asanyarray([self.derivative(s) for s in samples])
-            b = np.array([(self.func(s) - self.derivative(s) * s) for s in samples])
+            print(f"    Initializer: Dim-1 a")
+            a = np.asanyarray([self.derivative(s) for s in tqdm(samples)])
+            print(f"    Initializer: Dim-1 b")
+            b = np.array([(self.func(s) - self.derivative(s) * s) for s in tqdm(samples)])
 
         # Interpretation as distance function of an 1-dimensional arithmetic function
         elif self.dim == 2:
+            print(f"    Initializer: Dim-2 a")
             a = np.asanyarray(
                 [
                     [self.derivative(s), (self.func(s) - self.derivative(s) * s)]
-                    for s in samples
+                    for s in tqdm(samples)
                 ]
             )
 
             # Here b defines the distance-value of the given samples
-            b = np.array([self.get_distance(ai) for ai in a])
+            print(f"    Initializer: Dim-2 b")
+            b = np.array([self.get_distance(ai) for ai in tqdm(a)])
 
         # Interpretation as distance function of a plane defined by a 1-dimensional arithmetic function and
         # a vector orthogonal to that function in spatial space
         elif self.dim == 3:
             # Here the y-value will define the plane, i.e. y has no influence on the distance-value, as the function
             # has no boundary along the y-axis (within the defined domain range from -1 to 1).
+            print(f"    Initializer: Dim-3 a")
             a = np.asanyarray(
                 [
                     [self.derivative(s), s, (self.func(s) - self.derivative(s) * s)]
-                    for s in samples
+                    for s in tqdm(samples)
                 ]
             )
-            b = np.array([self.get_distance(ai) for ai in a])
+            print(f"    Initializer: Dim-3 b")
+            b = np.array([self.get_distance(ai) for ai in tqdm(a)])
 
         else:
             raise ValueError(

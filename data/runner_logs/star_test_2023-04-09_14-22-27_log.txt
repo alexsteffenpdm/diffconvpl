@@ -1,0 +1,4578 @@
+BASE_MODEL: C:\Users\skyfe\Development\diffconvpl\data\generated\star_test.json
+Total time: 1 day, 0:46:10.145928
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=1
+Startdate: 2023-04-09_14-22-27
+Enddate: 2023-04-09_14-22-59
+Duration: 0:00:32.262927
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-22-45.json
+	Scene: 2023-04-09_14-22-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=2
+Startdate: 2023-04-09_14-23-01
+Enddate: 2023-04-09_14-23-38
+Duration: 0:00:37.288265
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-23-21.json
+	Scene: 2023-04-09_14-23-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=3
+Startdate: 2023-04-09_14-23-40
+Enddate: 2023-04-09_14-24-22
+Duration: 0:00:41.641804
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-24-00.json
+	Scene: 2023-04-09_14-24-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=4
+Startdate: 2023-04-09_14-24-24
+Enddate: 2023-04-09_14-25-12
+Duration: 0:00:47.821047
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-24-46.json
+	Scene: 2023-04-09_14-24-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=5
+Startdate: 2023-04-09_14-25-14
+Enddate: 2023-04-09_14-26-06
+Duration: 0:00:51.953200
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-25-37.json
+	Scene: 2023-04-09_14-25-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=6
+Startdate: 2023-04-09_14-26-08
+Enddate: 2023-04-09_14-27-07
+Duration: 0:00:59.379825
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-26-32.json
+	Scene: 2023-04-09_14-26-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=7
+Startdate: 2023-04-09_14-27-09
+Enddate: 2023-04-09_14-28-13
+Duration: 0:01:03.647714
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-27-35.json
+	Scene: 2023-04-09_14-27-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=8
+Startdate: 2023-04-09_14-28-15
+Enddate: 2023-04-09_14-29-25
+Duration: 0:01:09.865056
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-28-42.json
+	Scene: 2023-04-09_14-28-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=9
+Startdate: 2023-04-09_14-29-27
+Enddate: 2023-04-09_14-30-41
+Duration: 0:01:13.720654
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-29-55.json
+	Scene: 2023-04-09_14-29-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=10
+Startdate: 2023-04-09_14-30-43
+Enddate: 2023-04-09_14-32-03
+Duration: 0:01:20.256312
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-31-12.json
+	Scene: 2023-04-09_14-31-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=11
+Startdate: 2023-04-09_14-32-05
+Enddate: 2023-04-09_14-33-31
+Duration: 0:01:26.277002
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-32-35.json
+	Scene: 2023-04-09_14-32-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=12
+Startdate: 2023-04-09_14-33-33
+Enddate: 2023-04-09_14-35-05
+Duration: 0:01:32.043501
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-34-05.json
+	Scene: 2023-04-09_14-34-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=13
+Startdate: 2023-04-09_14-35-07
+Enddate: 2023-04-09_14-36-36
+Duration: 0:01:28.739998
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-35-40.json
+	Scene: 2023-04-09_14-35-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=14
+Startdate: 2023-04-09_14-36-38
+Enddate: 2023-04-09_14-38-19
+Duration: 0:01:40.650122
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-37-12.json
+	Scene: 2023-04-09_14-37-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=15
+Startdate: 2023-04-09_14-38-21
+Enddate: 2023-04-09_14-40-07
+Duration: 0:01:46.072748
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-38-56.json
+	Scene: 2023-04-09_14-38-56.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=16
+Startdate: 2023-04-09_14-40-09
+Enddate: 2023-04-09_14-42-01
+Duration: 0:01:52.500428
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-40-45.json
+	Scene: 2023-04-09_14-40-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=17
+Startdate: 2023-04-09_14-42-03
+Enddate: 2023-04-09_14-44-01
+Duration: 0:01:57.810736
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-42-41.json
+	Scene: 2023-04-09_14-42-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=18
+Startdate: 2023-04-09_14-44-03
+Enddate: 2023-04-09_14-46-06
+Duration: 0:02:02.562314
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-44-42.json
+	Scene: 2023-04-09_14-44-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=19
+Startdate: 2023-04-09_14-46-08
+Enddate: 2023-04-09_14-48-15
+Duration: 0:02:06.797160
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-46-48.json
+	Scene: 2023-04-09_14-46-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=20
+Startdate: 2023-04-09_14-48-17
+Enddate: 2023-04-09_14-50-30
+Duration: 0:02:12.811520
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-48-58.json
+	Scene: 2023-04-09_14-48-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=21
+Startdate: 2023-04-09_14-50-32
+Enddate: 2023-04-09_14-52-52
+Duration: 0:02:20.118963
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-51-14.json
+	Scene: 2023-04-09_14-51-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=1 negative_funcs=22
+Startdate: 2023-04-09_14-52-54
+Enddate: 2023-04-09_14-55-16
+Duration: 0:02:22.281020
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-53-38.json
+	Scene: 2023-04-09_14-53-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=1
+Startdate: 2023-04-09_14-55-18
+Enddate: 2023-04-09_14-55-55
+Duration: 0:00:36.800456
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-55-38.json
+	Scene: 2023-04-09_14-55-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=2
+Startdate: 2023-04-09_14-55-57
+Enddate: 2023-04-09_14-56-39
+Duration: 0:00:42.138820
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-56-17.json
+	Scene: 2023-04-09_14-56-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=3
+Startdate: 2023-04-09_14-56-41
+Enddate: 2023-04-09_14-57-28
+Duration: 0:00:46.727148
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-57-02.json
+	Scene: 2023-04-09_14-57-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=4
+Startdate: 2023-04-09_14-57-30
+Enddate: 2023-04-09_14-58-18
+Duration: 0:00:47.944759
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-57-52.json
+	Scene: 2023-04-09_14-57-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=5
+Startdate: 2023-04-09_14-58-20
+Enddate: 2023-04-09_14-59-18
+Duration: 0:00:57.770826
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-58-44.json
+	Scene: 2023-04-09_14-58-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=6
+Startdate: 2023-04-09_14-59-20
+Enddate: 2023-04-09_15-00-17
+Duration: 0:00:57.669687
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-59-44.json
+	Scene: 2023-04-09_14-59-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=7
+Startdate: 2023-04-09_15-00-19
+Enddate: 2023-04-09_15-01-27
+Duration: 0:01:07.767436
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-00-45.json
+	Scene: 2023-04-09_15-00-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=8
+Startdate: 2023-04-09_15-01-29
+Enddate: 2023-04-09_15-02-42
+Duration: 0:01:13.144201
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-01-57.json
+	Scene: 2023-04-09_15-01-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=9
+Startdate: 2023-04-09_15-02-44
+Enddate: 2023-04-09_15-04-02
+Duration: 0:01:17.809757
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-03-13.json
+	Scene: 2023-04-09_15-03-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=10
+Startdate: 2023-04-09_15-04-04
+Enddate: 2023-04-09_15-05-28
+Duration: 0:01:23.842570
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-04-34.json
+	Scene: 2023-04-09_15-04-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=11
+Startdate: 2023-04-09_15-05-30
+Enddate: 2023-04-09_15-06-59
+Duration: 0:01:28.709209
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-06-01.json
+	Scene: 2023-04-09_15-06-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=12
+Startdate: 2023-04-09_15-07-01
+Enddate: 2023-04-09_15-08-34
+Duration: 0:01:33.123657
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-07-33.json
+	Scene: 2023-04-09_15-07-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=13
+Startdate: 2023-04-09_15-08-36
+Enddate: 2023-04-09_15-10-16
+Duration: 0:01:40.527146
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-09-09.json
+	Scene: 2023-04-09_15-09-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=14
+Startdate: 2023-04-09_15-10-19
+Enddate: 2023-04-09_15-12-02
+Duration: 0:01:43.947925
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-10-53.json
+	Scene: 2023-04-09_15-10-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=15
+Startdate: 2023-04-09_15-12-05
+Enddate: 2023-04-09_15-13-55
+Duration: 0:01:50.030903
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-12-41.json
+	Scene: 2023-04-09_15-12-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=16
+Startdate: 2023-04-09_15-13-57
+Enddate: 2023-04-09_15-15-53
+Duration: 0:01:56.283001
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-14-34.json
+	Scene: 2023-04-09_15-14-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=17
+Startdate: 2023-04-09_15-15-55
+Enddate: 2023-04-09_15-17-55
+Duration: 0:01:59.925683
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-16-34.json
+	Scene: 2023-04-09_15-16-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=18
+Startdate: 2023-04-09_15-17-57
+Enddate: 2023-04-09_15-20-02
+Duration: 0:02:05.051283
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-18-37.json
+	Scene: 2023-04-09_15-18-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=19
+Startdate: 2023-04-09_15-20-04
+Enddate: 2023-04-09_15-22-06
+Duration: 0:02:02.488056
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-20-45.json
+	Scene: 2023-04-09_15-20-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=20
+Startdate: 2023-04-09_15-22-08
+Enddate: 2023-04-09_15-24-24
+Duration: 0:02:15.817743
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-22-51.json
+	Scene: 2023-04-09_15-22-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=21
+Startdate: 2023-04-09_15-24-26
+Enddate: 2023-04-09_15-26-47
+Duration: 0:02:20.963191
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-25-10.json
+	Scene: 2023-04-09_15-25-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=2 negative_funcs=22
+Startdate: 2023-04-09_15-26-49
+Enddate: 2023-04-09_15-29-16
+Duration: 0:02:26.319329
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-27-34.json
+	Scene: 2023-04-09_15-27-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=1
+Startdate: 2023-04-09_15-29-18
+Enddate: 2023-04-09_15-30-00
+Duration: 0:00:42.772251
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-29-38.json
+	Scene: 2023-04-09_15-29-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=2
+Startdate: 2023-04-09_15-30-03
+Enddate: 2023-04-09_15-30-50
+Duration: 0:00:47.201615
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-30-24.json
+	Scene: 2023-04-09_15-30-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=3
+Startdate: 2023-04-09_15-30-52
+Enddate: 2023-04-09_15-31-45
+Duration: 0:00:53.206510
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-31-14.json
+	Scene: 2023-04-09_15-31-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=4
+Startdate: 2023-04-09_15-31-47
+Enddate: 2023-04-09_15-32-44
+Duration: 0:00:57.330954
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-32-11.json
+	Scene: 2023-04-09_15-32-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=5
+Startdate: 2023-04-09_15-32-46
+Enddate: 2023-04-09_15-33-49
+Duration: 0:01:02.708077
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-33-11.json
+	Scene: 2023-04-09_15-33-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=6
+Startdate: 2023-04-09_15-33-51
+Enddate: 2023-04-09_15-34-59
+Duration: 0:01:07.985869
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-34-17.json
+	Scene: 2023-04-09_15-34-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=7
+Startdate: 2023-04-09_15-35-01
+Enddate: 2023-04-09_15-36-13
+Duration: 0:01:12.087713
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-35-29.json
+	Scene: 2023-04-09_15-35-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=8
+Startdate: 2023-04-09_15-36-15
+Enddate: 2023-04-09_15-37-34
+Duration: 0:01:18.906582
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-36-44.json
+	Scene: 2023-04-09_15-36-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=9
+Startdate: 2023-04-09_15-37-36
+Enddate: 2023-04-09_15-39-00
+Duration: 0:01:23.825402
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-38-06.json
+	Scene: 2023-04-09_15-38-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=10
+Startdate: 2023-04-09_15-39-02
+Enddate: 2023-04-09_15-40-30
+Duration: 0:01:27.966158
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-39-33.json
+	Scene: 2023-04-09_15-39-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=11
+Startdate: 2023-04-09_15-40-32
+Enddate: 2023-04-09_15-42-05
+Duration: 0:01:33.193622
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-41-05.json
+	Scene: 2023-04-09_15-41-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=12
+Startdate: 2023-04-09_15-42-07
+Enddate: 2023-04-09_15-43-48
+Duration: 0:01:40.548528
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-42-41.json
+	Scene: 2023-04-09_15-42-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=13
+Startdate: 2023-04-09_15-43-50
+Enddate: 2023-04-09_15-45-35
+Duration: 0:01:44.901599
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-44-25.json
+	Scene: 2023-04-09_15-44-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=14
+Startdate: 2023-04-09_15-45-37
+Enddate: 2023-04-09_15-47-20
+Duration: 0:01:42.971519
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-46-13.json
+	Scene: 2023-04-09_15-46-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=15
+Startdate: 2023-04-09_15-47-22
+Enddate: 2023-04-09_15-49-18
+Duration: 0:01:55.684588
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-47-59.json
+	Scene: 2023-04-09_15-47-59.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=16
+Startdate: 2023-04-09_15-49-20
+Enddate: 2023-04-09_15-51-20
+Duration: 0:02:00.266112
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-49-58.json
+	Scene: 2023-04-09_15-49-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=17
+Startdate: 2023-04-09_15-51-22
+Enddate: 2023-04-09_15-53-19
+Duration: 0:01:56.802997
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-52-01.json
+	Scene: 2023-04-09_15-52-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=18
+Startdate: 2023-04-09_15-53-21
+Enddate: 2023-04-09_15-55-32
+Duration: 0:02:11.206094
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-54-02.json
+	Scene: 2023-04-09_15-54-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=19
+Startdate: 2023-04-09_15-55-34
+Enddate: 2023-04-09_15-57-51
+Duration: 0:02:16.744039
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-56-16.json
+	Scene: 2023-04-09_15-56-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=20
+Startdate: 2023-04-09_15-57-53
+Enddate: 2023-04-09_16-00-05
+Duration: 0:02:11.899938
+Files:
+	Autosave: AUTOSAVE_2023-04-09_15-58-36.json
+	Scene: 2023-04-09_15-58-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=21
+Startdate: 2023-04-09_16-00-07
+Enddate: 2023-04-09_16-02-34
+Duration: 0:02:27.380592
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-00-51.json
+	Scene: 2023-04-09_16-00-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=3 negative_funcs=22
+Startdate: 2023-04-09_16-02-36
+Enddate: 2023-04-09_16-05-07
+Duration: 0:02:31.201392
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-03-22.json
+	Scene: 2023-04-09_16-03-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=1
+Startdate: 2023-04-09_16-05-09
+Enddate: 2023-04-09_16-05-55
+Duration: 0:00:45.999952
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-05-31.json
+	Scene: 2023-04-09_16-05-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=2
+Startdate: 2023-04-09_16-05-57
+Enddate: 2023-04-09_16-06-50
+Duration: 0:00:52.699621
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-06-20.json
+	Scene: 2023-04-09_16-06-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=3
+Startdate: 2023-04-09_16-06-52
+Enddate: 2023-04-09_16-07-50
+Duration: 0:00:57.480832
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-07-16.json
+	Scene: 2023-04-09_16-07-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=4
+Startdate: 2023-04-09_16-07-52
+Enddate: 2023-04-09_16-08-55
+Duration: 0:01:02.852770
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-08-17.json
+	Scene: 2023-04-09_16-08-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=5
+Startdate: 2023-04-09_16-08-57
+Enddate: 2023-04-09_16-10-03
+Duration: 0:01:06.951798
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-09-23.json
+	Scene: 2023-04-09_16-09-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=6
+Startdate: 2023-04-09_16-10-06
+Enddate: 2023-04-09_16-11-19
+Duration: 0:01:13.536852
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-10-33.json
+	Scene: 2023-04-09_16-10-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=7
+Startdate: 2023-04-09_16-11-21
+Enddate: 2023-04-09_16-12-39
+Duration: 0:01:18.330508
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-11-50.json
+	Scene: 2023-04-09_16-11-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=8
+Startdate: 2023-04-09_16-12-41
+Enddate: 2023-04-09_16-14-05
+Duration: 0:01:23.178492
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-13-11.json
+	Scene: 2023-04-09_16-13-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=9
+Startdate: 2023-04-09_16-14-07
+Enddate: 2023-04-09_16-15-36
+Duration: 0:01:29.754007
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-14-38.json
+	Scene: 2023-04-09_16-14-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=10
+Startdate: 2023-04-09_16-15-39
+Enddate: 2023-04-09_16-17-13
+Duration: 0:01:34.296266
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-16-11.json
+	Scene: 2023-04-09_16-16-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=11
+Startdate: 2023-04-09_16-17-15
+Enddate: 2023-04-09_16-18-54
+Duration: 0:01:38.738223
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-17-48.json
+	Scene: 2023-04-09_16-17-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=12
+Startdate: 2023-04-09_16-18-56
+Enddate: 2023-04-09_16-20-40
+Duration: 0:01:43.927593
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-19-30.json
+	Scene: 2023-04-09_16-19-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=13
+Startdate: 2023-04-09_16-20-42
+Enddate: 2023-04-09_16-22-30
+Duration: 0:01:48.644572
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-21-18.json
+	Scene: 2023-04-09_16-21-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=14
+Startdate: 2023-04-09_16-22-32
+Enddate: 2023-04-09_16-24-26
+Duration: 0:01:53.912693
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-23-10.json
+	Scene: 2023-04-09_16-23-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=15
+Startdate: 2023-04-09_16-24-28
+Enddate: 2023-04-09_16-26-29
+Duration: 0:02:00.302737
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-25-07.json
+	Scene: 2023-04-09_16-25-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=16
+Startdate: 2023-04-09_16-26-31
+Enddate: 2023-04-09_16-28-36
+Duration: 0:02:05.680402
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-27-11.json
+	Scene: 2023-04-09_16-27-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=17
+Startdate: 2023-04-09_16-28-38
+Enddate: 2023-04-09_16-30-48
+Duration: 0:02:09.551826
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-29-19.json
+	Scene: 2023-04-09_16-29-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=18
+Startdate: 2023-04-09_16-30-50
+Enddate: 2023-04-09_16-33-06
+Duration: 0:02:15.829407
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-31-32.json
+	Scene: 2023-04-09_16-31-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=19
+Startdate: 2023-04-09_16-33-08
+Enddate: 2023-04-09_16-35-28
+Duration: 0:02:20.551336
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-33-51.json
+	Scene: 2023-04-09_16-33-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=20
+Startdate: 2023-04-09_16-35-30
+Enddate: 2023-04-09_16-37-56
+Duration: 0:02:25.794033
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-36-15.json
+	Scene: 2023-04-09_16-36-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=21
+Startdate: 2023-04-09_16-37-58
+Enddate: 2023-04-09_16-40-29
+Duration: 0:02:31.001457
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-38-44.json
+	Scene: 2023-04-09_16-38-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=4 negative_funcs=22
+Startdate: 2023-04-09_16-40-31
+Enddate: 2023-04-09_16-43-06
+Duration: 0:02:34.912602
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-41-18.json
+	Scene: 2023-04-09_16-41-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=1
+Startdate: 2023-04-09_16-43-08
+Enddate: 2023-04-09_16-44-00
+Duration: 0:00:51.484607
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-43-31.json
+	Scene: 2023-04-09_16-43-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=2
+Startdate: 2023-04-09_16-44-02
+Enddate: 2023-04-09_16-44-59
+Duration: 0:00:57.565692
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-44-25.json
+	Scene: 2023-04-09_16-44-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=3
+Startdate: 2023-04-09_16-45-01
+Enddate: 2023-04-09_16-46-03
+Duration: 0:01:01.913356
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-45-26.json
+	Scene: 2023-04-09_16-45-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=4
+Startdate: 2023-04-09_16-46-05
+Enddate: 2023-04-09_16-47-13
+Duration: 0:01:07.908786
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-46-31.json
+	Scene: 2023-04-09_16-46-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=5
+Startdate: 2023-04-09_16-47-15
+Enddate: 2023-04-09_16-48-27
+Duration: 0:01:11.429099
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-47-42.json
+	Scene: 2023-04-09_16-47-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=6
+Startdate: 2023-04-09_16-48-29
+Enddate: 2023-04-09_16-49-47
+Duration: 0:01:17.984772
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-48-57.json
+	Scene: 2023-04-09_16-48-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=7
+Startdate: 2023-04-09_16-49-49
+Enddate: 2023-04-09_16-51-12
+Duration: 0:01:23.146446
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-50-18.json
+	Scene: 2023-04-09_16-50-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=8
+Startdate: 2023-04-09_16-51-14
+Enddate: 2023-04-09_16-52-42
+Duration: 0:01:28.089791
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-51-45.json
+	Scene: 2023-04-09_16-51-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=9
+Startdate: 2023-04-09_16-52-44
+Enddate: 2023-04-09_16-54-17
+Duration: 0:01:33.527821
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-53-16.json
+	Scene: 2023-04-09_16-53-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=10
+Startdate: 2023-04-09_16-54-20
+Enddate: 2023-04-09_16-55-58
+Duration: 0:01:38.633146
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-54-53.json
+	Scene: 2023-04-09_16-54-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=11
+Startdate: 2023-04-09_16-56-00
+Enddate: 2023-04-09_16-57-45
+Duration: 0:01:44.847544
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-56-35.json
+	Scene: 2023-04-09_16-56-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=12
+Startdate: 2023-04-09_16-57-47
+Enddate: 2023-04-09_16-59-37
+Duration: 0:01:49.815473
+Files:
+	Autosave: AUTOSAVE_2023-04-09_16-58-23.json
+	Scene: 2023-04-09_16-58-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=13
+Startdate: 2023-04-09_16-59-39
+Enddate: 2023-04-09_17-01-34
+Duration: 0:01:55.445907
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-00-16.json
+	Scene: 2023-04-09_17-00-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=14
+Startdate: 2023-04-09_17-01-36
+Enddate: 2023-04-09_17-03-36
+Duration: 0:01:59.995151
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-02-15.json
+	Scene: 2023-04-09_17-02-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=15
+Startdate: 2023-04-09_17-03-38
+Enddate: 2023-04-09_17-05-45
+Duration: 0:02:06.300243
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-04-19.json
+	Scene: 2023-04-09_17-04-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=16
+Startdate: 2023-04-09_17-05-47
+Enddate: 2023-04-09_17-07-58
+Duration: 0:02:11.025369
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-06-28.json
+	Scene: 2023-04-09_17-06-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=17
+Startdate: 2023-04-09_17-08-00
+Enddate: 2023-04-09_17-10-15
+Duration: 0:02:15.410581
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-08-42.json
+	Scene: 2023-04-09_17-08-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=18
+Startdate: 2023-04-09_17-10-17
+Enddate: 2023-04-09_17-12-38
+Duration: 0:02:20.833254
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-11-01.json
+	Scene: 2023-04-09_17-11-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=19
+Startdate: 2023-04-09_17-12-40
+Enddate: 2023-04-09_17-15-07
+Duration: 0:02:27.233456
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-13-25.json
+	Scene: 2023-04-09_17-13-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=20
+Startdate: 2023-04-09_17-15-09
+Enddate: 2023-04-09_17-17-41
+Duration: 0:02:31.449221
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-15-56.json
+	Scene: 2023-04-09_17-15-56.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=21
+Startdate: 2023-04-09_17-17-43
+Enddate: 2023-04-09_17-20-21
+Duration: 0:02:38.371799
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-18-30.json
+	Scene: 2023-04-09_17-18-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=5 negative_funcs=22
+Startdate: 2023-04-09_17-20-23
+Enddate: 2023-04-09_17-23-06
+Duration: 0:02:42.709716
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-21-12.json
+	Scene: 2023-04-09_17-21-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=1
+Startdate: 2023-04-09_17-23-08
+Enddate: 2023-04-09_17-24-05
+Duration: 0:00:57.187866
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-23-32.json
+	Scene: 2023-04-09_17-23-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=2
+Startdate: 2023-04-09_17-24-07
+Enddate: 2023-04-09_17-25-12
+Duration: 0:01:05.022415
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-24-32.json
+	Scene: 2023-04-09_17-24-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=3
+Startdate: 2023-04-09_17-25-14
+Enddate: 2023-04-09_17-26-21
+Duration: 0:01:06.744401
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-25-41.json
+	Scene: 2023-04-09_17-25-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=4
+Startdate: 2023-04-09_17-26-23
+Enddate: 2023-04-09_17-27-36
+Duration: 0:01:13.119029
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-26-51.json
+	Scene: 2023-04-09_17-26-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=5
+Startdate: 2023-04-09_17-27-38
+Enddate: 2023-04-09_17-28-56
+Duration: 0:01:17.949663
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-28-07.json
+	Scene: 2023-04-09_17-28-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=6
+Startdate: 2023-04-09_17-28-58
+Enddate: 2023-04-09_17-30-20
+Duration: 0:01:21.786693
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-29-28.json
+	Scene: 2023-04-09_17-29-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=7
+Startdate: 2023-04-09_17-30-22
+Enddate: 2023-04-09_17-31-51
+Duration: 0:01:28.629704
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-30-53.json
+	Scene: 2023-04-09_17-30-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=8
+Startdate: 2023-04-09_17-31-53
+Enddate: 2023-04-09_17-33-27
+Duration: 0:01:34.001048
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-32-25.json
+	Scene: 2023-04-09_17-32-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=9
+Startdate: 2023-04-09_17-33-29
+Enddate: 2023-04-09_17-35-07
+Duration: 0:01:37.992383
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-34-02.json
+	Scene: 2023-04-09_17-34-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=10
+Startdate: 2023-04-09_17-35-09
+Enddate: 2023-04-09_17-36-52
+Duration: 0:01:43.058312
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-35-44.json
+	Scene: 2023-04-09_17-35-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=11
+Startdate: 2023-04-09_17-36-54
+Enddate: 2023-04-09_17-38-44
+Duration: 0:01:49.864985
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-37-30.json
+	Scene: 2023-04-09_17-37-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=12
+Startdate: 2023-04-09_17-38-46
+Enddate: 2023-04-09_17-40-39
+Duration: 0:01:53.400103
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-39-23.json
+	Scene: 2023-04-09_17-39-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=13
+Startdate: 2023-04-09_17-40-41
+Enddate: 2023-04-09_17-42-40
+Duration: 0:01:58.278034
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-41-20.json
+	Scene: 2023-04-09_17-41-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=14
+Startdate: 2023-04-09_17-42-42
+Enddate: 2023-04-09_17-44-46
+Duration: 0:02:03.892544
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-43-21.json
+	Scene: 2023-04-09_17-43-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=15
+Startdate: 2023-04-09_17-44-48
+Enddate: 2023-04-09_17-46-56
+Duration: 0:02:08.748889
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-45-29.json
+	Scene: 2023-04-09_17-45-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=16
+Startdate: 2023-04-09_17-46-58
+Enddate: 2023-04-09_17-49-14
+Duration: 0:02:15.850018
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-47-41.json
+	Scene: 2023-04-09_17-47-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=17
+Startdate: 2023-04-09_17-49-16
+Enddate: 2023-04-09_17-51-37
+Duration: 0:02:20.788807
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-50-00.json
+	Scene: 2023-04-09_17-50-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=18
+Startdate: 2023-04-09_17-51-39
+Enddate: 2023-04-09_17-54-04
+Duration: 0:02:25.264725
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-52-24.json
+	Scene: 2023-04-09_17-52-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=19
+Startdate: 2023-04-09_17-54-06
+Enddate: 2023-04-09_17-56-37
+Duration: 0:02:30.817907
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-54-52.json
+	Scene: 2023-04-09_17-54-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=20
+Startdate: 2023-04-09_17-56-39
+Enddate: 2023-04-09_17-59-15
+Duration: 0:02:35.556501
+Files:
+	Autosave: AUTOSAVE_2023-04-09_17-57-27.json
+	Scene: 2023-04-09_17-57-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=21
+Startdate: 2023-04-09_17-59-17
+Enddate: 2023-04-09_18-01-59
+Duration: 0:02:42.651101
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-00-05.json
+	Scene: 2023-04-09_18-00-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=6 negative_funcs=22
+Startdate: 2023-04-09_18-02-02
+Enddate: 2023-04-09_18-04-47
+Duration: 0:02:45.499731
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-02-51.json
+	Scene: 2023-04-09_18-02-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=1
+Startdate: 2023-04-09_18-04-49
+Enddate: 2023-04-09_18-05-51
+Duration: 0:01:01.893187
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-05-14.json
+	Scene: 2023-04-09_18-05-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=2
+Startdate: 2023-04-09_18-05-53
+Enddate: 2023-04-09_18-07-01
+Duration: 0:01:07.916572
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-06-19.json
+	Scene: 2023-04-09_18-06-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=3
+Startdate: 2023-04-09_18-07-03
+Enddate: 2023-04-09_18-08-17
+Duration: 0:01:13.997878
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-07-30.json
+	Scene: 2023-04-09_18-07-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=4
+Startdate: 2023-04-09_18-08-19
+Enddate: 2023-04-09_18-09-38
+Duration: 0:01:18.715226
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-08-48.json
+	Scene: 2023-04-09_18-08-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=5
+Startdate: 2023-04-09_18-09-40
+Enddate: 2023-04-09_18-10-57
+Duration: 0:01:17.731349
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-10-09.json
+	Scene: 2023-04-09_18-10-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=6
+Startdate: 2023-04-09_18-11-00
+Enddate: 2023-04-09_18-12-27
+Duration: 0:01:27.246727
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-11-31.json
+	Scene: 2023-04-09_18-11-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=7
+Startdate: 2023-04-09_18-12-29
+Enddate: 2023-04-09_18-14-04
+Duration: 0:01:34.872529
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-13-01.json
+	Scene: 2023-04-09_18-13-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=8
+Startdate: 2023-04-09_18-14-06
+Enddate: 2023-04-09_18-15-46
+Duration: 0:01:40.063481
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-14-39.json
+	Scene: 2023-04-09_18-14-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=9
+Startdate: 2023-04-09_18-15-48
+Enddate: 2023-04-09_18-17-33
+Duration: 0:01:45.062036
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-16-23.json
+	Scene: 2023-04-09_18-16-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=10
+Startdate: 2023-04-09_18-17-35
+Enddate: 2023-04-09_18-19-25
+Duration: 0:01:50.110810
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-18-11.json
+	Scene: 2023-04-09_18-18-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=11
+Startdate: 2023-04-09_18-19-27
+Enddate: 2023-04-09_18-21-22
+Duration: 0:01:54.484565
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-20-04.json
+	Scene: 2023-04-09_18-20-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=12
+Startdate: 2023-04-09_18-21-24
+Enddate: 2023-04-09_18-23-23
+Duration: 0:01:59.517007
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-22-02.json
+	Scene: 2023-04-09_18-22-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=13
+Startdate: 2023-04-09_18-23-25
+Enddate: 2023-04-09_18-25-31
+Duration: 0:02:06.039946
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-24-05.json
+	Scene: 2023-04-09_18-24-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=14
+Startdate: 2023-04-09_18-25-33
+Enddate: 2023-04-09_18-27-44
+Duration: 0:02:10.913755
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-26-14.json
+	Scene: 2023-04-09_18-26-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=15
+Startdate: 2023-04-09_18-27-46
+Enddate: 2023-04-09_18-30-02
+Duration: 0:02:16.227986
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-28-29.json
+	Scene: 2023-04-09_18-28-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=16
+Startdate: 2023-04-09_18-30-04
+Enddate: 2023-04-09_18-32-25
+Duration: 0:02:20.351549
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-30-48.json
+	Scene: 2023-04-09_18-30-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=17
+Startdate: 2023-04-09_18-32-27
+Enddate: 2023-04-09_18-34-52
+Duration: 0:02:25.658916
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-33-12.json
+	Scene: 2023-04-09_18-33-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=18
+Startdate: 2023-04-09_18-34-55
+Enddate: 2023-04-09_18-37-25
+Duration: 0:02:30.800206
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-35-41.json
+	Scene: 2023-04-09_18-35-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=19
+Startdate: 2023-04-09_18-37-27
+Enddate: 2023-04-09_18-40-04
+Duration: 0:02:36.150266
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-38-15.json
+	Scene: 2023-04-09_18-38-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=20
+Startdate: 2023-04-09_18-40-06
+Enddate: 2023-04-09_18-42-46
+Duration: 0:02:40.608544
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-40-54.json
+	Scene: 2023-04-09_18-40-54.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=21
+Startdate: 2023-04-09_18-42-48
+Enddate: 2023-04-09_18-45-35
+Duration: 0:02:47.191183
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-43-38.json
+	Scene: 2023-04-09_18-43-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=7 negative_funcs=22
+Startdate: 2023-04-09_18-45-37
+Enddate: 2023-04-09_18-48-30
+Duration: 0:02:52.460051
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-46-28.json
+	Scene: 2023-04-09_18-46-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=1
+Startdate: 2023-04-09_18-48-32
+Enddate: 2023-04-09_18-49-40
+Duration: 0:01:07.672943
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-48-58.json
+	Scene: 2023-04-09_18-48-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=2
+Startdate: 2023-04-09_18-49-42
+Enddate: 2023-04-09_18-50-55
+Duration: 0:01:12.896780
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-50-09.json
+	Scene: 2023-04-09_18-50-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=3
+Startdate: 2023-04-09_18-50-57
+Enddate: 2023-04-09_18-52-13
+Duration: 0:01:16.519332
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-51-25.json
+	Scene: 2023-04-09_18-51-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=4
+Startdate: 2023-04-09_18-52-15
+Enddate: 2023-04-09_18-53-33
+Duration: 0:01:18.220538
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-52-45.json
+	Scene: 2023-04-09_18-52-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=5
+Startdate: 2023-04-09_18-53-35
+Enddate: 2023-04-09_18-55-05
+Duration: 0:01:29.088376
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-54-06.json
+	Scene: 2023-04-09_18-54-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=6
+Startdate: 2023-04-09_18-55-07
+Enddate: 2023-04-09_18-56-39
+Duration: 0:01:32.503570
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-55-39.json
+	Scene: 2023-04-09_18-55-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=7
+Startdate: 2023-04-09_18-56-41
+Enddate: 2023-04-09_18-58-18
+Duration: 0:01:37.406288
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-57-15.json
+	Scene: 2023-04-09_18-57-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=8
+Startdate: 2023-04-09_18-58-21
+Enddate: 2023-04-09_19-00-04
+Duration: 0:01:43.353978
+Files:
+	Autosave: AUTOSAVE_2023-04-09_18-58-55.json
+	Scene: 2023-04-09_18-58-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=9
+Startdate: 2023-04-09_19-00-06
+Enddate: 2023-04-09_19-01-55
+Duration: 0:01:49.420612
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-00-42.json
+	Scene: 2023-04-09_19-00-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=10
+Startdate: 2023-04-09_19-01-57
+Enddate: 2023-04-09_19-03-52
+Duration: 0:01:54.475471
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-02-35.json
+	Scene: 2023-04-09_19-02-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=11
+Startdate: 2023-04-09_19-03-54
+Enddate: 2023-04-09_19-05-54
+Duration: 0:02:00.613291
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-04-33.json
+	Scene: 2023-04-09_19-04-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=12
+Startdate: 2023-04-09_19-05-57
+Enddate: 2023-04-09_19-08-02
+Duration: 0:02:04.995637
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-06-36.json
+	Scene: 2023-04-09_19-06-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=13
+Startdate: 2023-04-09_19-08-04
+Enddate: 2023-04-09_19-10-13
+Duration: 0:02:08.954264
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-08-45.json
+	Scene: 2023-04-09_19-08-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=14
+Startdate: 2023-04-09_19-10-15
+Enddate: 2023-04-09_19-12-29
+Duration: 0:02:14.901352
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-10-57.json
+	Scene: 2023-04-09_19-10-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=15
+Startdate: 2023-04-09_19-12-31
+Enddate: 2023-04-09_19-14-51
+Duration: 0:02:19.772332
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-13-15.json
+	Scene: 2023-04-09_19-13-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=16
+Startdate: 2023-04-09_19-14-53
+Enddate: 2023-04-09_19-17-18
+Duration: 0:02:24.573864
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-15-38.json
+	Scene: 2023-04-09_19-15-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=17
+Startdate: 2023-04-09_19-17-20
+Enddate: 2023-04-09_19-19-54
+Duration: 0:02:33.768986
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-18-06.json
+	Scene: 2023-04-09_19-18-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=18
+Startdate: 2023-04-09_19-19-56
+Enddate: 2023-04-09_19-22-38
+Duration: 0:02:42.379406
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-20-44.json
+	Scene: 2023-04-09_19-20-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=19
+Startdate: 2023-04-09_19-22-40
+Enddate: 2023-04-09_19-25-24
+Duration: 0:02:43.922808
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-23-30.json
+	Scene: 2023-04-09_19-23-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=20
+Startdate: 2023-04-09_19-25-26
+Enddate: 2023-04-09_19-28-15
+Duration: 0:02:49.338997
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-26-17.json
+	Scene: 2023-04-09_19-26-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=21
+Startdate: 2023-04-09_19-28-17
+Enddate: 2023-04-09_19-31-11
+Duration: 0:02:53.967917
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-29-09.json
+	Scene: 2023-04-09_19-29-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=8 negative_funcs=22
+Startdate: 2023-04-09_19-31-13
+Enddate: 2023-04-09_19-34-14
+Duration: 0:03:00.671092
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-32-07.json
+	Scene: 2023-04-09_19-32-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=1
+Startdate: 2023-04-09_19-34-16
+Enddate: 2023-04-09_19-35-31
+Duration: 0:01:14.655833
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-34-44.json
+	Scene: 2023-04-09_19-34-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=2
+Startdate: 2023-04-09_19-35-33
+Enddate: 2023-04-09_19-36-52
+Duration: 0:01:19.418666
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-36-02.json
+	Scene: 2023-04-09_19-36-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=3
+Startdate: 2023-04-09_19-36-54
+Enddate: 2023-04-09_19-38-18
+Duration: 0:01:23.731612
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-37-25.json
+	Scene: 2023-04-09_19-37-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=4
+Startdate: 2023-04-09_19-38-20
+Enddate: 2023-04-09_19-39-48
+Duration: 0:01:28.316999
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-38-51.json
+	Scene: 2023-04-09_19-38-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=5
+Startdate: 2023-04-09_19-39-51
+Enddate: 2023-04-09_19-41-24
+Duration: 0:01:33.581883
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-40-23.json
+	Scene: 2023-04-09_19-40-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=6
+Startdate: 2023-04-09_19-41-26
+Enddate: 2023-04-09_19-43-05
+Duration: 0:01:39.350243
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-42-00.json
+	Scene: 2023-04-09_19-42-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=7
+Startdate: 2023-04-09_19-43-08
+Enddate: 2023-04-09_19-44-50
+Duration: 0:01:42.748895
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-43-42.json
+	Scene: 2023-04-09_19-43-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=8
+Startdate: 2023-04-09_19-44-52
+Enddate: 2023-04-09_19-46-41
+Duration: 0:01:49.011336
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-45-28.json
+	Scene: 2023-04-09_19-45-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=9
+Startdate: 2023-04-09_19-46-43
+Enddate: 2023-04-09_19-48-37
+Duration: 0:01:53.393951
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-47-21.json
+	Scene: 2023-04-09_19-47-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=10
+Startdate: 2023-04-09_19-48-39
+Enddate: 2023-04-09_19-50-39
+Duration: 0:01:59.952064
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-49-17.json
+	Scene: 2023-04-09_19-49-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=11
+Startdate: 2023-04-09_19-50-41
+Enddate: 2023-04-09_19-52-44
+Duration: 0:02:03.619123
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-51-21.json
+	Scene: 2023-04-09_19-51-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=12
+Startdate: 2023-04-09_19-52-46
+Enddate: 2023-04-09_19-54-56
+Duration: 0:02:09.588758
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-53-27.json
+	Scene: 2023-04-09_19-53-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=13
+Startdate: 2023-04-09_19-54-58
+Enddate: 2023-04-09_19-57-15
+Duration: 0:02:16.788668
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-55-40.json
+	Scene: 2023-04-09_19-55-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=14
+Startdate: 2023-04-09_19-57-17
+Enddate: 2023-04-09_19-59-38
+Duration: 0:02:20.728878
+Files:
+	Autosave: AUTOSAVE_2023-04-09_19-58-00.json
+	Scene: 2023-04-09_19-58-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=15
+Startdate: 2023-04-09_19-59-40
+Enddate: 2023-04-09_20-02-06
+Duration: 0:02:25.874750
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-00-24.json
+	Scene: 2023-04-09_20-00-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=16
+Startdate: 2023-04-09_20-02-08
+Enddate: 2023-04-09_20-04-39
+Duration: 0:02:31.442193
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-02-54.json
+	Scene: 2023-04-09_20-02-54.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=17
+Startdate: 2023-04-09_20-04-41
+Enddate: 2023-04-09_20-07-15
+Duration: 0:02:34.190012
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-05-28.json
+	Scene: 2023-04-09_20-05-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=18
+Startdate: 2023-04-09_20-07-17
+Enddate: 2023-04-09_20-09-59
+Duration: 0:02:41.590458
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-08-06.json
+	Scene: 2023-04-09_20-08-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=19
+Startdate: 2023-04-09_20-10-01
+Enddate: 2023-04-09_20-12-49
+Duration: 0:02:48.323883
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-10-51.json
+	Scene: 2023-04-09_20-10-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=20
+Startdate: 2023-04-09_20-12-51
+Enddate: 2023-04-09_20-15-48
+Duration: 0:02:56.880106
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-13-43.json
+	Scene: 2023-04-09_20-13-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=21
+Startdate: 2023-04-09_20-15-50
+Enddate: 2023-04-09_20-18-50
+Duration: 0:02:59.813150
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-16-43.json
+	Scene: 2023-04-09_20-16-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=9 negative_funcs=22
+Startdate: 2023-04-09_20-18-52
+Enddate: 2023-04-09_20-22-00
+Duration: 0:03:08.336682
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-19-47.json
+	Scene: 2023-04-09_20-19-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=1
+Startdate: 2023-04-09_20-22-02
+Enddate: 2023-04-09_20-23-22
+Duration: 0:01:19.741654
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-22-32.json
+	Scene: 2023-04-09_20-22-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=2
+Startdate: 2023-04-09_20-23-24
+Enddate: 2023-04-09_20-24-49
+Duration: 0:01:24.596490
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-23-55.json
+	Scene: 2023-04-09_20-23-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=3
+Startdate: 2023-04-09_20-24-51
+Enddate: 2023-04-09_20-26-14
+Duration: 0:01:22.953361
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-25-22.json
+	Scene: 2023-04-09_20-25-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=4
+Startdate: 2023-04-09_20-26-16
+Enddate: 2023-04-09_20-27-52
+Duration: 0:01:35.705809
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-26-48.json
+	Scene: 2023-04-09_20-26-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=5
+Startdate: 2023-04-09_20-27-54
+Enddate: 2023-04-09_20-29-34
+Duration: 0:01:39.962135
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-28-27.json
+	Scene: 2023-04-09_20-28-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=6
+Startdate: 2023-04-09_20-29-36
+Enddate: 2023-04-09_20-31-21
+Duration: 0:01:44.929866
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-30-10.json
+	Scene: 2023-04-09_20-30-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=7
+Startdate: 2023-04-09_20-31-23
+Enddate: 2023-04-09_20-33-12
+Duration: 0:01:49.462028
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-31-59.json
+	Scene: 2023-04-09_20-31-59.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=8
+Startdate: 2023-04-09_20-33-14
+Enddate: 2023-04-09_20-35-08
+Duration: 0:01:54.054193
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-33-51.json
+	Scene: 2023-04-09_20-33-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=9
+Startdate: 2023-04-09_20-35-10
+Enddate: 2023-04-09_20-37-10
+Duration: 0:01:59.781794
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-35-49.json
+	Scene: 2023-04-09_20-35-49.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=10
+Startdate: 2023-04-09_20-37-12
+Enddate: 2023-04-09_20-39-17
+Duration: 0:02:05.436135
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-37-52.json
+	Scene: 2023-04-09_20-37-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=11
+Startdate: 2023-04-09_20-39-19
+Enddate: 2023-04-09_20-41-30
+Duration: 0:02:10.224240
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-40-00.json
+	Scene: 2023-04-09_20-40-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=12
+Startdate: 2023-04-09_20-41-32
+Enddate: 2023-04-09_20-43-49
+Duration: 0:02:17.519577
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-42-14.json
+	Scene: 2023-04-09_20-42-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=13
+Startdate: 2023-04-09_20-43-51
+Enddate: 2023-04-09_20-46-11
+Duration: 0:02:19.826461
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-44-35.json
+	Scene: 2023-04-09_20-44-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=14
+Startdate: 2023-04-09_20-46-13
+Enddate: 2023-04-09_20-48-38
+Duration: 0:02:25.349423
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-46-58.json
+	Scene: 2023-04-09_20-46-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=15
+Startdate: 2023-04-09_20-48-41
+Enddate: 2023-04-09_20-51-13
+Duration: 0:02:32.039542
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-49-27.json
+	Scene: 2023-04-09_20-49-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=16
+Startdate: 2023-04-09_20-51-15
+Enddate: 2023-04-09_20-53-51
+Duration: 0:02:36.360899
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-52-02.json
+	Scene: 2023-04-09_20-52-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=17
+Startdate: 2023-04-09_20-53-53
+Enddate: 2023-04-09_20-56-35
+Duration: 0:02:42.188235
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-54-42.json
+	Scene: 2023-04-09_20-54-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=18
+Startdate: 2023-04-09_20-56-37
+Enddate: 2023-04-09_20-59-24
+Duration: 0:02:46.923335
+Files:
+	Autosave: AUTOSAVE_2023-04-09_20-57-27.json
+	Scene: 2023-04-09_20-57-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=19
+Startdate: 2023-04-09_20-59-26
+Enddate: 2023-04-09_21-02-17
+Duration: 0:02:51.094524
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-00-17.json
+	Scene: 2023-04-09_21-00-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=20
+Startdate: 2023-04-09_21-02-19
+Enddate: 2023-04-09_21-05-16
+Duration: 0:02:56.628490
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-03-12.json
+	Scene: 2023-04-09_21-03-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=21
+Startdate: 2023-04-09_21-05-18
+Enddate: 2023-04-09_21-08-24
+Duration: 0:03:05.538169
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-06-12.json
+	Scene: 2023-04-09_21-06-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=10 negative_funcs=22
+Startdate: 2023-04-09_21-08-26
+Enddate: 2023-04-09_21-11-37
+Duration: 0:03:11.239698
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-09-21.json
+	Scene: 2023-04-09_21-09-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=1
+Startdate: 2023-04-09_21-11-39
+Enddate: 2023-04-09_21-13-04
+Duration: 0:01:24.795163
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-12-09.json
+	Scene: 2023-04-09_21-12-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=2
+Startdate: 2023-04-09_21-13-06
+Enddate: 2023-04-09_21-14-35
+Duration: 0:01:29.741036
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-13-37.json
+	Scene: 2023-04-09_21-13-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=3
+Startdate: 2023-04-09_21-14-37
+Enddate: 2023-04-09_21-16-12
+Duration: 0:01:34.781048
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-15-10.json
+	Scene: 2023-04-09_21-15-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=4
+Startdate: 2023-04-09_21-16-14
+Enddate: 2023-04-09_21-17-55
+Duration: 0:01:40.547470
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-16-48.json
+	Scene: 2023-04-09_21-16-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=5
+Startdate: 2023-04-09_21-17-57
+Enddate: 2023-04-09_21-19-43
+Duration: 0:01:45.954717
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-18-32.json
+	Scene: 2023-04-09_21-18-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=6
+Startdate: 2023-04-09_21-19-45
+Enddate: 2023-04-09_21-21-38
+Duration: 0:01:52.846097
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-20-22.json
+	Scene: 2023-04-09_21-20-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=7
+Startdate: 2023-04-09_21-21-40
+Enddate: 2023-04-09_21-23-37
+Duration: 0:01:57.275901
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-22-18.json
+	Scene: 2023-04-09_21-22-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=8
+Startdate: 2023-04-09_21-23-39
+Enddate: 2023-04-09_21-25-43
+Duration: 0:02:03.625201
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-24-18.json
+	Scene: 2023-04-09_21-24-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=9
+Startdate: 2023-04-09_21-25-45
+Enddate: 2023-04-09_21-27-52
+Duration: 0:02:07.633823
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-26-25.json
+	Scene: 2023-04-09_21-26-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=10
+Startdate: 2023-04-09_21-27-54
+Enddate: 2023-04-09_21-30-00
+Duration: 0:02:05.779558
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-28-36.json
+	Scene: 2023-04-09_21-28-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=11
+Startdate: 2023-04-09_21-30-02
+Enddate: 2023-04-09_21-32-21
+Duration: 0:02:18.662316
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-30-45.json
+	Scene: 2023-04-09_21-30-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=12
+Startdate: 2023-04-09_21-32-23
+Enddate: 2023-04-09_21-34-46
+Duration: 0:02:22.851333
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-33-07.json
+	Scene: 2023-04-09_21-33-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=13
+Startdate: 2023-04-09_21-34-48
+Enddate: 2023-04-09_21-37-13
+Duration: 0:02:25.415573
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-35-34.json
+	Scene: 2023-04-09_21-35-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=14
+Startdate: 2023-04-09_21-37-15
+Enddate: 2023-04-09_21-39-47
+Duration: 0:02:31.540127
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-38-01.json
+	Scene: 2023-04-09_21-38-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=15
+Startdate: 2023-04-09_21-39-49
+Enddate: 2023-04-09_21-42-25
+Duration: 0:02:36.355772
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-40-36.json
+	Scene: 2023-04-09_21-40-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=16
+Startdate: 2023-04-09_21-42-27
+Enddate: 2023-04-09_21-45-09
+Duration: 0:02:42.086146
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-43-16.json
+	Scene: 2023-04-09_21-43-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=17
+Startdate: 2023-04-09_21-45-11
+Enddate: 2023-04-09_21-47-57
+Duration: 0:02:45.298273
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-46-01.json
+	Scene: 2023-04-09_21-46-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=18
+Startdate: 2023-04-09_21-47-59
+Enddate: 2023-04-09_21-50-50
+Duration: 0:02:51.197822
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-48-50.json
+	Scene: 2023-04-09_21-48-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=19
+Startdate: 2023-04-09_21-50-52
+Enddate: 2023-04-09_21-53-48
+Duration: 0:02:56.452743
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-51-44.json
+	Scene: 2023-04-09_21-51-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=20
+Startdate: 2023-04-09_21-53-50
+Enddate: 2023-04-09_21-56-53
+Duration: 0:03:03.016236
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-54-44.json
+	Scene: 2023-04-09_21-54-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=21
+Startdate: 2023-04-09_21-56-56
+Enddate: 2023-04-09_21-59-49
+Duration: 0:02:53.109315
+Files:
+	Autosave: AUTOSAVE_2023-04-09_21-57-50.json
+	Scene: 2023-04-09_21-57-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=11 negative_funcs=22
+Startdate: 2023-04-09_21-59-51
+Enddate: 2023-04-09_22-03-03
+Duration: 0:03:11.956590
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-00-47.json
+	Scene: 2023-04-09_22-00-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=1
+Startdate: 2023-04-09_22-03-05
+Enddate: 2023-04-09_22-04-31
+Duration: 0:01:26.835460
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-03-36.json
+	Scene: 2023-04-09_22-03-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=2
+Startdate: 2023-04-09_22-04-34
+Enddate: 2023-04-09_22-06-06
+Duration: 0:01:32.502133
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-05-06.json
+	Scene: 2023-04-09_22-05-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=3
+Startdate: 2023-04-09_22-06-08
+Enddate: 2023-04-09_22-07-47
+Duration: 0:01:39.035535
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-06-42.json
+	Scene: 2023-04-09_22-06-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=4
+Startdate: 2023-04-09_22-07-49
+Enddate: 2023-04-09_22-09-27
+Duration: 0:01:38.155827
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-08-24.json
+	Scene: 2023-04-09_22-08-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=5
+Startdate: 2023-04-09_22-09-29
+Enddate: 2023-04-09_22-11-18
+Duration: 0:01:49.136920
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-10-05.json
+	Scene: 2023-04-09_22-10-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=6
+Startdate: 2023-04-09_22-11-20
+Enddate: 2023-04-09_22-13-15
+Duration: 0:01:54.216941
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-11-58.json
+	Scene: 2023-04-09_22-11-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=7
+Startdate: 2023-04-09_22-13-17
+Enddate: 2023-04-09_22-15-16
+Duration: 0:01:59.002854
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-13-55.json
+	Scene: 2023-04-09_22-13-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=8
+Startdate: 2023-04-09_22-15-18
+Enddate: 2023-04-09_22-17-23
+Duration: 0:02:05.649129
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-15-57.json
+	Scene: 2023-04-09_22-15-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=9
+Startdate: 2023-04-09_22-17-25
+Enddate: 2023-04-09_22-19-35
+Duration: 0:02:09.970125
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-18-06.json
+	Scene: 2023-04-09_22-18-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=10
+Startdate: 2023-04-09_22-19-37
+Enddate: 2023-04-09_22-21-55
+Duration: 0:02:17.060686
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-20-20.json
+	Scene: 2023-04-09_22-20-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=11
+Startdate: 2023-04-09_22-21-57
+Enddate: 2023-04-09_22-24-17
+Duration: 0:02:20.394679
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-22-40.json
+	Scene: 2023-04-09_22-22-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=12
+Startdate: 2023-04-09_22-24-19
+Enddate: 2023-04-09_22-26-44
+Duration: 0:02:25.418151
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-25-04.json
+	Scene: 2023-04-09_22-25-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=13
+Startdate: 2023-04-09_22-26-46
+Enddate: 2023-04-09_22-29-17
+Duration: 0:02:30.292900
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-27-32.json
+	Scene: 2023-04-09_22-27-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=14
+Startdate: 2023-04-09_22-29-19
+Enddate: 2023-04-09_22-31-57
+Duration: 0:02:38.240839
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-30-06.json
+	Scene: 2023-04-09_22-30-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=15
+Startdate: 2023-04-09_22-31-59
+Enddate: 2023-04-09_22-34-40
+Duration: 0:02:40.743903
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-32-48.json
+	Scene: 2023-04-09_22-32-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=16
+Startdate: 2023-04-09_22-34-42
+Enddate: 2023-04-09_22-37-28
+Duration: 0:02:45.859784
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-35-31.json
+	Scene: 2023-04-09_22-35-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=17
+Startdate: 2023-04-09_22-37-30
+Enddate: 2023-04-09_22-40-28
+Duration: 0:02:57.899165
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-38-21.json
+	Scene: 2023-04-09_22-38-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=18
+Startdate: 2023-04-09_22-40-30
+Enddate: 2023-04-09_22-43-26
+Duration: 0:02:56.023212
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-41-22.json
+	Scene: 2023-04-09_22-41-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=19
+Startdate: 2023-04-09_22-43-28
+Enddate: 2023-04-09_22-46-30
+Duration: 0:03:01.855450
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-44-21.json
+	Scene: 2023-04-09_22-44-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=20
+Startdate: 2023-04-09_22-46-32
+Enddate: 2023-04-09_22-49-39
+Duration: 0:03:06.834905
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-47-27.json
+	Scene: 2023-04-09_22-47-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=21
+Startdate: 2023-04-09_22-49-41
+Enddate: 2023-04-09_22-52-39
+Duration: 0:02:58.348239
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-50-37.json
+	Scene: 2023-04-09_22-50-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=12 negative_funcs=22
+Startdate: 2023-04-09_22-52-41
+Enddate: 2023-04-09_22-55-58
+Duration: 0:03:17.311692
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-53-38.json
+	Scene: 2023-04-09_22-53-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=1
+Startdate: 2023-04-09_22-56-00
+Enddate: 2023-04-09_22-57-34
+Duration: 0:01:33.720145
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-56-33.json
+	Scene: 2023-04-09_22-56-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=2
+Startdate: 2023-04-09_22-57-36
+Enddate: 2023-04-09_22-59-15
+Duration: 0:01:39.196045
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-58-10.json
+	Scene: 2023-04-09_22-58-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=3
+Startdate: 2023-04-09_22-59-17
+Enddate: 2023-04-09_23-01-03
+Duration: 0:01:45.376926
+Files:
+	Autosave: AUTOSAVE_2023-04-09_22-59-52.json
+	Scene: 2023-04-09_22-59-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=4
+Startdate: 2023-04-09_23-01-05
+Enddate: 2023-04-09_23-02-53
+Duration: 0:01:48.765427
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-01-41.json
+	Scene: 2023-04-09_23-01-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=5
+Startdate: 2023-04-09_23-02-55
+Enddate: 2023-04-09_23-04-49
+Duration: 0:01:53.603507
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-03-33.json
+	Scene: 2023-04-09_23-03-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=6
+Startdate: 2023-04-09_23-04-51
+Enddate: 2023-04-09_23-06-50
+Duration: 0:01:59.063859
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-05-30.json
+	Scene: 2023-04-09_23-05-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=7
+Startdate: 2023-04-09_23-06-52
+Enddate: 2023-04-09_23-08-58
+Duration: 0:02:06.087445
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-07-32.json
+	Scene: 2023-04-09_23-07-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=8
+Startdate: 2023-04-09_23-09-00
+Enddate: 2023-04-09_23-11-09
+Duration: 0:02:08.915190
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-09-41.json
+	Scene: 2023-04-09_23-09-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=9
+Startdate: 2023-04-09_23-11-11
+Enddate: 2023-04-09_23-13-27
+Duration: 0:02:16.029616
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-11-54.json
+	Scene: 2023-04-09_23-11-54.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=10
+Startdate: 2023-04-09_23-13-29
+Enddate: 2023-04-09_23-15-50
+Duration: 0:02:20.785240
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-14-13.json
+	Scene: 2023-04-09_23-14-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=11
+Startdate: 2023-04-09_23-15-52
+Enddate: 2023-04-09_23-18-17
+Duration: 0:02:25.029823
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-16-37.json
+	Scene: 2023-04-09_23-16-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=12
+Startdate: 2023-04-09_23-18-19
+Enddate: 2023-04-09_23-20-50
+Duration: 0:02:30.484954
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-19-05.json
+	Scene: 2023-04-09_23-19-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=13
+Startdate: 2023-04-09_23-20-52
+Enddate: 2023-04-09_23-23-27
+Duration: 0:02:35.368667
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-21-39.json
+	Scene: 2023-04-09_23-21-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=14
+Startdate: 2023-04-09_23-23-29
+Enddate: 2023-04-09_23-26-11
+Duration: 0:02:41.912383
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-24-18.json
+	Scene: 2023-04-09_23-24-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=15
+Startdate: 2023-04-09_23-26-13
+Enddate: 2023-04-09_23-28-59
+Duration: 0:02:45.402293
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-27-03.json
+	Scene: 2023-04-09_23-27-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=16
+Startdate: 2023-04-09_23-29-01
+Enddate: 2023-04-09_23-31-53
+Duration: 0:02:52.194433
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-29-52.json
+	Scene: 2023-04-09_23-29-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=17
+Startdate: 2023-04-09_23-31-55
+Enddate: 2023-04-09_23-34-52
+Duration: 0:02:56.713696
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-32-47.json
+	Scene: 2023-04-09_23-32-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=18
+Startdate: 2023-04-09_23-34-54
+Enddate: 2023-04-09_23-37-56
+Duration: 0:03:02.727539
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-35-47.json
+	Scene: 2023-04-09_23-35-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=19
+Startdate: 2023-04-09_23-37-58
+Enddate: 2023-04-09_23-41-07
+Duration: 0:03:08.273215
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-38-53.json
+	Scene: 2023-04-09_23-38-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=20
+Startdate: 2023-04-09_23-41-09
+Enddate: 2023-04-09_23-44-22
+Duration: 0:03:13.328962
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-42-05.json
+	Scene: 2023-04-09_23-42-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=21
+Startdate: 2023-04-09_23-44-24
+Enddate: 2023-04-09_23-47-42
+Duration: 0:03:18.375127
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-45-21.json
+	Scene: 2023-04-09_23-45-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=13 negative_funcs=22
+Startdate: 2023-04-09_23-47-45
+Enddate: 2023-04-09_23-51-09
+Duration: 0:03:24.196953
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-48-43.json
+	Scene: 2023-04-09_23-48-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=1
+Startdate: 2023-04-09_23-51-11
+Enddate: 2023-04-09_23-52-49
+Duration: 0:01:38.345885
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-51-44.json
+	Scene: 2023-04-09_23-51-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=2
+Startdate: 2023-04-09_23-52-51
+Enddate: 2023-04-09_23-54-35
+Duration: 0:01:43.408944
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-53-26.json
+	Scene: 2023-04-09_23-53-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=3
+Startdate: 2023-04-09_23-54-37
+Enddate: 2023-04-09_23-56-25
+Duration: 0:01:48.747999
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-55-13.json
+	Scene: 2023-04-09_23-55-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=4
+Startdate: 2023-04-09_23-56-27
+Enddate: 2023-04-09_23-58-21
+Duration: 0:01:53.425794
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-57-05.json
+	Scene: 2023-04-09_23-57-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=5
+Startdate: 2023-04-09_23-58-23
+Enddate: 2023-04-10_00-00-21
+Duration: 0:01:58.384845
+Files:
+	Autosave: AUTOSAVE_2023-04-09_23-59-01.json
+	Scene: 2023-04-09_23-59-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=6
+Startdate: 2023-04-10_00-00-23
+Enddate: 2023-04-10_00-02-28
+Duration: 0:02:04.418530
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-01-03.json
+	Scene: 2023-04-10_00-01-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=7
+Startdate: 2023-04-10_00-02-30
+Enddate: 2023-04-10_00-04-40
+Duration: 0:02:10.184061
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-03-11.json
+	Scene: 2023-04-10_00-03-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=8
+Startdate: 2023-04-10_00-04-42
+Enddate: 2023-04-10_00-06-57
+Duration: 0:02:15.071386
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-05-24.json
+	Scene: 2023-04-10_00-05-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=9
+Startdate: 2023-04-10_00-06-59
+Enddate: 2023-04-10_00-09-20
+Duration: 0:02:20.784399
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-07-43.json
+	Scene: 2023-04-10_00-07-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=10
+Startdate: 2023-04-10_00-09-22
+Enddate: 2023-04-10_00-11-38
+Duration: 0:02:16.177862
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-10-07.json
+	Scene: 2023-04-10_00-10-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=11
+Startdate: 2023-04-10_00-11-40
+Enddate: 2023-04-10_00-14-12
+Duration: 0:02:31.515690
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-12-26.json
+	Scene: 2023-04-10_00-12-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=12
+Startdate: 2023-04-10_00-14-14
+Enddate: 2023-04-10_00-16-50
+Duration: 0:02:36.795131
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-15-01.json
+	Scene: 2023-04-10_00-15-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=13
+Startdate: 2023-04-10_00-16-52
+Enddate: 2023-04-10_00-19-34
+Duration: 0:02:41.054801
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-17-41.json
+	Scene: 2023-04-10_00-17-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=14
+Startdate: 2023-04-10_00-19-36
+Enddate: 2023-04-10_00-22-22
+Duration: 0:02:46.241266
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-20-25.json
+	Scene: 2023-04-10_00-20-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=15
+Startdate: 2023-04-10_00-22-24
+Enddate: 2023-04-10_00-25-15
+Duration: 0:02:51.149283
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-23-15.json
+	Scene: 2023-04-10_00-23-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=16
+Startdate: 2023-04-10_00-25-17
+Enddate: 2023-04-10_00-28-14
+Duration: 0:02:56.815899
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-26-09.json
+	Scene: 2023-04-10_00-26-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=17
+Startdate: 2023-04-10_00-28-16
+Enddate: 2023-04-10_00-31-17
+Duration: 0:03:01.153783
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-29-09.json
+	Scene: 2023-04-10_00-29-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=18
+Startdate: 2023-04-10_00-31-19
+Enddate: 2023-04-10_00-34-25
+Duration: 0:03:06.393905
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-32-14.json
+	Scene: 2023-04-10_00-32-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=19
+Startdate: 2023-04-10_00-34-28
+Enddate: 2023-04-10_00-37-41
+Duration: 0:03:13.927089
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-35-24.json
+	Scene: 2023-04-10_00-35-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=20
+Startdate: 2023-04-10_00-37-43
+Enddate: 2023-04-10_00-41-00
+Duration: 0:03:16.672731
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-38-41.json
+	Scene: 2023-04-10_00-38-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=21
+Startdate: 2023-04-10_00-41-02
+Enddate: 2023-04-10_00-44-25
+Duration: 0:03:22.536799
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-42-01.json
+	Scene: 2023-04-10_00-42-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=14 negative_funcs=22
+Startdate: 2023-04-10_00-44-27
+Enddate: 2023-04-10_00-47-55
+Duration: 0:03:28.395231
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-45-26.json
+	Scene: 2023-04-10_00-45-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=1
+Startdate: 2023-04-10_00-47-57
+Enddate: 2023-04-10_00-49-41
+Duration: 0:01:43.957684
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-48-32.json
+	Scene: 2023-04-10_00-48-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=2
+Startdate: 2023-04-10_00-49-43
+Enddate: 2023-04-10_00-51-34
+Duration: 0:01:50.813823
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-50-19.json
+	Scene: 2023-04-10_00-50-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=3
+Startdate: 2023-04-10_00-51-36
+Enddate: 2023-04-10_00-53-31
+Duration: 0:01:54.831365
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-52-13.json
+	Scene: 2023-04-10_00-52-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=4
+Startdate: 2023-04-10_00-53-33
+Enddate: 2023-04-10_00-55-34
+Duration: 0:02:01.040088
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-54-11.json
+	Scene: 2023-04-10_00-54-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=5
+Startdate: 2023-04-10_00-55-36
+Enddate: 2023-04-10_00-57-42
+Duration: 0:02:05.539515
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-56-16.json
+	Scene: 2023-04-10_00-56-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=6
+Startdate: 2023-04-10_00-57-44
+Enddate: 2023-04-10_00-59-54
+Duration: 0:02:10.769578
+Files:
+	Autosave: AUTOSAVE_2023-04-10_00-58-25.json
+	Scene: 2023-04-10_00-58-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=7
+Startdate: 2023-04-10_00-59-56
+Enddate: 2023-04-10_01-02-11
+Duration: 0:02:15.059397
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-00-39.json
+	Scene: 2023-04-10_01-00-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=8
+Startdate: 2023-04-10_01-02-14
+Enddate: 2023-04-10_01-04-36
+Duration: 0:02:22.508569
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-02-57.json
+	Scene: 2023-04-10_01-02-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=9
+Startdate: 2023-04-10_01-04-38
+Enddate: 2023-04-10_01-07-03
+Duration: 0:02:24.919413
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-05-23.json
+	Scene: 2023-04-10_01-05-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=10
+Startdate: 2023-04-10_01-07-05
+Enddate: 2023-04-10_01-09-36
+Duration: 0:02:31.284804
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-07-51.json
+	Scene: 2023-04-10_01-07-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=11
+Startdate: 2023-04-10_01-09-38
+Enddate: 2023-04-10_01-12-13
+Duration: 0:02:35.125444
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-10-26.json
+	Scene: 2023-04-10_01-10-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=12
+Startdate: 2023-04-10_01-12-16
+Enddate: 2023-04-10_01-14-57
+Duration: 0:02:41.789392
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-13-05.json
+	Scene: 2023-04-10_01-13-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=13
+Startdate: 2023-04-10_01-14-59
+Enddate: 2023-04-10_01-17-45
+Duration: 0:02:45.694741
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-15-49.json
+	Scene: 2023-04-10_01-15-49.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=14
+Startdate: 2023-04-10_01-17-47
+Enddate: 2023-04-10_01-20-29
+Duration: 0:02:42.149388
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-18-38.json
+	Scene: 2023-04-10_01-18-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=15
+Startdate: 2023-04-10_01-20-31
+Enddate: 2023-04-10_01-23-28
+Duration: 0:02:56.322790
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-21-24.json
+	Scene: 2023-04-10_01-21-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=16
+Startdate: 2023-04-10_01-23-30
+Enddate: 2023-04-10_01-26-32
+Duration: 0:03:02.304857
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-24-23.json
+	Scene: 2023-04-10_01-24-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=17
+Startdate: 2023-04-10_01-26-34
+Enddate: 2023-04-10_01-29-41
+Duration: 0:03:06.534711
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-27-29.json
+	Scene: 2023-04-10_01-27-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=18
+Startdate: 2023-04-10_01-29-43
+Enddate: 2023-04-10_01-32-55
+Duration: 0:03:12.612476
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-30-39.json
+	Scene: 2023-04-10_01-30-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=19
+Startdate: 2023-04-10_01-32-57
+Enddate: 2023-04-10_01-36-14
+Duration: 0:03:16.992829
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-33-54.json
+	Scene: 2023-04-10_01-33-54.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=20
+Startdate: 2023-04-10_01-36-16
+Enddate: 2023-04-10_01-39-39
+Duration: 0:03:22.490493
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-37-15.json
+	Scene: 2023-04-10_01-37-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=21
+Startdate: 2023-04-10_01-39-41
+Enddate: 2023-04-10_01-43-09
+Duration: 0:03:27.967609
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-40-41.json
+	Scene: 2023-04-10_01-40-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=15 negative_funcs=22
+Startdate: 2023-04-10_01-43-11
+Enddate: 2023-04-10_01-46-44
+Duration: 0:03:33.113948
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-44-12.json
+	Scene: 2023-04-10_01-44-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=1
+Startdate: 2023-04-10_01-46-46
+Enddate: 2023-04-10_01-48-34
+Duration: 0:01:48.417099
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-47-22.json
+	Scene: 2023-04-10_01-47-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=2
+Startdate: 2023-04-10_01-48-36
+Enddate: 2023-04-10_01-50-30
+Duration: 0:01:53.875879
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-49-14.json
+	Scene: 2023-04-10_01-49-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=3
+Startdate: 2023-04-10_01-50-32
+Enddate: 2023-04-10_01-52-31
+Duration: 0:01:58.631532
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-51-11.json
+	Scene: 2023-04-10_01-51-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=4
+Startdate: 2023-04-10_01-52-33
+Enddate: 2023-04-10_01-54-37
+Duration: 0:02:04.085630
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-53-13.json
+	Scene: 2023-04-10_01-53-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=5
+Startdate: 2023-04-10_01-54-39
+Enddate: 2023-04-10_01-56-50
+Duration: 0:02:10.582914
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-55-20.json
+	Scene: 2023-04-10_01-55-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=6
+Startdate: 2023-04-10_01-56-52
+Enddate: 2023-04-10_01-59-06
+Duration: 0:02:14.246196
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-57-34.json
+	Scene: 2023-04-10_01-57-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=7
+Startdate: 2023-04-10_01-59-08
+Enddate: 2023-04-10_02-01-18
+Duration: 0:02:09.995745
+Files:
+	Autosave: AUTOSAVE_2023-04-10_01-59-51.json
+	Scene: 2023-04-10_01-59-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=8
+Startdate: 2023-04-10_02-01-20
+Enddate: 2023-04-10_02-03-47
+Duration: 0:02:26.728973
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-02-05.json
+	Scene: 2023-04-10_02-02-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=9
+Startdate: 2023-04-10_02-03-49
+Enddate: 2023-04-10_02-06-20
+Duration: 0:02:31.198717
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-04-35.json
+	Scene: 2023-04-10_02-04-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=10
+Startdate: 2023-04-10_02-06-22
+Enddate: 2023-04-10_02-09-00
+Duration: 0:02:37.678694
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-07-09.json
+	Scene: 2023-04-10_02-07-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=11
+Startdate: 2023-04-10_02-09-02
+Enddate: 2023-04-10_02-11-45
+Duration: 0:02:43.098204
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-09-50.json
+	Scene: 2023-04-10_02-09-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=12
+Startdate: 2023-04-10_02-11-47
+Enddate: 2023-04-10_02-14-33
+Duration: 0:02:45.620952
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-12-37.json
+	Scene: 2023-04-10_02-12-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=13
+Startdate: 2023-04-10_02-14-35
+Enddate: 2023-04-10_02-17-25
+Duration: 0:02:50.757116
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-15-25.json
+	Scene: 2023-04-10_02-15-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=14
+Startdate: 2023-04-10_02-17-27
+Enddate: 2023-04-10_02-20-25
+Duration: 0:02:58.054972
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-18-20.json
+	Scene: 2023-04-10_02-18-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=15
+Startdate: 2023-04-10_02-20-27
+Enddate: 2023-04-10_02-23-29
+Duration: 0:03:01.577495
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-21-21.json
+	Scene: 2023-04-10_02-21-21.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=16
+Startdate: 2023-04-10_02-23-31
+Enddate: 2023-04-10_02-26-38
+Duration: 0:03:06.944864
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-24-26.json
+	Scene: 2023-04-10_02-24-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=17
+Startdate: 2023-04-10_02-26-40
+Enddate: 2023-04-10_02-29-53
+Duration: 0:03:12.981455
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-27-36.json
+	Scene: 2023-04-10_02-27-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=18
+Startdate: 2023-04-10_02-29-55
+Enddate: 2023-04-10_02-33-13
+Duration: 0:03:17.704221
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-30-53.json
+	Scene: 2023-04-10_02-30-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=19
+Startdate: 2023-04-10_02-33-15
+Enddate: 2023-04-10_02-36-37
+Duration: 0:03:22.229548
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-34-13.json
+	Scene: 2023-04-10_02-34-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=20
+Startdate: 2023-04-10_02-36-39
+Enddate: 2023-04-10_02-40-07
+Duration: 0:03:27.463879
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-37-39.json
+	Scene: 2023-04-10_02-37-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=21
+Startdate: 2023-04-10_02-40-09
+Enddate: 2023-04-10_02-43-42
+Duration: 0:03:33.010792
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-41-10.json
+	Scene: 2023-04-10_02-41-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=16 negative_funcs=22
+Startdate: 2023-04-10_02-43-44
+Enddate: 2023-04-10_02-47-22
+Duration: 0:03:38.345577
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-44-46.json
+	Scene: 2023-04-10_02-44-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=1
+Startdate: 2023-04-10_02-47-24
+Enddate: 2023-04-10_02-49-19
+Duration: 0:01:55.236713
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-48-01.json
+	Scene: 2023-04-10_02-48-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=2
+Startdate: 2023-04-10_02-49-21
+Enddate: 2023-04-10_02-51-21
+Duration: 0:02:00.120035
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-50-00.json
+	Scene: 2023-04-10_02-50-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=3
+Startdate: 2023-04-10_02-51-24
+Enddate: 2023-04-10_02-53-28
+Duration: 0:02:04.943324
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-52-03.json
+	Scene: 2023-04-10_02-52-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=4
+Startdate: 2023-04-10_02-53-30
+Enddate: 2023-04-10_02-55-34
+Duration: 0:02:03.362971
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-54-12.json
+	Scene: 2023-04-10_02-54-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=5
+Startdate: 2023-04-10_02-55-36
+Enddate: 2023-04-10_02-57-52
+Duration: 0:02:16.093391
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-56-18.json
+	Scene: 2023-04-10_02-56-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=6
+Startdate: 2023-04-10_02-57-54
+Enddate: 2023-04-10_03-00-13
+Duration: 0:02:19.386067
+Files:
+	Autosave: AUTOSAVE_2023-04-10_02-58-38.json
+	Scene: 2023-04-10_02-58-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=7
+Startdate: 2023-04-10_03-00-15
+Enddate: 2023-04-10_03-02-41
+Duration: 0:02:25.734300
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-01-00.json
+	Scene: 2023-04-10_03-01-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=8
+Startdate: 2023-04-10_03-02-43
+Enddate: 2023-04-10_03-05-13
+Duration: 0:02:30.007199
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-03-29.json
+	Scene: 2023-04-10_03-03-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=9
+Startdate: 2023-04-10_03-05-15
+Enddate: 2023-04-10_03-07-52
+Duration: 0:02:36.844001
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-06-03.json
+	Scene: 2023-04-10_03-06-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=10
+Startdate: 2023-04-10_03-07-54
+Enddate: 2023-04-10_03-10-35
+Duration: 0:02:41.210991
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-08-43.json
+	Scene: 2023-04-10_03-08-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=11
+Startdate: 2023-04-10_03-10-37
+Enddate: 2023-04-10_03-13-23
+Duration: 0:02:45.484719
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-11-27.json
+	Scene: 2023-04-10_03-11-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=12
+Startdate: 2023-04-10_03-13-25
+Enddate: 2023-04-10_03-16-16
+Duration: 0:02:50.780370
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-14-16.json
+	Scene: 2023-04-10_03-14-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=13
+Startdate: 2023-04-10_03-16-18
+Enddate: 2023-04-10_03-19-14
+Duration: 0:02:55.787282
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-17-10.json
+	Scene: 2023-04-10_03-17-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=14
+Startdate: 2023-04-10_03-19-16
+Enddate: 2023-04-10_03-22-19
+Duration: 0:03:03.035281
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-20-09.json
+	Scene: 2023-04-10_03-20-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=15
+Startdate: 2023-04-10_03-22-21
+Enddate: 2023-04-10_03-25-27
+Duration: 0:03:06.244443
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-23-15.json
+	Scene: 2023-04-10_03-23-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=16
+Startdate: 2023-04-10_03-25-29
+Enddate: 2023-04-10_03-28-41
+Duration: 0:03:11.822678
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-26-25.json
+	Scene: 2023-04-10_03-26-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=17
+Startdate: 2023-04-10_03-28-43
+Enddate: 2023-04-10_03-32-00
+Duration: 0:03:17.574412
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-29-40.json
+	Scene: 2023-04-10_03-29-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=18
+Startdate: 2023-04-10_03-32-02
+Enddate: 2023-04-10_03-35-11
+Duration: 0:03:09.069382
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-33-01.json
+	Scene: 2023-04-10_03-33-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=19
+Startdate: 2023-04-10_03-35-14
+Enddate: 2023-04-10_03-38-45
+Duration: 0:03:31.830813
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-36-13.json
+	Scene: 2023-04-10_03-36-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=20
+Startdate: 2023-04-10_03-38-47
+Enddate: 2023-04-10_03-42-19
+Duration: 0:03:31.486106
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-39-48.json
+	Scene: 2023-04-10_03-39-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=21
+Startdate: 2023-04-10_03-42-21
+Enddate: 2023-04-10_03-45-59
+Duration: 0:03:38.053130
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-43-23.json
+	Scene: 2023-04-10_03-43-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=17 negative_funcs=22
+Startdate: 2023-04-10_03-46-01
+Enddate: 2023-04-10_03-49-45
+Duration: 0:03:43.673528
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-47-04.json
+	Scene: 2023-04-10_03-47-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=1
+Startdate: 2023-04-10_03-49-47
+Enddate: 2023-04-10_03-51-47
+Duration: 0:02:00.212083
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-50-25.json
+	Scene: 2023-04-10_03-50-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=2
+Startdate: 2023-04-10_03-51-49
+Enddate: 2023-04-10_03-53-46
+Duration: 0:01:57.131945
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-52-29.json
+	Scene: 2023-04-10_03-52-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=3
+Startdate: 2023-04-10_03-53-48
+Enddate: 2023-04-10_03-56-00
+Duration: 0:02:11.600518
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-54-29.json
+	Scene: 2023-04-10_03-54-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=4
+Startdate: 2023-04-10_03-56-02
+Enddate: 2023-04-10_03-58-17
+Duration: 0:02:15.502867
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-56-44.json
+	Scene: 2023-04-10_03-56-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=5
+Startdate: 2023-04-10_03-58-19
+Enddate: 2023-04-10_04-00-39
+Duration: 0:02:19.588225
+Files:
+	Autosave: AUTOSAVE_2023-04-10_03-59-03.json
+	Scene: 2023-04-10_03-59-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=6
+Startdate: 2023-04-10_04-00-41
+Enddate: 2023-04-10_04-03-07
+Duration: 0:02:25.534054
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-01-26.json
+	Scene: 2023-04-10_04-01-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=7
+Startdate: 2023-04-10_04-03-09
+Enddate: 2023-04-10_04-05-39
+Duration: 0:02:30.343286
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-03-55.json
+	Scene: 2023-04-10_04-03-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=8
+Startdate: 2023-04-10_04-05-41
+Enddate: 2023-04-10_04-08-16
+Duration: 0:02:35.575032
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-06-28.json
+	Scene: 2023-04-10_04-06-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=9
+Startdate: 2023-04-10_04-08-19
+Enddate: 2023-04-10_04-11-00
+Duration: 0:02:41.708418
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-09-07.json
+	Scene: 2023-04-10_04-09-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=10
+Startdate: 2023-04-10_04-11-02
+Enddate: 2023-04-10_04-13-49
+Duration: 0:02:46.263530
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-11-52.json
+	Scene: 2023-04-10_04-11-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=11
+Startdate: 2023-04-10_04-13-51
+Enddate: 2023-04-10_04-16-42
+Duration: 0:02:51.320187
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-14-41.json
+	Scene: 2023-04-10_04-14-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=12
+Startdate: 2023-04-10_04-16-44
+Enddate: 2023-04-10_04-19-40
+Duration: 0:02:56.012056
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-17-36.json
+	Scene: 2023-04-10_04-17-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=13
+Startdate: 2023-04-10_04-19-42
+Enddate: 2023-04-10_04-22-46
+Duration: 0:03:03.587552
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-20-36.json
+	Scene: 2023-04-10_04-20-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=14
+Startdate: 2023-04-10_04-22-48
+Enddate: 2023-04-10_04-25-55
+Duration: 0:03:07.318422
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-23-42.json
+	Scene: 2023-04-10_04-23-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=15
+Startdate: 2023-04-10_04-25-57
+Enddate: 2023-04-10_04-29-10
+Duration: 0:03:13.347983
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-26-53.json
+	Scene: 2023-04-10_04-26-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=16
+Startdate: 2023-04-10_04-29-12
+Enddate: 2023-04-10_04-32-32
+Duration: 0:03:19.515894
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-30-10.json
+	Scene: 2023-04-10_04-30-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=17
+Startdate: 2023-04-10_04-32-34
+Enddate: 2023-04-10_04-35-56
+Duration: 0:03:22.507782
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-33-32.json
+	Scene: 2023-04-10_04-33-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=18
+Startdate: 2023-04-10_04-35-58
+Enddate: 2023-04-10_04-39-27
+Duration: 0:03:28.502404
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-36-58.json
+	Scene: 2023-04-10_04-36-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=19
+Startdate: 2023-04-10_04-39-29
+Enddate: 2023-04-10_04-43-03
+Duration: 0:03:33.826325
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-40-30.json
+	Scene: 2023-04-10_04-40-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=20
+Startdate: 2023-04-10_04-43-05
+Enddate: 2023-04-10_04-46-29
+Duration: 0:03:24.564139
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-44-07.json
+	Scene: 2023-04-10_04-44-07.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=21
+Startdate: 2023-04-10_04-46-31
+Enddate: 2023-04-10_04-49-58
+Duration: 0:03:26.119554
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-47-35.json
+	Scene: 2023-04-10_04-47-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=18 negative_funcs=22
+Startdate: 2023-04-10_04-50-00
+Enddate: 2023-04-10_04-53-49
+Duration: 0:03:49.234890
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-51-04.json
+	Scene: 2023-04-10_04-51-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=1
+Startdate: 2023-04-10_04-53-51
+Enddate: 2023-04-10_04-55-48
+Duration: 0:01:56.623944
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-54-31.json
+	Scene: 2023-04-10_04-54-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=2
+Startdate: 2023-04-10_04-55-50
+Enddate: 2023-04-10_04-57-59
+Duration: 0:02:09.560400
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-56-31.json
+	Scene: 2023-04-10_04-56-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=3
+Startdate: 2023-04-10_04-58-01
+Enddate: 2023-04-10_05-00-15
+Duration: 0:02:14.243822
+Files:
+	Autosave: AUTOSAVE_2023-04-10_04-58-44.json
+	Scene: 2023-04-10_04-58-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=4
+Startdate: 2023-04-10_05-00-17
+Enddate: 2023-04-10_05-02-39
+Duration: 0:02:21.253069
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-01-01.json
+	Scene: 2023-04-10_05-01-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=5
+Startdate: 2023-04-10_05-02-41
+Enddate: 2023-04-10_05-05-05
+Duration: 0:02:24.639438
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-03-25.json
+	Scene: 2023-04-10_05-03-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=6
+Startdate: 2023-04-10_05-05-07
+Enddate: 2023-04-10_05-07-39
+Duration: 0:02:31.158472
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-05-53.json
+	Scene: 2023-04-10_05-05-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=7
+Startdate: 2023-04-10_05-07-41
+Enddate: 2023-04-10_05-10-06
+Duration: 0:02:25.646320
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-08-28.json
+	Scene: 2023-04-10_05-08-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=8
+Startdate: 2023-04-10_05-10-08
+Enddate: 2023-04-10_05-12-49
+Duration: 0:02:40.509061
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-10-57.json
+	Scene: 2023-04-10_05-10-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=9
+Startdate: 2023-04-10_05-12-51
+Enddate: 2023-04-10_05-15-38
+Duration: 0:02:47.210860
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-13-41.json
+	Scene: 2023-04-10_05-13-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=10
+Startdate: 2023-04-10_05-15-40
+Enddate: 2023-04-10_05-18-32
+Duration: 0:02:51.936518
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-16-31.json
+	Scene: 2023-04-10_05-16-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=11
+Startdate: 2023-04-10_05-18-34
+Enddate: 2023-04-10_05-21-32
+Duration: 0:02:57.871471
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-19-26.json
+	Scene: 2023-04-10_05-19-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=12
+Startdate: 2023-04-10_05-21-34
+Enddate: 2023-04-10_05-24-36
+Duration: 0:03:02.262189
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-22-28.json
+	Scene: 2023-04-10_05-22-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=13
+Startdate: 2023-04-10_05-24-38
+Enddate: 2023-04-10_05-27-48
+Duration: 0:03:09.419299
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-25-33.json
+	Scene: 2023-04-10_05-25-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=14
+Startdate: 2023-04-10_05-27-50
+Enddate: 2023-04-10_05-31-02
+Duration: 0:03:12.378172
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-28-46.json
+	Scene: 2023-04-10_05-28-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=15
+Startdate: 2023-04-10_05-31-04
+Enddate: 2023-04-10_05-34-21
+Duration: 0:03:17.207591
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-32-02.json
+	Scene: 2023-04-10_05-32-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=16
+Startdate: 2023-04-10_05-34-23
+Enddate: 2023-04-10_05-37-47
+Duration: 0:03:23.647098
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-35-22.json
+	Scene: 2023-04-10_05-35-22.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=17
+Startdate: 2023-04-10_05-37-49
+Enddate: 2023-04-10_05-41-18
+Duration: 0:03:28.465975
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-38-49.json
+	Scene: 2023-04-10_05-38-49.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=18
+Startdate: 2023-04-10_05-41-20
+Enddate: 2023-04-10_05-44-53
+Duration: 0:03:33.908398
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-42-20.json
+	Scene: 2023-04-10_05-42-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=19
+Startdate: 2023-04-10_05-44-55
+Enddate: 2023-04-10_05-48-32
+Duration: 0:03:36.949170
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-45-58.json
+	Scene: 2023-04-10_05-45-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=20
+Startdate: 2023-04-10_05-48-34
+Enddate: 2023-04-10_05-52-05
+Duration: 0:03:30.185128
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-49-38.json
+	Scene: 2023-04-10_05-49-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=21
+Startdate: 2023-04-10_05-52-07
+Enddate: 2023-04-10_05-55-55
+Duration: 0:03:47.795534
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-53-11.json
+	Scene: 2023-04-10_05-53-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=19 negative_funcs=22
+Startdate: 2023-04-10_05-55-57
+Enddate: 2023-04-10_05-59-52
+Duration: 0:03:55.123883
+Files:
+	Autosave: AUTOSAVE_2023-04-10_05-57-02.json
+	Scene: 2023-04-10_05-57-02.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=1
+Startdate: 2023-04-10_05-59-54
+Enddate: 2023-04-10_06-02-04
+Duration: 0:02:10.016221
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-00-35.json
+	Scene: 2023-04-10_06-00-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=2
+Startdate: 2023-04-10_06-02-06
+Enddate: 2023-04-10_06-04-21
+Duration: 0:02:14.762998
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-02-48.json
+	Scene: 2023-04-10_06-02-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=3
+Startdate: 2023-04-10_06-04-23
+Enddate: 2023-04-10_06-06-42
+Duration: 0:02:19.037446
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-05-06.json
+	Scene: 2023-04-10_06-05-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=4
+Startdate: 2023-04-10_06-06-44
+Enddate: 2023-04-10_06-09-10
+Duration: 0:02:26.605677
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-07-28.json
+	Scene: 2023-04-10_06-07-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=5
+Startdate: 2023-04-10_06-09-12
+Enddate: 2023-04-10_06-11-45
+Duration: 0:02:32.346350
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-09-58.json
+	Scene: 2023-04-10_06-09-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=6
+Startdate: 2023-04-10_06-11-47
+Enddate: 2023-04-10_06-14-24
+Duration: 0:02:37.473827
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-12-34.json
+	Scene: 2023-04-10_06-12-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=7
+Startdate: 2023-04-10_06-14-26
+Enddate: 2023-04-10_06-17-08
+Duration: 0:02:42.027693
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-15-15.json
+	Scene: 2023-04-10_06-15-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=8
+Startdate: 2023-04-10_06-17-10
+Enddate: 2023-04-10_06-19-58
+Duration: 0:02:47.706134
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-18-00.json
+	Scene: 2023-04-10_06-18-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=9
+Startdate: 2023-04-10_06-20-00
+Enddate: 2023-04-10_06-22-52
+Duration: 0:02:52.447623
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-20-51.json
+	Scene: 2023-04-10_06-20-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=10
+Startdate: 2023-04-10_06-22-55
+Enddate: 2023-04-10_06-25-56
+Duration: 0:03:01.149711
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-23-47.json
+	Scene: 2023-04-10_06-23-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=11
+Startdate: 2023-04-10_06-25-58
+Enddate: 2023-04-10_06-29-02
+Duration: 0:03:04.725706
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-26-52.json
+	Scene: 2023-04-10_06-26-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=12
+Startdate: 2023-04-10_06-29-04
+Enddate: 2023-04-10_06-32-00
+Duration: 0:02:55.416053
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-30-00.json
+	Scene: 2023-04-10_06-30-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=13
+Startdate: 2023-04-10_06-32-02
+Enddate: 2023-04-10_06-35-06
+Duration: 0:03:03.772407
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-32-59.json
+	Scene: 2023-04-10_06-32-59.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=14
+Startdate: 2023-04-10_06-35-08
+Enddate: 2023-04-10_06-38-30
+Duration: 0:03:22.692398
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-36-06.json
+	Scene: 2023-04-10_06-36-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=15
+Startdate: 2023-04-10_06-38-32
+Enddate: 2023-04-10_06-42-13
+Duration: 0:03:40.493591
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-39-34.json
+	Scene: 2023-04-10_06-39-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=16
+Startdate: 2023-04-10_06-42-15
+Enddate: 2023-04-10_06-46-37
+Duration: 0:04:21.744111
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-43-44.json
+	Scene: 2023-04-10_06-43-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=17
+Startdate: 2023-04-10_06-46-39
+Enddate: 2023-04-10_06-50-38
+Duration: 0:03:59.031127
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-48-05.json
+	Scene: 2023-04-10_06-48-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=18
+Startdate: 2023-04-10_06-50-40
+Enddate: 2023-04-10_06-55-20
+Duration: 0:04:39.647218
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-52-13.json
+	Scene: 2023-04-10_06-52-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=19
+Startdate: 2023-04-10_06-55-22
+Enddate: 2023-04-10_07-00-13
+Duration: 0:04:51.490796
+Files:
+	Autosave: AUTOSAVE_2023-04-10_06-57-01.json
+	Scene: 2023-04-10_06-57-01.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=20
+Startdate: 2023-04-10_07-00-15
+Enddate: 2023-04-10_07-05-02
+Duration: 0:04:46.520798
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-01-50.json
+	Scene: 2023-04-10_07-01-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=21
+Startdate: 2023-04-10_07-05-04
+Enddate: 2023-04-10_07-09-46
+Duration: 0:04:42.045988
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-06-41.json
+	Scene: 2023-04-10_07-06-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=20 negative_funcs=22
+Startdate: 2023-04-10_07-09-48
+Enddate: 2023-04-10_07-14-04
+Duration: 0:04:16.276945
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-10-59.json
+	Scene: 2023-04-10_07-10-59.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=1
+Startdate: 2023-04-10_07-14-06
+Enddate: 2023-04-10_07-16-29
+Duration: 0:02:23.030302
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-14-51.json
+	Scene: 2023-04-10_07-14-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=2
+Startdate: 2023-04-10_07-16-31
+Enddate: 2023-04-10_07-19-01
+Duration: 0:02:29.381773
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-17-17.json
+	Scene: 2023-04-10_07-17-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=3
+Startdate: 2023-04-10_07-19-03
+Enddate: 2023-04-10_07-21-40
+Duration: 0:02:37.142138
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-19-50.json
+	Scene: 2023-04-10_07-19-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=4
+Startdate: 2023-04-10_07-21-42
+Enddate: 2023-04-10_07-24-11
+Duration: 0:02:29.384749
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-22-30.json
+	Scene: 2023-04-10_07-22-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=5
+Startdate: 2023-04-10_07-24-13
+Enddate: 2023-04-10_07-26-57
+Duration: 0:02:44.054927
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-25-03.json
+	Scene: 2023-04-10_07-25-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=6
+Startdate: 2023-04-10_07-26-59
+Enddate: 2023-04-10_07-29-47
+Duration: 0:02:48.030113
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-27-49.json
+	Scene: 2023-04-10_07-27-49.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=7
+Startdate: 2023-04-10_07-29-49
+Enddate: 2023-04-10_07-32-47
+Duration: 0:02:57.617926
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-30-40.json
+	Scene: 2023-04-10_07-30-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=8
+Startdate: 2023-04-10_07-32-49
+Enddate: 2023-04-10_07-35-48
+Duration: 0:02:58.819779
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-33-41.json
+	Scene: 2023-04-10_07-33-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=9
+Startdate: 2023-04-10_07-35-50
+Enddate: 2023-04-10_07-38-55
+Duration: 0:03:04.655266
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-36-44.json
+	Scene: 2023-04-10_07-36-44.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=10
+Startdate: 2023-04-10_07-38-57
+Enddate: 2023-04-10_07-42-07
+Duration: 0:03:10.876184
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-39-51.json
+	Scene: 2023-04-10_07-39-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=11
+Startdate: 2023-04-10_07-42-10
+Enddate: 2023-04-10_07-45-21
+Duration: 0:03:11.470496
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-43-05.json
+	Scene: 2023-04-10_07-43-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=12
+Startdate: 2023-04-10_07-45-23
+Enddate: 2023-04-10_07-48-37
+Duration: 0:03:13.693900
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-46-19.json
+	Scene: 2023-04-10_07-46-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=13
+Startdate: 2023-04-10_07-48-39
+Enddate: 2023-04-10_07-52-00
+Duration: 0:03:20.783377
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-49-36.json
+	Scene: 2023-04-10_07-49-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=14
+Startdate: 2023-04-10_07-52-02
+Enddate: 2023-04-10_07-55-27
+Duration: 0:03:25.531989
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-53-00.json
+	Scene: 2023-04-10_07-53-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=15
+Startdate: 2023-04-10_07-55-29
+Enddate: 2023-04-10_07-59-03
+Duration: 0:03:34.307686
+Files:
+	Autosave: AUTOSAVE_2023-04-10_07-56-30.json
+	Scene: 2023-04-10_07-56-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=16
+Startdate: 2023-04-10_07-59-06
+Enddate: 2023-04-10_08-02-47
+Duration: 0:03:41.160730
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-00-08.json
+	Scene: 2023-04-10_08-00-08.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=17
+Startdate: 2023-04-10_08-02-49
+Enddate: 2023-04-10_08-06-35
+Duration: 0:03:45.819350
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-03-52.json
+	Scene: 2023-04-10_08-03-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=18
+Startdate: 2023-04-10_08-06-37
+Enddate: 2023-04-10_08-10-29
+Duration: 0:03:52.899456
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-07-41.json
+	Scene: 2023-04-10_08-07-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=19
+Startdate: 2023-04-10_08-10-32
+Enddate: 2023-04-10_08-14-21
+Duration: 0:03:49.854868
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-11-37.json
+	Scene: 2023-04-10_08-11-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=20
+Startdate: 2023-04-10_08-14-23
+Enddate: 2023-04-10_08-18-24
+Duration: 0:04:00.688841
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-15-32.json
+	Scene: 2023-04-10_08-15-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=21
+Startdate: 2023-04-10_08-18-26
+Enddate: 2023-04-10_08-22-33
+Duration: 0:04:06.531538
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-19-34.json
+	Scene: 2023-04-10_08-19-34.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=21 negative_funcs=22
+Startdate: 2023-04-10_08-22-35
+Enddate: 2023-04-10_08-26-46
+Duration: 0:04:11.166674
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-23-45.json
+	Scene: 2023-04-10_08-23-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=1
+Startdate: 2023-04-10_08-26-48
+Enddate: 2023-04-10_08-29-12
+Duration: 0:02:24.177253
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-27-32.json
+	Scene: 2023-04-10_08-27-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=2
+Startdate: 2023-04-10_08-29-14
+Enddate: 2023-04-10_08-31-45
+Duration: 0:02:30.529289
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-30-00.json
+	Scene: 2023-04-10_08-30-00.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=3
+Startdate: 2023-04-10_08-31-47
+Enddate: 2023-04-10_08-34-18
+Duration: 0:02:31.606438
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-32-33.json
+	Scene: 2023-04-10_08-32-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=4
+Startdate: 2023-04-10_08-34-20
+Enddate: 2023-04-10_08-37-01
+Duration: 0:02:40.850680
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-35-08.json
+	Scene: 2023-04-10_08-35-08.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=5
+Startdate: 2023-04-10_08-37-03
+Enddate: 2023-04-10_08-39-53
+Duration: 0:02:49.913316
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-37-54.json
+	Scene: 2023-04-10_08-37-54.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=6
+Startdate: 2023-04-10_08-39-55
+Enddate: 2023-04-10_08-42-48
+Duration: 0:02:52.537924
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-40-46.json
+	Scene: 2023-04-10_08-40-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=7
+Startdate: 2023-04-10_08-42-50
+Enddate: 2023-04-10_08-45-47
+Duration: 0:02:57.376498
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-43-42.json
+	Scene: 2023-04-10_08-43-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=8
+Startdate: 2023-04-10_08-45-49
+Enddate: 2023-04-10_08-48-51
+Duration: 0:03:01.465491
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-46-43.json
+	Scene: 2023-04-10_08-46-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=9
+Startdate: 2023-04-10_08-48-53
+Enddate: 2023-04-10_08-52-00
+Duration: 0:03:06.907499
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-49-47.json
+	Scene: 2023-04-10_08-49-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=10
+Startdate: 2023-04-10_08-52-02
+Enddate: 2023-04-10_08-55-10
+Duration: 0:03:07.929682
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-52-57.json
+	Scene: 2023-04-10_08-52-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=11
+Startdate: 2023-04-10_08-55-12
+Enddate: 2023-04-10_08-58-27
+Duration: 0:03:15.356618
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-56-08.json
+	Scene: 2023-04-10_08-56-08.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=12
+Startdate: 2023-04-10_08-58-29
+Enddate: 2023-04-10_09-01-54
+Duration: 0:03:24.731014
+Files:
+	Autosave: AUTOSAVE_2023-04-10_08-59-27.json
+	Scene: 2023-04-10_08-59-27.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=13
+Startdate: 2023-04-10_09-01-56
+Enddate: 2023-04-10_09-05-30
+Duration: 0:03:34.366623
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-02-55.json
+	Scene: 2023-04-10_09-02-55.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=14
+Startdate: 2023-04-10_09-05-32
+Enddate: 2023-04-10_09-09-12
+Duration: 0:03:39.370598
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-06-35.json
+	Scene: 2023-04-10_09-06-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=15
+Startdate: 2023-04-10_09-09-14
+Enddate: 2023-04-10_09-12-53
+Duration: 0:03:39.599997
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-10-16.json
+	Scene: 2023-04-10_09-10-16.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=16
+Startdate: 2023-04-10_09-12-55
+Enddate: 2023-04-10_09-16-42
+Duration: 0:03:47.198787
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-13-59.json
+	Scene: 2023-04-10_09-13-59.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=17
+Startdate: 2023-04-10_09-16-44
+Enddate: 2023-04-10_09-20-36
+Duration: 0:03:51.921671
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-17-50.json
+	Scene: 2023-04-10_09-17-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=18
+Startdate: 2023-04-10_09-20-38
+Enddate: 2023-04-10_09-24-34
+Duration: 0:03:55.222011
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-21-45.json
+	Scene: 2023-04-10_09-21-45.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=19
+Startdate: 2023-04-10_09-24-36
+Enddate: 2023-04-10_09-28-34
+Duration: 0:03:58.321622
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-25-42.json
+	Scene: 2023-04-10_09-25-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=20
+Startdate: 2023-04-10_09-28-36
+Enddate: 2023-04-10_09-32-37
+Duration: 0:04:01.241489
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-29-43.json
+	Scene: 2023-04-10_09-29-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=21
+Startdate: 2023-04-10_09-32-39
+Enddate: 2023-04-10_09-36-46
+Duration: 0:04:06.908517
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-33-48.json
+	Scene: 2023-04-10_09-33-48.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=22 negative_funcs=22
+Startdate: 2023-04-10_09-36-48
+Enddate: 2023-04-10_09-41-00
+Duration: 0:04:11.468729
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-37-58.json
+	Scene: 2023-04-10_09-37-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=1
+Startdate: 2023-04-10_09-41-02
+Enddate: 2023-04-10_09-43-29
+Duration: 0:02:26.681207
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-41-47.json
+	Scene: 2023-04-10_09-41-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=2
+Startdate: 2023-04-10_09-43-31
+Enddate: 2023-04-10_09-46-03
+Duration: 0:02:32.599562
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-44-17.json
+	Scene: 2023-04-10_09-44-17.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=3
+Startdate: 2023-04-10_09-46-05
+Enddate: 2023-04-10_09-48-41
+Duration: 0:02:36.107838
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-46-53.json
+	Scene: 2023-04-10_09-46-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=4
+Startdate: 2023-04-10_09-48-43
+Enddate: 2023-04-10_09-51-26
+Duration: 0:02:42.819913
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-49-32.json
+	Scene: 2023-04-10_09-49-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=5
+Startdate: 2023-04-10_09-51-28
+Enddate: 2023-04-10_09-54-16
+Duration: 0:02:47.581705
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-52-18.json
+	Scene: 2023-04-10_09-52-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=6
+Startdate: 2023-04-10_09-54-18
+Enddate: 2023-04-10_09-57-17
+Duration: 0:02:58.816656
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-55-11.json
+	Scene: 2023-04-10_09-55-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=7
+Startdate: 2023-04-10_09-57-19
+Enddate: 2023-04-10_10-00-21
+Duration: 0:03:02.468352
+Files:
+	Autosave: AUTOSAVE_2023-04-10_09-58-13.json
+	Scene: 2023-04-10_09-58-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=8
+Startdate: 2023-04-10_10-00-23
+Enddate: 2023-04-10_10-03-31
+Duration: 0:03:07.980688
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-01-18.json
+	Scene: 2023-04-10_10-01-18.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=9
+Startdate: 2023-04-10_10-03-33
+Enddate: 2023-04-10_10-06-47
+Duration: 0:03:13.378779
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-04-29.json
+	Scene: 2023-04-10_10-04-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=10
+Startdate: 2023-04-10_10-06-49
+Enddate: 2023-04-10_10-10-08
+Duration: 0:03:19.729838
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-07-46.json
+	Scene: 2023-04-10_10-07-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=11
+Startdate: 2023-04-10_10-10-10
+Enddate: 2023-04-10_10-13-35
+Duration: 0:03:24.231156
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-11-09.json
+	Scene: 2023-04-10_10-11-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=12
+Startdate: 2023-04-10_10-13-37
+Enddate: 2023-04-10_10-17-03
+Duration: 0:03:25.925642
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-14-36.json
+	Scene: 2023-04-10_10-14-36.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=13
+Startdate: 2023-04-10_10-17-05
+Enddate: 2023-04-10_10-20-36
+Duration: 0:03:31.061930
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-18-05.json
+	Scene: 2023-04-10_10-18-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=14
+Startdate: 2023-04-10_10-20-38
+Enddate: 2023-04-10_10-24-22
+Duration: 0:03:44.477053
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-21-39.json
+	Scene: 2023-04-10_10-21-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=15
+Startdate: 2023-04-10_10-24-24
+Enddate: 2023-04-10_10-29-16
+Duration: 0:04:51.521190
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-26-08.json
+	Scene: 2023-04-10_10-26-08.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=16
+Startdate: 2023-04-10_10-29-18
+Enddate: 2023-04-10_10-34-17
+Duration: 0:04:59.443874
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-31-09.json
+	Scene: 2023-04-10_10-31-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=17
+Startdate: 2023-04-10_10-34-19
+Enddate: 2023-04-10_10-39-28
+Duration: 0:05:09.144459
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-36-10.json
+	Scene: 2023-04-10_10-36-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=18
+Startdate: 2023-04-10_10-39-30
+Enddate: 2023-04-10_10-44-46
+Duration: 0:05:15.969006
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-41-31.json
+	Scene: 2023-04-10_10-41-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=19
+Startdate: 2023-04-10_10-44-48
+Enddate: 2023-04-10_10-50-18
+Duration: 0:05:29.174846
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-46-49.json
+	Scene: 2023-04-10_10-46-49.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=20
+Startdate: 2023-04-10_10-50-20
+Enddate: 2023-04-10_10-56-01
+Duration: 0:05:40.921537
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-52-32.json
+	Scene: 2023-04-10_10-52-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=21
+Startdate: 2023-04-10_10-56-03
+Enddate: 2023-04-10_11-01-36
+Duration: 0:05:33.322341
+Files:
+	Autosave: AUTOSAVE_2023-04-10_10-58-05.json
+	Scene: 2023-04-10_10-58-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=23 negative_funcs=22
+Startdate: 2023-04-10_11-01-38
+Enddate: 2023-04-10_11-06-45
+Duration: 0:05:06.785516
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-03-06.json
+	Scene: 2023-04-10_11-03-06.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=1
+Startdate: 2023-04-10_11-06-47
+Enddate: 2023-04-10_11-10-07
+Duration: 0:03:19.682185
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-08-03.json
+	Scene: 2023-04-10_11-08-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=2
+Startdate: 2023-04-10_11-10-09
+Enddate: 2023-04-10_11-13-43
+Duration: 0:03:34.183281
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-11-33.json
+	Scene: 2023-04-10_11-11-33.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=3
+Startdate: 2023-04-10_11-13-45
+Enddate: 2023-04-10_11-17-25
+Duration: 0:03:40.532106
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-15-11.json
+	Scene: 2023-04-10_11-15-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=4
+Startdate: 2023-04-10_11-17-27
+Enddate: 2023-04-10_11-21-08
+Duration: 0:03:40.968018
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-18-50.json
+	Scene: 2023-04-10_11-18-50.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=5
+Startdate: 2023-04-10_11-21-10
+Enddate: 2023-04-10_11-24-39
+Duration: 0:03:28.218584
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-22-28.json
+	Scene: 2023-04-10_11-22-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=6
+Startdate: 2023-04-10_11-24-41
+Enddate: 2023-04-10_11-27-46
+Duration: 0:03:04.976924
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-25-35.json
+	Scene: 2023-04-10_11-25-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=7
+Startdate: 2023-04-10_11-27-48
+Enddate: 2023-04-10_11-30-55
+Duration: 0:03:06.835474
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-28-42.json
+	Scene: 2023-04-10_11-28-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=8
+Startdate: 2023-04-10_11-30-57
+Enddate: 2023-04-10_11-34-10
+Duration: 0:03:13.596280
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-31-53.json
+	Scene: 2023-04-10_11-31-53.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=9
+Startdate: 2023-04-10_11-34-12
+Enddate: 2023-04-10_11-37-29
+Duration: 0:03:17.153249
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-35-09.json
+	Scene: 2023-04-10_11-35-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=10
+Startdate: 2023-04-10_11-37-31
+Enddate: 2023-04-10_11-40-55
+Duration: 0:03:23.620524
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-38-30.json
+	Scene: 2023-04-10_11-38-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=11
+Startdate: 2023-04-10_11-40-57
+Enddate: 2023-04-10_11-44-22
+Duration: 0:03:24.713884
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-41-56.json
+	Scene: 2023-04-10_11-41-56.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=12
+Startdate: 2023-04-10_11-44-24
+Enddate: 2023-04-10_11-47-54
+Duration: 0:03:30.477452
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-45-24.json
+	Scene: 2023-04-10_11-45-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=13
+Startdate: 2023-04-10_11-47-56
+Enddate: 2023-04-10_11-51-33
+Duration: 0:03:36.759767
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-48-57.json
+	Scene: 2023-04-10_11-48-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=14
+Startdate: 2023-04-10_11-51-35
+Enddate: 2023-04-10_11-55-17
+Duration: 0:03:42.201467
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-52-38.json
+	Scene: 2023-04-10_11-52-38.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=15
+Startdate: 2023-04-10_11-55-19
+Enddate: 2023-04-10_11-59-05
+Duration: 0:03:45.683650
+Files:
+	Autosave: AUTOSAVE_2023-04-10_11-56-23.json
+	Scene: 2023-04-10_11-56-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=16
+Startdate: 2023-04-10_11-59-07
+Enddate: 2023-04-10_12-03-02
+Duration: 0:03:55.316684
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-00-12.json
+	Scene: 2023-04-10_12-00-12.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=17
+Startdate: 2023-04-10_12-03-04
+Enddate: 2023-04-10_12-07-02
+Duration: 0:03:58.024023
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-04-10.json
+	Scene: 2023-04-10_12-04-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=18
+Startdate: 2023-04-10_12-07-04
+Enddate: 2023-04-10_12-11-13
+Duration: 0:04:08.344956
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-08-14.json
+	Scene: 2023-04-10_12-08-14.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=19
+Startdate: 2023-04-10_12-11-15
+Enddate: 2023-04-10_12-15-30
+Duration: 0:04:14.695376
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-12-25.json
+	Scene: 2023-04-10_12-12-25.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=20
+Startdate: 2023-04-10_12-15-32
+Enddate: 2023-04-10_12-19-50
+Duration: 0:04:18.655464
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-16-43.json
+	Scene: 2023-04-10_12-16-43.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=21
+Startdate: 2023-04-10_12-19-52
+Enddate: 2023-04-10_12-24-09
+Duration: 0:04:16.995156
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-21-04.json
+	Scene: 2023-04-10_12-21-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=24 negative_funcs=22
+Startdate: 2023-04-10_12-24-11
+Enddate: 2023-04-10_12-28-33
+Duration: 0:04:21.643293
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-25-24.json
+	Scene: 2023-04-10_12-25-24.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=1
+Startdate: 2023-04-10_12-28-35
+Enddate: 2023-04-10_12-31-13
+Duration: 0:02:37.518782
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-29-23.json
+	Scene: 2023-04-10_12-29-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=2
+Startdate: 2023-04-10_12-31-15
+Enddate: 2023-04-10_12-33-59
+Duration: 0:02:44.260746
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-32-03.json
+	Scene: 2023-04-10_12-32-03.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=3
+Startdate: 2023-04-10_12-34-01
+Enddate: 2023-04-10_12-36-51
+Duration: 0:02:50.548381
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-34-52.json
+	Scene: 2023-04-10_12-34-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=4
+Startdate: 2023-04-10_12-36-53
+Enddate: 2023-04-10_12-39-52
+Duration: 0:02:58.043572
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-37-46.json
+	Scene: 2023-04-10_12-37-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=5
+Startdate: 2023-04-10_12-39-54
+Enddate: 2023-04-10_12-42-55
+Duration: 0:03:01.174860
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-40-47.json
+	Scene: 2023-04-10_12-40-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=6
+Startdate: 2023-04-10_12-42-57
+Enddate: 2023-04-10_12-46-06
+Duration: 0:03:09.423629
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-43-52.json
+	Scene: 2023-04-10_12-43-52.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=7
+Startdate: 2023-04-10_12-46-08
+Enddate: 2023-04-10_12-49-22
+Duration: 0:03:13.456590
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-47-04.json
+	Scene: 2023-04-10_12-47-04.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=8
+Startdate: 2023-04-10_12-49-24
+Enddate: 2023-04-10_12-52-40
+Duration: 0:03:16.558468
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-50-20.json
+	Scene: 2023-04-10_12-50-20.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=9
+Startdate: 2023-04-10_12-52-42
+Enddate: 2023-04-10_12-56-04
+Duration: 0:03:21.155533
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-53-41.json
+	Scene: 2023-04-10_12-53-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=10
+Startdate: 2023-04-10_12-56-06
+Enddate: 2023-04-10_12-59-33
+Duration: 0:03:27.021877
+Files:
+	Autosave: AUTOSAVE_2023-04-10_12-57-05.json
+	Scene: 2023-04-10_12-57-05.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=11
+Startdate: 2023-04-10_12-59-35
+Enddate: 2023-04-10_13-03-06
+Duration: 0:03:31.707176
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-00-35.json
+	Scene: 2023-04-10_13-00-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=12
+Startdate: 2023-04-10_13-03-08
+Enddate: 2023-04-10_13-06-46
+Duration: 0:03:37.490988
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-04-10.json
+	Scene: 2023-04-10_13-04-10.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=13
+Startdate: 2023-04-10_13-06-48
+Enddate: 2023-04-10_13-10-32
+Duration: 0:03:43.964371
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-07-51.json
+	Scene: 2023-04-10_13-07-51.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=14
+Startdate: 2023-04-10_13-10-34
+Enddate: 2023-04-10_13-14-21
+Duration: 0:03:47.466065
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-11-39.json
+	Scene: 2023-04-10_13-11-39.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=15
+Startdate: 2023-04-10_13-14-23
+Enddate: 2023-04-10_13-18-18
+Duration: 0:03:55.075145
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-15-29.json
+	Scene: 2023-04-10_13-15-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=16
+Startdate: 2023-04-10_13-18-21
+Enddate: 2023-04-10_13-22-19
+Duration: 0:03:58.788354
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-19-28.json
+	Scene: 2023-04-10_13-19-28.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=17
+Startdate: 2023-04-10_13-22-21
+Enddate: 2023-04-10_13-26-24
+Duration: 0:04:02.157876
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-23-30.json
+	Scene: 2023-04-10_13-23-30.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=18
+Startdate: 2023-04-10_13-26-26
+Enddate: 2023-04-10_13-30-31
+Duration: 0:04:05.110003
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-27-35.json
+	Scene: 2023-04-10_13-27-35.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=19
+Startdate: 2023-04-10_13-30-33
+Enddate: 2023-04-10_13-34-45
+Duration: 0:04:12.553213
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-31-42.json
+	Scene: 2023-04-10_13-31-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=20
+Startdate: 2023-04-10_13-34-47
+Enddate: 2023-04-10_13-39-01
+Duration: 0:04:13.266852
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-35-58.json
+	Scene: 2023-04-10_13-35-58.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=21
+Startdate: 2023-04-10_13-39-03
+Enddate: 2023-04-10_13-43-21
+Duration: 0:04:18.587222
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-40-15.json
+	Scene: 2023-04-10_13-40-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=25 negative_funcs=22
+Startdate: 2023-04-10_13-43-23
+Enddate: 2023-04-10_13-47-49
+Duration: 0:04:25.740777
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-44-37.json
+	Scene: 2023-04-10_13-44-37.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=1
+Startdate: 2023-04-10_13-47-51
+Enddate: 2023-04-10_13-50-34
+Duration: 0:02:42.737593
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-48-40.json
+	Scene: 2023-04-10_13-48-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=2
+Startdate: 2023-04-10_13-50-36
+Enddate: 2023-04-10_13-53-22
+Duration: 0:02:46.099769
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-51-26.json
+	Scene: 2023-04-10_13-51-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=3
+Startdate: 2023-04-10_13-53-24
+Enddate: 2023-04-10_13-56-16
+Duration: 0:02:52.401875
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-54-15.json
+	Scene: 2023-04-10_13-54-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=4
+Startdate: 2023-04-10_13-56-18
+Enddate: 2023-04-10_13-59-17
+Duration: 0:02:58.602958
+Files:
+	Autosave: AUTOSAVE_2023-04-10_13-57-11.json
+	Scene: 2023-04-10_13-57-11.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=5
+Startdate: 2023-04-10_13-59-19
+Enddate: 2023-04-10_14-02-22
+Duration: 0:03:02.719120
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-00-13.json
+	Scene: 2023-04-10_14-00-13.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=6
+Startdate: 2023-04-10_14-02-24
+Enddate: 2023-04-10_14-05-31
+Duration: 0:03:07.493148
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-03-19.json
+	Scene: 2023-04-10_14-03-19.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=7
+Startdate: 2023-04-10_14-05-33
+Enddate: 2023-04-10_14-08-47
+Duration: 0:03:13.334350
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-06-29.json
+	Scene: 2023-04-10_14-06-29.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=8
+Startdate: 2023-04-10_14-08-49
+Enddate: 2023-04-10_14-12-07
+Duration: 0:03:17.891775
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-09-46.json
+	Scene: 2023-04-10_14-09-46.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=9
+Startdate: 2023-04-10_14-12-09
+Enddate: 2023-04-10_14-15-37
+Duration: 0:03:28.800233
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-13-08.json
+	Scene: 2023-04-10_14-13-08.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=10
+Startdate: 2023-04-10_14-15-39
+Enddate: 2023-04-10_14-19-11
+Duration: 0:03:32.029961
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-16-41.json
+	Scene: 2023-04-10_14-16-41.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=11
+Startdate: 2023-04-10_14-19-14
+Enddate: 2023-04-10_14-22-52
+Duration: 0:03:37.990560
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-20-15.json
+	Scene: 2023-04-10_14-20-15.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=12
+Startdate: 2023-04-10_14-22-54
+Enddate: 2023-04-10_14-26-35
+Duration: 0:03:41.384706
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-23-57.json
+	Scene: 2023-04-10_14-23-57.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=13
+Startdate: 2023-04-10_14-26-37
+Enddate: 2023-04-10_14-30-23
+Duration: 0:03:46.497959
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-27-42.json
+	Scene: 2023-04-10_14-27-42.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=14
+Startdate: 2023-04-10_14-30-26
+Enddate: 2023-04-10_14-34-17
+Duration: 0:03:51.875910
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-31-31.json
+	Scene: 2023-04-10_14-31-31.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=15
+Startdate: 2023-04-10_14-34-19
+Enddate: 2023-04-10_14-38-13
+Duration: 0:03:53.891817
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-35-26.json
+	Scene: 2023-04-10_14-35-26.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=16
+Startdate: 2023-04-10_14-38-15
+Enddate: 2023-04-10_14-42-13
+Duration: 0:03:57.499024
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-39-23.json
+	Scene: 2023-04-10_14-39-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=17
+Startdate: 2023-04-10_14-42-15
+Enddate: 2023-04-10_14-46-20
+Duration: 0:04:05.099897
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-43-23.json
+	Scene: 2023-04-10_14-43-23.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=18
+Startdate: 2023-04-10_14-46-22
+Enddate: 2023-04-10_14-50-32
+Duration: 0:04:09.686448
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-47-32.json
+	Scene: 2023-04-10_14-47-32.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=19
+Startdate: 2023-04-10_14-50-34
+Enddate: 2023-04-10_14-54-54
+Duration: 0:04:20.004431
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-51-47.json
+	Scene: 2023-04-10_14-51-47.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=20
+Startdate: 2023-04-10_14-54-56
+Enddate: 2023-04-10_14-59-23
+Duration: 0:04:26.865452
+Files:
+	Autosave: AUTOSAVE_2023-04-10_14-56-09.json
+	Scene: 2023-04-10_14-56-09.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=21
+Startdate: 2023-04-10_14-59-25
+Enddate: 2023-04-10_15-03-56
+Duration: 0:04:31.535368
+Files:
+	Autosave: AUTOSAVE_2023-04-10_15-00-40.json
+	Scene: 2023-04-10_15-00-40.blend1
+
+Combination: m=1000 epochs=5000 positive_funcs=26 negative_funcs=22
+Startdate: 2023-04-10_15-03-58
+Enddate: 2023-04-10_15-08-35
+Duration: 0:04:36.433727
+Files:
+	Autosave: AUTOSAVE_2023-04-10_15-05-14.json
+	Scene: 2023-04-10_15-05-14.blend1

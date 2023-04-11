@@ -1,0 +1,282 @@
+BASE_MODEL: C:\Users\skyfe\Development\diffconvpl\data\generated\star_test.json
+Total time: 2:47:52.269648
+
+Startdate: 2023-04-09_11-29-26
+Enddate: 2023-04-09_11-33-01
+Duration: 0:03:35.485158
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-30-02.json
+	Scene: 2023-04-09_11-30-02.blend1
+
+Startdate: 2023-04-09_11-33-03
+Enddate: 2023-04-09_11-36-58
+Duration: 0:03:54.149479
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-33-40.json
+	Scene: 2023-04-09_11-33-40.blend1
+
+Startdate: 2023-04-09_11-37-00
+Enddate: 2023-04-09_11-40-40
+Duration: 0:03:40.736950
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-37-37.json
+	Scene: 2023-04-09_11-37-37.blend1
+
+Startdate: 2023-04-09_11-40-42
+Enddate: 2023-04-09_11-44-34
+Duration: 0:03:51.847303
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-41-21.json
+	Scene: 2023-04-09_11-41-21.blend1
+
+Startdate: 2023-04-09_11-44-36
+Enddate: 2023-04-09_11-48-35
+Duration: 0:03:58.876988
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-45-15.json
+	Scene: 2023-04-09_11-45-15.blend1
+
+Startdate: 2023-04-09_11-48-37
+Enddate: 2023-04-09_11-52-40
+Duration: 0:04:02.509226
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-49-18.json
+	Scene: 2023-04-09_11-49-18.blend1
+
+Startdate: 2023-04-09_11-52-42
+Enddate: 2023-04-09_11-56-45
+Duration: 0:04:03.233748
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-53-23.json
+	Scene: 2023-04-09_11-53-23.blend1
+
+Startdate: 2023-04-09_11-56-47
+Enddate: 2023-04-09_12-00-54
+Duration: 0:04:07.091561
+Files:
+	Autosave: AUTOSAVE_2023-04-09_11-57-31.json
+	Scene: 2023-04-09_11-57-31.blend1
+
+Startdate: 2023-04-09_12-00-56
+Enddate: 2023-04-09_12-04-57
+Duration: 0:04:01.051255
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-01-35.json
+	Scene: 2023-04-09_12-01-35.blend1
+
+Startdate: 2023-04-09_12-04-59
+Enddate: 2023-04-09_12-09-01
+Duration: 0:04:01.651182
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-05-38.json
+	Scene: 2023-04-09_12-05-38.blend1
+
+Startdate: 2023-04-09_12-09-03
+Enddate: 2023-04-09_12-12-40
+Duration: 0:03:36.578365
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-09-40.json
+	Scene: 2023-04-09_12-09-40.blend1
+
+Startdate: 2023-04-09_12-12-42
+Enddate: 2023-04-09_12-16-44
+Duration: 0:04:02.026714
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-13-22.json
+	Scene: 2023-04-09_12-13-22.blend1
+
+Startdate: 2023-04-09_12-16-46
+Enddate: 2023-04-09_12-20-48
+Duration: 0:04:01.874592
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-17-27.json
+	Scene: 2023-04-09_12-17-27.blend1
+
+Startdate: 2023-04-09_12-20-50
+Enddate: 2023-04-09_12-24-52
+Duration: 0:04:02.772947
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-21-31.json
+	Scene: 2023-04-09_12-21-31.blend1
+
+Startdate: 2023-04-09_12-24-54
+Enddate: 2023-04-09_12-28-57
+Duration: 0:04:02.529019
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-25-37.json
+	Scene: 2023-04-09_12-25-37.blend1
+
+Startdate: 2023-04-09_12-28-59
+Enddate: 2023-04-09_12-33-01
+Duration: 0:04:02.085452
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-29-42.json
+	Scene: 2023-04-09_12-29-42.blend1
+
+Startdate: 2023-04-09_12-33-03
+Enddate: 2023-04-09_12-37-02
+Duration: 0:03:59.340239
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-33-47.json
+	Scene: 2023-04-09_12-33-47.blend1
+
+Startdate: 2023-04-09_12-37-04
+Enddate: 2023-04-09_12-41-07
+Duration: 0:04:02.503279
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-37-49.json
+	Scene: 2023-04-09_12-37-49.blend1
+
+Startdate: 2023-04-09_12-41-09
+Enddate: 2023-04-09_12-45-13
+Duration: 0:04:04.038368
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-41-55.json
+	Scene: 2023-04-09_12-41-55.blend1
+
+Startdate: 2023-04-09_12-45-15
+Enddate: 2023-04-09_12-49-21
+Duration: 0:04:06.250273
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-46-02.json
+	Scene: 2023-04-09_12-46-02.blend1
+
+Startdate: 2023-04-09_12-49-23
+Enddate: 2023-04-09_12-53-36
+Duration: 0:04:12.938865
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-50-13.json
+	Scene: 2023-04-09_12-50-13.blend1
+
+Startdate: 2023-04-09_12-53-38
+Enddate: 2023-04-09_12-57-52
+Duration: 0:04:13.198694
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-54-29.json
+	Scene: 2023-04-09_12-54-29.blend1
+
+Startdate: 2023-04-09_12-57-54
+Enddate: 2023-04-09_13-02-11
+Duration: 0:04:17.484203
+Files:
+	Autosave: AUTOSAVE_2023-04-09_12-58-46.json
+	Scene: 2023-04-09_12-58-46.blend1
+
+Startdate: 2023-04-09_13-02-13
+Enddate: 2023-04-09_13-06-26
+Duration: 0:04:12.972887
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-03-07.json
+	Scene: 2023-04-09_13-03-07.blend1
+
+Startdate: 2023-04-09_13-06-28
+Enddate: 2023-04-09_13-10-38
+Duration: 0:04:10.165780
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-07-22.json
+	Scene: 2023-04-09_13-07-22.blend1
+
+Startdate: 2023-04-09_13-10-40
+Enddate: 2023-04-09_13-14-54
+Duration: 0:04:13.400426
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-11-35.json
+	Scene: 2023-04-09_13-11-35.blend1
+
+Startdate: 2023-04-09_13-14-56
+Enddate: 2023-04-09_13-19-10
+Duration: 0:04:14.253343
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-15-52.json
+	Scene: 2023-04-09_13-15-52.blend1
+
+Startdate: 2023-04-09_13-19-12
+Enddate: 2023-04-09_13-23-29
+Duration: 0:04:16.547512
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-20-10.json
+	Scene: 2023-04-09_13-20-10.blend1
+
+Startdate: 2023-04-09_13-23-31
+Enddate: 2023-04-09_13-27-28
+Duration: 0:03:57.484300
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-24-29.json
+	Scene: 2023-04-09_13-24-29.blend1
+
+Startdate: 2023-04-09_13-27-30
+Enddate: 2023-04-09_13-31-50
+Duration: 0:04:19.427420
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-28-30.json
+	Scene: 2023-04-09_13-28-30.blend1
+
+Startdate: 2023-04-09_13-31-52
+Enddate: 2023-04-09_13-36-14
+Duration: 0:04:22.370450
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-32-54.json
+	Scene: 2023-04-09_13-32-54.blend1
+
+Startdate: 2023-04-09_13-36-16
+Enddate: 2023-04-09_13-40-37
+Duration: 0:04:20.880447
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-37-20.json
+	Scene: 2023-04-09_13-37-20.blend1
+
+Startdate: 2023-04-09_13-40-39
+Enddate: 2023-04-09_13-45-03
+Duration: 0:04:24.050436
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-41-44.json
+	Scene: 2023-04-09_13-41-44.blend1
+
+Startdate: 2023-04-09_13-45-05
+Enddate: 2023-04-09_13-49-29
+Duration: 0:04:24.446911
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-46-11.json
+	Scene: 2023-04-09_13-46-11.blend1
+
+Startdate: 2023-04-09_13-49-32
+Enddate: 2023-04-09_13-53-56
+Duration: 0:04:24.842624
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-50-39.json
+	Scene: 2023-04-09_13-50-39.blend1
+
+Startdate: 2023-04-09_13-53-58
+Enddate: 2023-04-09_13-58-37
+Duration: 0:04:38.286438
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-55-11.json
+	Scene: 2023-04-09_13-55-11.blend1
+
+Startdate: 2023-04-09_13-58-39
+Enddate: 2023-04-09_14-03-13
+Duration: 0:04:33.910501
+Files:
+	Autosave: AUTOSAVE_2023-04-09_13-59-51.json
+	Scene: 2023-04-09_13-59-51.blend1
+
+Startdate: 2023-04-09_14-03-15
+Enddate: 2023-04-09_14-07-50
+Duration: 0:04:35.744906
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-04-28.json
+	Scene: 2023-04-09_14-04-28.blend1
+
+Startdate: 2023-04-09_14-07-52
+Enddate: 2023-04-09_14-12-29
+Duration: 0:04:36.126833
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-09-07.json
+	Scene: 2023-04-09_14-09-07.blend1
+
+Startdate: 2023-04-09_14-12-31
+Enddate: 2023-04-09_14-17-16
+Duration: 0:04:45.559492
+Files:
+	Autosave: AUTOSAVE_2023-04-09_14-13-47.json
+	Scene: 2023-04-09_14-13-47.blend1

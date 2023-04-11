@@ -182,6 +182,7 @@ class BlenderSceneHandler:
         print(
             f"Saved approximation in: {os.path.join(NEW_BLEND_PATH,f'{self.name}.blend')}"
         )
+        os.remove(file_path)
         return
 
 

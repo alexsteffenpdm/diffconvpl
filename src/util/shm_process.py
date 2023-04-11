@@ -23,9 +23,9 @@ class MemorySharedSubprocess:
     def _unwrap(
         self,
     ):
-        print(
-            f"Unwrapping shm with name {self.shm.name} to target function {self.target.__name__}"
-        )
+        # print(
+        #     f"Unwrapping shm with name {self.shm.name} to target function {self.target.__name__}"
+        # )
         data = json.loads(self.shm.buf.tobytes().decode("UTF-8").rstrip("\x00"))
         call_str = f"self.target("
         for t, k in zip(self.targetargs.parameters, data.keys()):

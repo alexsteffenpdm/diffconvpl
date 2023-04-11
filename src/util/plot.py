@@ -11,6 +11,10 @@ import numpy as np
 import json
 
 
+# SETUP_PY_ENV
+BLENDER_PATH = os.path.normpath("C:\\Program Files\\Blender Foundation\\Blender 3.4")
+
+
 def unscientific_plot(name: str, values: np.array):
     print(f"{name}: {np.array2string(values,formatter={'float':lambda x: f'{x:f}'})}\n")
 
@@ -25,43 +29,44 @@ def plotsdf(
     autosave: bool,
     losses: np.array,
     filename: str,
+    display_blend: bool,
 ) -> None:
     assert len(z) ** 2 == (len(xv) * len(yv)), f"{len(z)} == ({len(xv)} * {len(yv)})"
     assert len(z.shape) == 2
-    fig = plt.figure("Results SDF", [10, 30])
-    err_x = np.arange(0, len(losses), 1)
-    plt.subplot(2, 2, 1)
-    plt.title("Error")
-    plt.plot(err_x, losses, color=rand_color(), label="Loss")
-    plt.xlabel("Iterations")
-    plt.ylabel("Error")
-    plt.legend(loc="best")
+    # fig = plt.figure("Results SDF", [10, 30])
+    # err_x = np.arange(0, len(losses), 1)
+    # plt.subplot(2, 2, 1)
+    # plt.title("Error")
+    # plt.plot(err_x, losses, color=rand_color(), label="Loss")
+    # plt.xlabel("Iterations")
+    # plt.ylabel("Error")
+    # plt.legend(loc="best")
 
-    plt.subplot(2, 1, 2)
+    # plt.subplot(2, 1, 2)
 
-    plt.contourf(xv, yv, z)
-    plt.xlabel("x")
-    plt.ylabel("y")
-    plt.title(f"Approximation of {func}")
-    plt.legend(loc="best")
-    plt.axis("equal")
+    # plt.contourf(xv, yv, z)
+    # plt.xlabel("x")
+    # plt.ylabel("y")
+    # plt.title(f"Approximation of {func}")
+    # plt.legend(loc="best")
+    # plt.axis("equal")
 
-    plt.subplot(2, 2, 2)
-    plt.title("Error Propagation")
-    plt.plot(err_d, err_v, color=rand_color(), label="Normalized Error")
-    plt.xlabel("x/y value")
-    plt.ylabel("SDF Error")
-    plt.legend(loc="best")
+    # plt.subplot(2, 2, 2)
+    # plt.title("Error Propagation")
+    # plt.plot(err_d, err_v, color=rand_color(), label="Normalized Error")
+    # plt.xlabel("x/y value")
+    # plt.ylabel("SDF Error")
+    # plt.legend(loc="best")
 
-    plt.savefig(f"data\\plots\\{filename}.png")
-    if autosave != False:
-        plt.show(block=False)
-    plt.close()
+    # plt.savefig(f"data\\plots\\{filename}.png")
+    # if autosave != False:
+    #     plt.show(block=False)
+    # plt.close()
 
-    fig2, ax2 = plt.subplots(subplot_kw={"projection": "3d"})
-    surf = ax2.plot_surface(xv, yv, z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
-    fig2.colorbar(surf, shrink=0.5, aspect=5)
-    plt.show()
+    # fig2, ax2 = plt.subplots(subplot_kw={"projection": "3d"})
+    # surf = ax2.plot_surface(xv, yv, z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    # fig2.colorbar(surf, shrink=0.5, aspect=5)
+    # plt.show()
 
     x = xv.flatten()
     y = yv.flatten()
@@ -87,7 +92,10 @@ def plotsdf(
         os.getcwd(), "src", "util", "blender", "scene_handler.py"
     )
     print(os.popen(f"python {writer_path}").read())
-
+    BLEND_PATH = os.path.join(os.getcwd(),"data","generated","blender_files","scenes",f"{filename}.blend")
+    if display_blend == True:
+        os.chdir(BLENDER_PATH)
+        os.system(f"blender {BLEND_PATH}")
     return
 
 

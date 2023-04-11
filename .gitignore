@@ -8,5 +8,10 @@ tmp.json
 .vscode/
 *.blend
 *.blend1
+!**data/experiments/blends/*.blend
 !**src/assets/scene.blend*
 !**src/assets/SDF_Material.mtl
+current_timetag.txt
+runner_tmp.json
+.env
+setup.py

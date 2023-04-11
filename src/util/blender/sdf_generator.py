@@ -5,10 +5,7 @@ import json
 import numpy as np
 from tqdm import tqdm
 import random
-from shapely import points, LineString
-from shapely.geometry import Polygon, Point
-import matplotlib.pyplot as plt
-import shapely
+
 
 JSON_PATH = os.path.join(os.getcwd(), "data\\generated")
 
@@ -87,7 +84,6 @@ class BlenderSDFGenerator:
                 z = l * -1
                 datapoints.append([x, y, z])
 
-        print(len(datapoints))
         np.random.shuffle(datapoints)
 
         for _ in range(self.json_values["entries"]):
@@ -136,6 +132,7 @@ if __name__ == "__main__":
         "positive_funcs": 1,
         "negative_funcs": 1,
         "format": "[x,y,d]",
+        "fullplot": True,
         "statistics": {
             "num_datapoints": 0,
             "num_edges": 0,
@@ -143,8 +140,8 @@ if __name__ == "__main__":
             "neg_edges": 0,
         },
         "data": None,
-        "fullplot": True,
     }
+    
     generator = BlenderSDFGenerator(handler_dict=handler_dict, json_dict=json_dict)
     generator.make_sdf()
     generator.as_json(filename="star_test.json")

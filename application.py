@@ -1,8 +1,7 @@
 from src.maxaffine import MultiDimMaxAffineFunction
 from src.util.common import *
 from src.util.logger import ParamLogger
-from src.util.plot import plot2d, plotsdf
-from src.util.target import Target
+from src.util.plot import plotsdf
 from src.util.parameter_initializer import Initializer
 from src.util.shm_process import MemorySharedSubprocess
 
@@ -10,7 +9,6 @@ import numpy as np
 import os
 import torch
 import random
-import multiprocessing
 import argparse
 
 from tqdm import tqdm
@@ -22,54 +20,23 @@ AUTOSAVE = False
 APP_ARGS = {}
 
 
-def plot_wrapper(
-    func: str,
-    x: np.array,
-    y_target: np.array,
-    maxaffines: np.ndarray,
-    y_pred: np.array,
-    fullplot: bool,
-    timetag: str,
-    autosave: bool,
-    losses: np.array,
-):
-    plot2d(func, x, y_target, maxaffines, y_pred, fullplot, timetag, autosave, losses)
-
-
-def plot_wrapper_sdf(
-    func: str,
-    xv: np.array,
-    yv: np.array,
-    z: np.array,
-    err_d: np.array,
-    err_v: np.array,
-    autosave: bool,
-    losses: np.array,
-    filename: str,
-):
-    plotsdf(func, xv, yv, z, err_d, err_v, autosave, losses, filename)
-
-
 def run():
     global APP_ARGS, AUTOSAVE
     print("STAGE: Setup")
     fullplot = APP_ARGS["fullplot"]
     logger = ParamLogger()
 
-    # setup params for MaxAffineFunction
-    # TARGET = Target(func=APP_ARGS["func"], parameters=APP_ARGS["params"])
-
     m = APP_ARGS["m"]
     entries = APP_ARGS["entries"]
     epochs = APP_ARGS["epochs"]
     positive_funcs = APP_ARGS["positive_funcs"]
     negative_funcs = APP_ARGS["negative_funcs"]
-
+    display = APP_ARGS["display_blender"]
+ 
     batching = "batch_size" in APP_ARGS.keys()
     if batching:
         batch_size = APP_ARGS["batch_size"]
 
-    # setup data
     signs: np.array = make_signs(positive=positive_funcs, negative=negative_funcs)
     k: int = len(signs)
 
@@ -82,7 +49,6 @@ def run():
     )
 
     model: MultiDimMaxAffineFunction = MultiDimMaxAffineFunction(
-        # target=TARGET,
         m=m,
         k=k,
         dim=2,
@@ -130,20 +96,29 @@ def run():
             loss.backward()
 
             optimizer.step()
-            torch.cuda.empty_cache()
             pbar.update(1)
 
     pbar.close()
     pbar_dict = pbar.format_dict
 
-    print("STAGE: Plot")
+    print("STAGE: Model Evaluation")
 
-    timetag = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-    try:
-        x, y, z = model.generate_sdf_plot_data(spacing=0.01, min=-1.0, max=1.0)
-    except:
-        print("ERROR while generating sdf plot data")
-        exit()
+    timetag = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    with open(os.path.join(os.getcwd(),"current_timetag.txt"),"w") as fp:
+        fp.write(timetag)
+        fp.close()
+
+    spacing = 0.01
+    points: np.array = int((abs(-1.0) + abs(1.0)) / spacing) + 1
+    domain: np.array = np.linspace(-1.0, 1.0, points)
+    x, y = np.meshgrid(domain, domain)
+    
+    z: np.ndarray = np.zeros_like(x)
+    
+    for ki in tqdm(range(model.k)):
+        zi = model.generate_sdf_plot_data_single_maxaffine_function(x=x,y=y,k=ki)
+        z += zi
+        
     # try:
     #     error_domain, error_values = model.error_propagation(
     #         spacing=0.01, min=-20.0, max=20.0
@@ -152,18 +127,16 @@ def run():
     #     print("ERROR while generating error propagation")
 
     plot_dict = {
-        # "func": TARGET.no_package_str(),
         "func": "Unkown",
         "xv": x.tolist(),
         "yv": y.tolist(),
         "z": z.tolist(),
         "err_d": [],
         "err_v": [],
-        # "err_d": error_domain.tolist(),
-        # "err_v": error_values.tolist(),
         "autosave": AUTOSAVE,
         "losses": loss_plot,
         "filename": timetag,
+        "display_blend": display,
     }
 
     with open(
@@ -206,7 +179,6 @@ def run():
         log_dict = build_log_dict(
             tqdm_dict=pbar_dict,
             loss=loss.item(),
-            # func=TARGET.no_package_str(),
             func="Unknown",
             positive=positive_funcs,
             negative=negative_funcs,
@@ -218,6 +190,9 @@ def run():
         APP_ARGS["Autosave"] = AUTOSAVE
         logger.json_log(dict=APP_ARGS, filename=timetag)
 
+    if os.environ.get("diffconvpl_running") is not None:
+        os.environ["diffconvpl_running"] = 0
+
 
 def setup(
     autosave: bool,
@@ -225,6 +200,7 @@ def setup(
     filepath: str = None,
     batch_size: int = 2**32,
     no_batch: bool = False,
+    display_blender: bool = False,
 ) -> None:
     global APP_ARGS, AUTOSAVE
     AUTOSAVE = autosave
@@ -235,7 +211,6 @@ def setup(
             if not os.path.exists(directory)
         ]
 
-        # APP_ARGS START
         APP_ARGS = {
             "func": "torch.sin(10*x)",
             "params": ["x"],
@@ -246,26 +221,30 @@ def setup(
             "negative_funcs": 16,
             "fullplot": fullplot,
         }
-        # APP_ARGS STOP
+
         if no_batch == False:
             APP_ARGS["batch_size"] = batch_size
 
     else:
         APP_ARGS = rerun_experiment(filepath)
-
+    APP_ARGS["display_blender"] = display_blender
+ 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Diffconvpl")
+
     parser.add_argument(
         "--autosave",
         action="store_true",
         help="Skips questions and directly saves data.",
     )
+
     parser.add_argument(
         "--fullplot",
         action="store_true",
-        help="Enable plotting all max affine functions.",
+        help="Enable plotting all max-affine functions.",
     )
+
     parser.add_argument(
         "--no-batch", action="store_true", help="Disables batch-computation."
     )
@@ -278,6 +257,7 @@ if __name__ == "__main__":
         nargs="?",
         help="Issues and autorun with a given configuration via file.",
     )
+
     parser.add_argument(
         "--batchsize",
         metavar=int,
@@ -287,13 +267,22 @@ if __name__ == "__main__":
         help="Presets batch_size value used for large datasets",
     )
 
+    parser.add_argument(
+        "--blender-render",
+        metavar=bool,
+        default=False,
+        action="store",
+        nargs="?",
+        help="Wether to run blender and display the results after computation."
+    )
     args = parser.parse_args()
-
+  
     setup(
         autosave=args.autosave,
         fullplot=args.fullplot,
         filepath=args.autorun,
         batch_size=int(args.batchsize),
         no_batch=args.no_batch,
+        display_blender=args.blender_render,
     )
     run()
