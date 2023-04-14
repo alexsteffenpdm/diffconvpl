@@ -5,11 +5,11 @@ if os.getenv("TESTING") == "True":
 else:
     from .common import rand_color
 
-import matplotlib.pyplot as plt
-from matplotlib import cm
-import numpy as np
 import json
 
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm
 
 # SETUP_PY_ENV
 BLENDER_PATH = os.path.normpath("C:\\Program Files\\Blender Foundation\\Blender 3.4")
@@ -71,16 +71,13 @@ def plotsdf(
     x = xv.flatten()
     y = yv.flatten()
     z = z.flatten()
-    vertices = []
-    for xi, yi, zi in zip(x, y, z):
-        vertices.append([xi, yi, zi])
-    vertices = np.asanyarray(vertices)
+    vertices = [[xi, yi, zi] for xi, yi, zi in zip(x, y, z)]
 
     with open("tmp.json", "w") as outfile:
         json.dump(
             {
                 "mode": "create",
-                "data": vertices.tolist(),
+                "data": np.asanyarray(vertices).tolist(),
                 "name": filename,
                 "gridsize": [xv.shape[0], xv.shape[1]],
             },
@@ -88,9 +85,7 @@ def plotsdf(
         )
     print("STAGE: Data Export")
     # workaround for bpy import error, when handling subprocesses
-    writer_path = os.path.join(
-        os.getcwd(), "src", "util", "blender", "scene_handler.py"
-    )
+    writer_path = os.path.join(os.getcwd(), "src", "blender", "scene_handler.py")
     print(os.popen(f"python {writer_path}").read())
     BLEND_PATH = os.path.join(
         os.getcwd(), "data", "generated", "blender_files", "scenes", f"{filename}.blend"

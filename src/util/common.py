@@ -1,10 +1,11 @@
-from typing import Any
-import random
-import os
 import json
+import os
+import random
+from enum import Enum
+from typing import Any, Optional
 
 
-class cmdcolors:
+class cmdcolors(Enum):
     HEADER = "\033[95m"
     OKBLUE = "\033[94m"
     OKCYAN = "\033[96m"
@@ -17,12 +18,12 @@ class cmdcolors:
 
 
 def print_colored(text: str, color: cmdcolors) -> None:
-    print(color + text + cmdcolors.ENDC)
+    print(f"{color} {text} {cmdcolors.ENDC}")
 
 
 def rand_color() -> str:
     r = lambda: random.randint(0, 255)
-    return "#{:02x}{:02x}{:02x}".format(r(), r(), r())
+    return f"#{r():02x}{r():02x}{r():02x}"
 
 
 def make_signs(positive: int, negative: int) -> list[float]:
@@ -40,7 +41,7 @@ def build_log_dict(
     func: str,
     positive: int,
     negative: int,
-    success: bool,
+    success: Optional[bool],
     autosave: bool,
 ) -> dict[str, Any]:
     return {
@@ -56,9 +57,9 @@ def build_log_dict(
     }
 
 
-def rerun_experiment(filepath: str = None) -> dict[str, Any]:
+def rerun_experiment(filepath: str = "") -> dict[str, Any]:
     if filepath:
-        with open(filepath, "r") as fp:
+        with open(filepath) as fp:
             return json.load(fp)
     try:
         selection = -1
@@ -69,7 +70,7 @@ def rerun_experiment(filepath: str = None) -> dict[str, Any]:
             if tmp >= 0 and tmp <= len(experiments) - 1:
                 selection = tmp
 
-        with open(f"data\\json\\{experiments[selection]}", "r") as fp:
+        with open(f"data\\json\\{experiments[selection]}") as fp:
             return json.load(fp)
 
     except:
@@ -77,7 +78,7 @@ def rerun_experiment(filepath: str = None) -> dict[str, Any]:
         exit()
 
 
-def get_batch_spacing(size: int, stop: int) -> list[int]:
+def get_batch_spacing(size: int, stop: int) -> list[tuple[int, int]]:
     x = size - 1
     arr = [(0, size)]
     while x < stop:

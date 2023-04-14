@@ -1,10 +1,10 @@
-import os
 import json
-import torch
-import numpy as np
-from typing import Tuple
-from tqdm import tqdm
+import os
+from typing import Callable, Tuple
 
+import numpy as np
+import torch
+from tqdm import tqdm
 
 # The class 'Initializer' initializes the a and b values for max-affine functions by
 # parsing a JSON file with the following format:
@@ -21,8 +21,8 @@ from tqdm import tqdm
 # https://numpy.org/doc/stable/reference/random/generated/numpy.random.uniform.html (Version 1.24) (Last visited on: 23/02/13)
 
 
-class Initializer(object):
-    def __init__(self, filepath: str, dim: int = 1) -> object:
+class Initializer:
+    def __init__(self, filepath: str, dim: int = 1) -> None:
         if not os.path.exists(filepath):
             raise ValueError(f"File does not exist under {filepath}")
 
@@ -35,14 +35,14 @@ class Initializer(object):
         self.func_str: str = f"lambda {self.symbol}: {func}"
         self.deriv_str: str = f"lambda {self.symbol}: {deriv}"
 
-        self.func: str = eval(self.func_str)
-        self.derivative: str = eval(self.deriv_str)
+        self.func: Callable = eval(self.func_str)
+        self.derivative: Callable = eval(self.deriv_str)
         self.domain: np.array = np.array([-1.0, 1.0])
 
     def __repr__(self) -> str:
         return f"Parameter Initializer '{self.name}':\n\tSymbol: {self.symbol}\n\tFunction: {self.func_str}\n\tDerivative: {self.deriv_str}"
 
-    def __call__(self, entries: int) -> Tuple[torch.Tensor, torch.Tensor]:
+    def __call__(self, entries: int) -> tuple[torch.Tensor, torch.Tensor]:
         print(f"    Initializer: Generating Samples")
         samples: np.array = np.array(
             [
@@ -99,8 +99,8 @@ class Initializer(object):
             torch.FloatTensor
         )
 
-    def from_json(self, filepath: str) -> Tuple[str, str, str, str, str]:
-        with open(filepath, "r") as file:
+    def from_json(self, filepath: str) -> tuple[str, str, str, str, str]:
+        with open(filepath) as file:
             data = json.load(file)
             return (
                 data["name"],

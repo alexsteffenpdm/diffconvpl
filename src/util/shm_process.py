@@ -1,21 +1,21 @@
 import inspect
-from multiprocessing import Process
-from multiprocessing import shared_memory
-from typing import Callable, Dict, Any
-import time
-import numpy as np
 import json
+import time
+from multiprocessing import Process, shared_memory
+from typing import Any, Callable, Dict
+
+import numpy as np
 
 
 class MemorySharedSubprocess:
     def __init__(self, target: Callable):
-        self.shm: shared_memory.SharedMemory = None
+        self.shm: shared_memory.SharedMemory
         self.target: Callable = target
         self.forked: bool = False
-        self.subprocess: Process = None
+        self.subprocess: Process
         self.targetargs = inspect.signature(self.target)
 
-    def _create_buffer(self, data: Dict[str, Any]):
+    def _create_buffer(self, data: dict[str, Any]):
         d = bytes(json.dumps(data).encode("UTF-8"))
         self.shm = shared_memory.SharedMemory(create=True, size=len(d))
         self.shm.buf[0 : len(d)] = d
@@ -39,7 +39,7 @@ class MemorySharedSubprocess:
         call_str = call_str[:-2] + ")"
         eval(call_str)
 
-    def fork_on(self, data: Dict[str, Any]):
+    def fork_on(self, data: dict[str, Any]):
         self._create_buffer(data)
         if self.shm.size == 0:
             raise ValueError(

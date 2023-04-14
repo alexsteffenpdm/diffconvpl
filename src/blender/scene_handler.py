@@ -1,8 +1,10 @@
-import numpy as np
-import os
-import bpy
-import shutil
 import json
+import os
+import shutil
+from typing import Any, Optional
+
+import bpy
+import numpy as np
 from tqdm import tqdm
 
 ARGUMENTS = {
@@ -37,7 +39,7 @@ class BlenderSceneHandler:
 
     def make_faces(
         self,
-    ) -> list[int]:
+    ) -> list[list[int]]:
         n = self.gridsize[0]
         m = self.gridsize[1]
         mat = np.arange(0, (n * m), 1).reshape(n, m)
@@ -63,7 +65,7 @@ class BlenderSceneHandler:
 
     def layercut(
         self,
-    ) -> None:
+    ) -> tuple[np.ndarray, np.ndarray]:
         bpy.ops.wm.open_mainfile(filepath=self.filepath_scene)
         bpy.context.window.scene = bpy.data.scenes[0]
 
@@ -88,7 +90,7 @@ class BlenderSceneHandler:
 
         bpy.data.objects.remove(cube_object, do_unlink=True)
 
-        cut_cube_vertices = []
+        cut_cube_vertices: list[Optional[list[Any]]] = []
         cut_cube_edges = []
         for v in mesh_object.data.vertices:
             v_global = mesh_object.matrix_world @ v.co
@@ -104,8 +106,6 @@ class BlenderSceneHandler:
                 cut_cube_edges.append([v1, v2])
         cut_cube_edges = self.remap_edges(cut_cube_vertices, cut_cube_edges)
         cut_cube_vertices = [v for v in cut_cube_vertices if v is not None]
-
-        # print(f"Vertices:\n{len(cut_cube_vertices)}\nEdges:\n{len(cut_cube_edges)}")
 
         return np.asanyarray(cut_cube_vertices)[:, :2], np.asanyarray(cut_cube_edges)
 
@@ -157,7 +157,7 @@ class BlenderSceneHandler:
         sphere_mat = bpy.data.materials.new(name="Datapoints_Material")
         sphere_mat.diffuse_color = (0.0, 0.0, 0.0, 1.0)
 
-        with open(file_path, "r") as f:
+        with open(file_path) as f:
             centroids = [tuple(map(float, line.strip().split())) for line in f]
 
         orig_sphere = bpy.ops.mesh.primitive_uv_sphere_add(
@@ -189,7 +189,7 @@ class BlenderSceneHandler:
 if __name__ == "__main__":
     indict = None
 
-    with open(os.path.join(os.getcwd(), "tmp.json"), "r") as infile:
+    with open(os.path.join(os.getcwd(), "tmp.json")) as infile:
         indict = json.load(infile)
 
     os.remove(os.path.join(os.getcwd(), "tmp.json"))

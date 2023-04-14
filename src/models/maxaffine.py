@@ -1,10 +1,11 @@
-import torch
+from typing import Callable
+
 import numpy as np
-from typing import Tuple, Callable
+import torch
 from tqdm import tqdm
 
-from .util.common import get_batch_spacing
-from .util.parameter_initializer import Initializer
+from ..util.common import get_batch_spacing
+from ..util.parameter_initializer import Initializer
 
 
 class MultiDimMaxAffineFunction(torch.nn.Module):
@@ -15,14 +16,12 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         dim: int,
         x: np.array,
         signs: np.array,
-        # target: Target,
         initializer: Initializer,
         batchsize: int = 2**32,
     ):
-        super(MultiDimMaxAffineFunction, self).__init__()
+        super().__init__()
 
         self.initializer: Initializer = initializer
-        # self.target: Target = target
 
         self.x: torch.nn.Parameter = (
             torch.nn.Parameter(torch.from_numpy(x), requires_grad=False)
@@ -49,12 +48,13 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         # self.func: Callable = lambda t: torch.logsumexp(torch.relu(t), dim=-1)
         self.gradfunc: Callable = lambda t: torch.argmax(t, dim=-1)
         # self.func:Callable = lambda t: torch.logsumexp(t, dim=-1)
+        self.batch_size: int
         if batchsize == 2**32:
-            self.batch_size: int = self.x.shape[0]
+            self.batch_size = self.x.shape[0]
         else:
-            self.batch_size: int = batchsize
+            self.batch_size = batchsize
 
-        self.batches: list[int] = []
+        self.batches: list[tuple[int, int]] = []
         self.initialization()
 
     def initialization(self) -> None:
@@ -180,8 +180,6 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                 self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
             )
 
-
-
         return z.cpu().detach().numpy().reshape(len(x), len(y))
 
     def generate_sdf_plot_data_single_maxaffine_function_vectorized(
@@ -199,14 +197,12 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         )
         z: torch.Tensor = torch.zeros_like(x_flat)
         # x_stacked = torch.vstack([x_flat,y_flat]).T
-        z.data = self.eval(ki=k, x=torch.vstack([x_flat,y_flat]).T)* self.s[k]
+        z.data = self.eval(ki=k, x=torch.vstack([x_flat, y_flat]).T) * self.s[k]
 
         # for i in range(len(x_flat)):
         #     z.data[i] = (
         #         self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
         #     )
-
-
 
         return z.cpu().detach().numpy().reshape(len(x), len(y))
 

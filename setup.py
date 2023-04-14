@@ -1,7 +1,7 @@
 import os
 import platform
-import sys
 import subprocess
+import sys
 
 
 class cmdcolors:
@@ -14,6 +14,7 @@ class cmdcolors:
     ENDC = "\033[0m"
     BOLD = "\033[1m"
     UNDERLINE = "\033[4m"
+
 
 STDOUT = True
 
@@ -63,7 +64,7 @@ else:
 ################# ENVFILE CHECK #################
 printl(f"Checking environment file:")
 environment = {}
-with open(os.path.join(os.getcwd(), ".env"), "r") as fp:
+with open(os.path.join(os.getcwd(), ".env")) as fp:
     for line in fp.readlines():
         line = line.replace('"', "")
         line_contents = line.split("=")
@@ -163,7 +164,7 @@ finally:
 _venv_activate_script_content_ = []
 printl("Setting required environment variables:")
 try:
-    with open(_venv_activate_script_path_ + ".ps1", "r") as fp:
+    with open(_venv_activate_script_path_ + ".ps1") as fp:
         for line in fp.readlines():
             _venv_activate_script_content_.append(line)
 

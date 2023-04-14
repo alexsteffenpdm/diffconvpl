@@ -11183,3 +11183,22 @@ Duration: 67.60340762138367
 Iters per Second: 73.96076878258496
 Success: True
 Autosave: True
+Function: Unknown
+Iterations: 5000
+Positive: 26
+Negative: 22
+Error: 4.3959789763903245e-05
+Duration: 63.23422598838806
+Iters per Second: 79.07110305925416
+Success: True
+Autosave: True
+
+Function: Unknown
+Iterations: 5000
+Positive: 26
+Negative: 22
+Error: 0.00045890745241194963
+Duration: 62.80476689338684
+Iters per Second: 79.61179138659435
+Success: True
+Autosave: True

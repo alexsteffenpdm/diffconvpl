@@ -1,12 +1,12 @@
-import os
-import json
-from tqdm import tqdm
-from typing import Dict, Any
 import argparse
-import numpy as np
-from datetime import datetime, timedelta
 import itertools
+import json
+import os
 import time
+from datetime import datetime, timedelta
+from typing import Any
+
+import numpy as np
 
 
 def parse_attrs(ns: argparse.Namespace, attrs: list[str]) -> argparse.Namespace:
@@ -53,7 +53,7 @@ class BatchRunner:
             ),
         }
 
-    def approximate_runtime(self, runtime_per_instance: int) -> str:
+    def approximate_runtime(self, runtime_per_instance: int) -> tuple[str, list]:
         combinations = self.make_combinations()
 
         print(
@@ -82,7 +82,7 @@ class BatchRunner:
     def get_data(
         self,
     ) -> dict[str, Any]:
-        with open(self.filepath, "r") as fp:
+        with open(self.filepath) as fp:
             return json.load(fp)
 
     def get_filenames(
@@ -90,7 +90,7 @@ class BatchRunner:
     ) -> dict[str, str]:
         filenames_dir = {}
         tag = ""
-        with open(os.path.join(os.getcwd(), "current_timetag.txt"), "r") as tagfile:
+        with open(os.path.join(os.getcwd(), "current_timetag.txt")) as tagfile:
             tag += tagfile.readline()
         for k, v in self.listen_to_dirs.items():
             for file in os.listdir(v):
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "-M",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="+",
@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "-P",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="+",
@@ -193,7 +193,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "-N",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="+",
@@ -202,7 +202,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "-E",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="+",
@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--iter-on",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="+",

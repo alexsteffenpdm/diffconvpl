@@ -1,11 +1,11 @@
-import os
-from scene_handler import BlenderSceneHandler
-from typing import Any
 import json
-import numpy as np
-from tqdm import tqdm
+import os
 import random
+from typing import Any
 
+import numpy as np
+from scene_handler import BlenderSceneHandler
+from tqdm import tqdm
 
 JSON_PATH = os.path.join(os.getcwd(), "data\\generated")
 
@@ -70,6 +70,8 @@ class BlenderSDFGenerator:
 
     def make_sdf(self):
         sdf_arr = []
+        vertices: np.ndarray
+        edges: np.ndarray
         vertices, edges = self.handler.layercut()
         levels = np.asanyarray(
             [random.gauss(0.0, self.handler.noise / 2) for _ in range(100)]
@@ -95,8 +97,8 @@ class BlenderSDFGenerator:
         pos_edges = 0
         neg_edges = 0
         for e in edges:
-            v1 = vertices[e[0]]
-            v2 = vertices[e[1]]
+            v1 = vertices[e[0]]  # type: ignore
+            v2 = vertices[e[1]]  # type: ignore
             direction = v2 - v1
             if direction[0] < 0:
                 neg_edges += 1

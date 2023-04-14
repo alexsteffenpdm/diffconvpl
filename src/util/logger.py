@@ -1,26 +1,25 @@
-import logging
-from typing import Dict
-import os
 import csv
-import glob
 import json
+import logging
+import os
+from typing import Dict
 
 
-class ParamLogger(object):
+class ParamLogger:
     def __init__(
         self,
     ):
         self.logger = logging.getLogger("DiffconvPL_Logger")
         self.logger.setLevel(logging.DEBUG)
 
-        self.filehandler = logging.FileHandler("data\experiments.log")
+        self.filehandler = logging.FileHandler(r"data\experiments.log")
         self.filehandler.setLevel(logging.DEBUG)
 
         self.logger.addHandler(self.filehandler)
 
         self.formatter = logging.Formatter("%(message)s")
 
-        self.csv = "data\experiments.csv"
+        self.csv = r"data\experiments.csv"
 
         self.fields = [
             "Function",
@@ -36,14 +35,14 @@ class ParamLogger(object):
 
     def log_entry(
         self,
-        dict: Dict[str, str],
+        dict: dict[str, str],
     ):
         msg = ""
         for key, value in dict.items():
             msg += f"{key}: {value}\n"
         self.logger.debug(msg=msg)
 
-    def csv_log(self, dict: Dict[str, str]):
+    def csv_log(self, dict: dict[str, str]):
         if os.path.exists(self.csv):
             with open(self.csv, "a", encoding="UTF8", newline="") as fp:
                 writer = csv.DictWriter(fp, fieldnames=self.fields)
@@ -54,11 +53,11 @@ class ParamLogger(object):
                 writer.writeheader()
                 writer.writerow(dict)
 
-    def full_log(self, dict: Dict[str, str]):
+    def full_log(self, dict: dict[str, str]):
         self.log_entry(dict=dict)
         self.csv_log(dict=dict)
 
-    def json_log(self, dict: Dict[str, str], filename: str):
+    def json_log(self, dict: dict[str, str], filename: str):
         if dict["Autosave"] == True:
             filepath = f"data\\json\\AUTOSAVE_{filename}.json"
         else:

@@ -1,23 +1,24 @@
-from src.maxaffine import MultiDimMaxAffineFunction
-from src.util.common import *
-from src.util.logger import ParamLogger
-from src.util.plot import plotsdf
-from src.util.parameter_initializer import Initializer
-from src.util.shm_process import MemorySharedSubprocess
+import argparse
+import os
+import random
+from datetime import datetime
+from typing import Any, Optional
 
 import numpy as np
-import os
 import torch
-import random
-import argparse
-
 from tqdm import tqdm
-from datetime import datetime
 
-random.seed(1)
+from src.models.maxaffine import MultiDimMaxAffineFunction
+from src.util.common import *
+from src.util.logger import ParamLogger
+from src.util.parameter_initializer import Initializer
+from src.util.plot import plotsdf
+from src.util.shm_process import MemorySharedSubprocess
 
-AUTOSAVE = False
-APP_ARGS = {}
+random.seed(os.environ.get("GLOBAL_SEED"))
+
+AUTOSAVE: bool = False
+APP_ARGS: dict[str, Any] = {}
 
 
 def run():
@@ -37,7 +38,9 @@ def run():
     if batching:
         batch_size = APP_ARGS["batch_size"]
 
-    signs: np.array = np.asarray(make_signs(positive=positive_funcs, negative=negative_funcs))
+    signs: np.array = np.asarray(
+        make_signs(positive=positive_funcs, negative=negative_funcs)
+    )
     k: int = len(signs)
 
     datapoints: np.array = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
@@ -115,7 +118,9 @@ def run():
 
     z: np.ndarray = np.zeros_like(x)
     for ki in tqdm(range(model.k)):
-        z += model.generate_sdf_plot_data_single_maxaffine_function_vectorized(x=x,y=y,k=ki)
+        z += model.generate_sdf_plot_data_single_maxaffine_function_vectorized(
+            x=x, y=y, k=ki
+        )
 
     # try:
     #     error_domain, error_values = model.error_propagation(
@@ -156,6 +161,8 @@ def run():
 
     print("STAGE: End")
 
+    keep_data: Optional[bool]
+    success: Optional[bool]
     if AUTOSAVE == True:
         keep_data = True
         success = True
@@ -189,13 +196,13 @@ def run():
         logger.json_log(dict=APP_ARGS, filename=timetag)
 
     if os.environ.get("diffconvpl_running") is not None:
-        os.environ["diffconvpl_running"] = 0
+        os.environ["diffconvpl_running"] = "0"
 
 
 def setup(
     autosave: bool,
     fullplot: bool,
-    filepath: str = None,
+    filepath: Optional[str] = None,
     batch_size: int = 2**32,
     no_batch: bool = False,
     display_blender: bool = False,
@@ -203,11 +210,9 @@ def setup(
     global APP_ARGS, AUTOSAVE
     AUTOSAVE = autosave
     if not filepath:
-        [
-            os.makedirs(directory)
-            for directory in ["data", "data\\json", "data\\plots", "data\\generated"]
-            if not os.path.exists(directory)
-        ]
+        for directory in ["data", "data\\json", "data\\plots", "data\\generated"]:
+            if not os.path.exists(directory):
+                os.makedirs(directory)
 
         APP_ARGS = {
             "func": "torch.sin(10*x)",
@@ -249,7 +254,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--autorun",
-        metavar=str,
+        metavar="str",
         default=None,
         action="store",
         nargs="?",
@@ -258,7 +263,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--batchsize",
-        metavar=int,
+        metavar="int",
         default=2**32,
         action="store",
         nargs="?",
@@ -267,7 +272,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--blender-render",
-        metavar=bool,
+        metavar="bool",
         default=False,
         action="store",
         nargs="?",

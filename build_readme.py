@@ -1,6 +1,5 @@
 import os
 from subprocess import check_output
-import re
 
 # Metadata
 APPLICATION_PATH = os.path.join(os.getcwd(), "application.py")
@@ -41,7 +40,7 @@ def write_help_texts(content: str):
 def get_default_app_args():
     EXAMPLE_APPARGS = ""
     record = False
-    with open(APPLICATION_PATH, "r") as appfile:
+    with open(APPLICATION_PATH) as appfile:
         for line in appfile.readlines():
             if "APP_ARGS START" in line:
                 record = True
@@ -55,7 +54,7 @@ def get_default_app_args():
 
 
 def get_version():
-    with open(VERSION_PATH, "r") as versionfile:
+    with open(VERSION_PATH) as versionfile:
         return versionfile.readlines()[0]
 
 
@@ -68,7 +67,7 @@ def get_paths():
 
 def get_meta_readme():
     content = ""
-    with open(README_META_PATH, "r") as contentfile:
+    with open(README_META_PATH) as contentfile:
         for line in contentfile.readlines():
             content += line
     return content
