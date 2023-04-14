@@ -1,3 +1,17 @@
+Version 0.2.2
+    Findings:
+        -   due to the differences in the approach between both models (ReLu-MLP and Max-Affine) it is hard to define a proper mapping
+            between the different parameters such that both models have eqal requirements in order to calculate a model
+        -   in addition to the point above, aiming for a configuration which only compares the calculation and repsectively the result itself,
+            when given identical inputs, has to be achieved
+    Changes:
+        -   a first (yet) untested implementation of a ReLu-MLP has been done and will be used as comparison
+        -   a setup script has been written, that automates the setup of a virtual enviroment (it was planned to be added in version 0.2.4)
+        -   polling datapoints from the resulting model is now vectorized (from current tests the speed has increased by ~250x)
+    Future Changes:
+        -   reintegration and redesign of the error propagation will be implemented in version 0.2.3
+        -   the new setup script and the implementation of a ReLu-MLP will lead to a general refactorization
+
 Version 0.2.1
     Findings:
         -   the generated sdf seems to be stable only in the range of provided data (distortions are visible below and above)
@@ -11,7 +25,7 @@ Version 0.2.1
         -   due to the changes above there is no implemented way to gain knowledge about the error propagation (therefore, the appropriate sequences
             in the code have been deactivated though commenting)
     Future Changes:
-        -   a ReLu-CNN will be added in version 0.2.2 and used as comarison
+        -   a ReLu-MLP will be added in version 0.2.2 and used as comarison
         -   reintegration and redesign of the error propagation will be implemented in version 0.2.3
         -   an automated setup will be added until version 0.2.4
 

@@ -37,7 +37,7 @@ def run():
     if batching:
         batch_size = APP_ARGS["batch_size"]
 
-    signs: np.array = make_signs(positive=positive_funcs, negative=negative_funcs)
+    signs: np.array = np.asarray(make_signs(positive=positive_funcs, negative=negative_funcs))
     k: int = len(signs)
 
     datapoints: np.array = np.asanyarray([(d[0], d[1]) for d in APP_ARGS["data"]])
@@ -114,10 +114,8 @@ def run():
     x, y = np.meshgrid(domain, domain)
 
     z: np.ndarray = np.zeros_like(x)
-
     for ki in tqdm(range(model.k)):
-        zi = model.generate_sdf_plot_data_single_maxaffine_function(x=x, y=y, k=ki)
-        z += zi
+        z += model.generate_sdf_plot_data_single_maxaffine_function_vectorized(x=x,y=y,k=ki)
 
     # try:
     #     error_domain, error_values = model.error_propagation(

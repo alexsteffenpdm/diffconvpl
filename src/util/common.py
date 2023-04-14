@@ -2,7 +2,6 @@ from typing import Any
 import random
 import os
 import json
-import numpy as np
 
 
 class cmdcolors:
@@ -26,13 +25,13 @@ def rand_color() -> str:
     return "#{:02x}{:02x}{:02x}".format(r(), r(), r())
 
 
-def make_signs(positive: int, negative: int) -> np.array:
+def make_signs(positive: int, negative: int) -> list[float]:
     assert positive >= 0
     assert negative >= 0
     assert (abs(positive) + abs(negative)) > 0
     signs = ([1.0] * positive) + ([-1.0] * negative)
 
-    return np.asarray(signs)
+    return signs
 
 
 def build_log_dict(

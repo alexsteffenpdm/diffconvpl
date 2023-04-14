@@ -3,7 +3,7 @@
 **data/json/*
 **data/plots/*
 **data/plots/blender_files/*.txt
-**venv_dev*
+**.diffconvpl_env*
 tmp.json
 .vscode/
 *.blend
@@ -13,5 +13,3 @@ tmp.json
 !**src/assets/SDF_Material.mtl
 current_timetag.txt
 runner_tmp.json
-.env
-setup.py

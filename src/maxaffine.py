@@ -175,11 +175,38 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             .to(torch.device("cuda:0"))
         )
         z: torch.Tensor = torch.zeros_like(x_flat)
-
         for i in range(len(x_flat)):
             z.data[i] = (
                 self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
             )
+
+
+
+        return z.cpu().detach().numpy().reshape(len(x), len(y))
+
+    def generate_sdf_plot_data_single_maxaffine_function_vectorized(
+        self, x: np.ndarray, y: np.ndarray, k: int
+    ) -> np.ndarray:
+        x_flat: torch.Tensor = (
+            torch.from_numpy(x.flatten())
+            .type(torch.FloatTensor)
+            .to(torch.device("cuda:0"))
+        )
+        y_flat: torch.Tensor = (
+            torch.from_numpy(y.flatten())
+            .type(torch.FloatTensor)
+            .to(torch.device("cuda:0"))
+        )
+        z: torch.Tensor = torch.zeros_like(x_flat)
+        # x_stacked = torch.vstack([x_flat,y_flat]).T
+        z.data = self.eval(ki=k, x=torch.vstack([x_flat,y_flat]).T)* self.s[k]
+
+        # for i in range(len(x_flat)):
+        #     z.data[i] = (
+        #         self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
+        #     )
+
+
 
         return z.cpu().detach().numpy().reshape(len(x), len(y))
 

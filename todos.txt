@@ -1,4 +1,5 @@
-write relu/gelu class as comparator
+OPEN:
+
 write volumentric comparator (total and within z boundaries of inputs)
 
     mesh = obj.data
@@ -7,14 +8,17 @@ write volumentric comparator (total and within z boundaries of inputs)
     bm.from_mesh(mesh)
     volume = bm.calc_volume()
 
-
-
 write statistical comparator (modelsize, computation speed and quality)
 write model exporter and recalculator and solver for given Z
 setup docs
-finish setup script
-optimize model evalutation (vectorized approach + bounding box cutout)
+optimize model evaluation with bounding box cutout
 generate/find other models to test against
 setup blender file for visualization (good rendered shots)
 code cleanup
 error propagation
+
+FINISHED:
+
+write relu/gelu class as comparator
+finish setup script
+optimize model evaluation (vectorized approach)
