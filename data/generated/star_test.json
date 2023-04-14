@@ -6,8 +6,8 @@
     "m": 1000,
     "entries": 5000,
     "epochs": 5000,
-    "positive_funcs": 1,
-    "negative_funcs": 1,
+    "positive_funcs": 26,
+    "negative_funcs": 22,
     "format": "[x,y,d]",
     "fullplot": true,
     "statistics": {

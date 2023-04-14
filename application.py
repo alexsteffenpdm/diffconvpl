@@ -56,6 +56,7 @@ def run():
         k=k,
         dim=2,
         x=datapoints,
+        y=y,
         signs=signs,
         initializer=Initializer("src\\initializations\\parabola.json", dim=2),
         batchsize=batch_size if batching else 2**32,
@@ -76,30 +77,12 @@ def run():
 
     print("STAGE: Calculation")
 
-    optimizer: torch.optim = torch.optim.Adam([model.a, model.b], lr=0.06)
-    loss: torch.Tensor = None
     loss_plot: list[float] = []
     pbar = tqdm(total=epochs)
-    if batching == True:
-        for _ in range(epochs):
-            optimizer.zero_grad()
-
-            loss = model.batch_diff(model(batching), y)
-            loss_plot.append(loss.item())
-            loss.backward()
-
-            optimizer.step()
-            torch.cuda.empty_cache()
-            pbar.update(1)
-    else:
-        for _ in range(epochs):
-            optimizer.zero_grad()
-            loss = (model(batching) - y).pow(2).mean()
-            loss_plot.append(loss.item())
-            loss.backward()
-
-            optimizer.step()
-            pbar.update(1)
+    for _ in range(epochs):
+        model.forward(batching)
+        loss_plot.append(model.get_loss())
+        pbar.update(1)
 
     pbar.close()
     pbar_dict = pbar.format_dict
@@ -118,9 +101,7 @@ def run():
 
     z: np.ndarray = np.zeros_like(x)
     for ki in tqdm(range(model.k)):
-        z += model.generate_sdf_plot_data_single_maxaffine_function_vectorized(
-            x=x, y=y, k=ki
-        )
+        z += model.generate_sdf_plot_data(x=x, y=y, k=ki)
 
     # try:
     #     error_domain, error_values = model.error_propagation(
@@ -183,7 +164,7 @@ def run():
     if keep_data:
         log_dict = build_log_dict(
             tqdm_dict=pbar_dict,
-            loss=loss.item(),
+            loss=loss_plot[-1],
             func="Unknown",
             positive=positive_funcs,
             negative=negative_funcs,

@@ -15,6 +15,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         k: int,
         dim: int,
         x: np.array,
+        y: torch.tensor,
         signs: np.array,
         initializer: Initializer,
         batchsize: int = 2**32,
@@ -28,6 +29,8 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             .type(torch.FloatTensor)
             .to(torch.device("cuda:0"))
         )
+
+        self.y: torch.Tensor = y.type(torch.FloatTensor).to(torch.device("cuda:0"))
 
         self.s: torch.nn.Parameter = torch.nn.Parameter(
             torch.from_numpy(signs), requires_grad=False
@@ -45,9 +48,12 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         self.m: int = m
 
         self.func: Callable = lambda t: torch.max(t, dim=-1)[0]
-        # self.func: Callable = lambda t: torch.logsumexp(torch.relu(t), dim=-1)
-        self.gradfunc: Callable = lambda t: torch.argmax(t, dim=-1)
-        # self.func:Callable = lambda t: torch.logsumexp(t, dim=-1)
+        self.optimizer = torch.optim.Adam([self.a, self.b], lr=0.06)
+
+        self.activation_fn: Callable = lambda t: torch.max(t, dim=-1)[0]
+        self.loss_fn: torch.nn.MSELoss = torch.nn.MSELoss(reduction="mean")
+        self.loss: torch.Tensor
+
         self.batch_size: int
         if batchsize == 2**32:
             self.batch_size = self.x.shape[0]
@@ -56,6 +62,9 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
 
         self.batches: list[tuple[int, int]] = []
         self.initialization()
+
+    def __call__(self, batching: bool) -> torch.Tensor:
+        return self.forward(batching)
 
     def initialization(self) -> None:
         a, b = self.initializer(self.m)
@@ -85,6 +94,28 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
         W: torch.Tensor = (self.s[None] * V).sum(dim=-1, keepdim=True)
         return W
 
+    def forward(self, batching: bool) -> None:
+        self.optimizer.zero_grad()
+        if batching:
+            self.loss = self.loss_fn(
+                torch.cat([self.batch_eval(s=b[0], e=b[1]) for b in self.batches]),
+                self.y,
+            )
+        else:
+            self.loss = self.loss_fn(
+                torch.stack(
+                    [
+                        si * self.eval(ki=ki, x=None)
+                        for ki, si in zip(range(self.k), self.s)
+                    ]
+                ).sum(dim=0),
+                self.y,
+            )
+
+        self.loss.backward()
+        self.optimizer.step()
+        torch.cuda.empty_cache()
+
     def bench(self, y_target, granularity=0.005) -> None:
         if len(self.x.shape) == 1:
             self.x = self.x[:, None]
@@ -99,69 +130,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
                 self.batch_size = entries
         self.batches = get_batch_spacing(self.batch_size, self.x.shape[0])
 
-    def forward(self, batching: bool) -> torch.Tensor:
-        if batching:
-            return torch.cat([self.batch_eval(s=b[0], e=b[1]) for b in self.batches])
-        else:
-            return torch.stack(
-                [si * self.eval(ki=ki, x=None) for ki, si in zip(range(self.k), self.s)]
-            ).sum(dim=0)
-
-    def batch_diff(
-        self, prediction: torch.Tensor, target: torch.Tensor
-    ) -> torch.Tensor:
-        diff: torch.Tensor = torch.zeros(1, dtype=torch.float32, requires_grad=True).to(
-            torch.device("cuda:0")
-        )
-        for b in self.batches:
-            diff += (prediction[b[0] : b[1]] - target[b[0] : b[1]]).pow(2).mean()
-
-        return diff.mean()
-
-    def __call__(self, batching: bool) -> torch.Tensor:
-        return self.forward(batching)
-
-    def generate_sdf_plot_data(self, spacing: float, min: float, max: float):
-        def model_output(
-            data: torch.FloatTensor, k: int, s: torch.FloatTensor
-        ) -> torch.FloatTensor:
-            prediction: torch.Tensor = torch.zeros((k), dtype=torch.float32).to(
-                torch.device("cuda:0")
-            )
-            for ki, si in zip(range(k), s):
-                prediction[ki] = self.eval(ki=ki, x=data) * si
-            return prediction.sum()
-
-        print(f"\tCollecting model evaluation (granularity: {spacing})")
-
-        points: np.array = int((abs(min) + abs(max)) / spacing) + 1
-        domain: np.array = np.linspace(min, max, points)
-        x, y = np.meshgrid(domain, domain)
-
-        x_flat: torch.Tensor = (
-            torch.from_numpy(x.flatten())
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-        y_flat: torch.Tensor = (
-            torch.from_numpy(y.flatten())
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-        z: torch.Tensor = torch.zeros_like(x_flat)
-
-        for i in tqdm(range(len(x_flat))):
-            z.data[i] = model_output(
-                data=torch.stack([x_flat[i], y_flat[i]]), k=self.k, s=self.s
-            )
-
-        try:
-            return x, y, z.cpu().detach().numpy().reshape(len(x), len(y))
-        except:
-            print("could not return")
-            exit()
-
-    def generate_sdf_plot_data_single_maxaffine_function(
+    def generate_sdf_plot_data(
         self, x: np.ndarray, y: np.ndarray, k: int
     ) -> np.ndarray:
         x_flat: torch.Tensor = (
@@ -175,34 +144,7 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
             .to(torch.device("cuda:0"))
         )
         z: torch.Tensor = torch.zeros_like(x_flat)
-        for i in range(len(x_flat)):
-            z.data[i] = (
-                self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
-            )
-
-        return z.cpu().detach().numpy().reshape(len(x), len(y))
-
-    def generate_sdf_plot_data_single_maxaffine_function_vectorized(
-        self, x: np.ndarray, y: np.ndarray, k: int
-    ) -> np.ndarray:
-        x_flat: torch.Tensor = (
-            torch.from_numpy(x.flatten())
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-        y_flat: torch.Tensor = (
-            torch.from_numpy(y.flatten())
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-        z: torch.Tensor = torch.zeros_like(x_flat)
-        # x_stacked = torch.vstack([x_flat,y_flat]).T
         z.data = self.eval(ki=k, x=torch.vstack([x_flat, y_flat]).T) * self.s[k]
-
-        # for i in range(len(x_flat)):
-        #     z.data[i] = (
-        #         self.eval(ki=k, x=torch.stack([x_flat[i], y_flat[i]])) * self.s[k]
-        #     )
 
         return z.cpu().detach().numpy().reshape(len(x), len(y))
 
@@ -247,23 +189,5 @@ class MultiDimMaxAffineFunction(torch.nn.Module):
 
     #     return domain, np.subtract(model_z, target_z)
 
-    def tensor_devices(self) -> None:
-        tensors = {"a": self.a, "b": self.b, "s": self.s, "x": self.x}
-        for k, v in tensors.items():
-            print(f"Tensor {k} on device: {v.device}")
-
-    def gradient(self, min: float, max: float):
-        domain: np.array = np.linspace(min, max, self.m)
-        x, y = np.meshgrid(domain, domain)
-        print(np.vstack((x, y)).shape, np.vstack((x, y)))
-        # domain:np.array = torch.from_numpy(np.linspace(min,max,points)).type(torch.FloatTensor).to(torch.device("cuda:0"))
-        domain = (
-            torch.from_numpy(np.vstack((x, y)))
-            .type(torch.FloatTensor)
-            .to(torch.device("cuda:0"))
-        )
-
-        q = np.zeros([self.m, self.k])
-        for ki in range(self.k):
-            q[ki] = self.gradfunc(domain @ self.a[ki].T + self.b[ki])
-            print(q[ki])
+    def get_loss(self) -> float:
+        return self.loss.item()

@@ -1,7 +1,7 @@
 import itertools
 import random
 from collections import OrderedDict
-from typing import Any, List
+from typing import Any, Callable, List
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -57,11 +57,11 @@ class ReluMLP(torch.nn.Module):
         ]
 
         self.params = [param for layer in self.layers for param in list(layer)]
+        self.optimizer = torch.optim.Adam(self.params, lr=0.06)
 
-        self.optimizer = torch.optim.Adam(self.params)
-
-        self.activation_fn = torch.nn.ReLU()
-        self.loss_fn = torch.nn.MSELoss(reduction="mean")
+        self.activation_fn: Callable = torch.nn.ReLU()
+        self.loss_fn: torch.nn.MSELoss = torch.nn.MSELoss(reduction="mean")
+        self.loss: torch.Tensor
 
         self.initialization()
 
@@ -81,9 +81,14 @@ class ReluMLP(torch.nn.Module):
 
     def forward(self) -> None:
         self.optimizer.zero_grad()
-        training_loss = self.layers[-1](
-            self.activation_fn(self.layers[0](self.training_coords))
+
+        self.loss = self.loss_fn(
+            self.layers[-1](self.activation_fn(self.layers[0](self.training_coords))),
+            self.training_distances,
         )
-        loss = self.loss_fn(training_loss, self.training_distances)
-        loss.backward()
+        self.loss.backward()
         self.optimizer.step()
+        torch.cuda.empty_cache()
+
+    def get_loss(self) -> float:
+        return self.loss.item()
